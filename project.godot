@@ -11,17 +11,13 @@ config_version=5
 [application]
 
 config/name="Escape Room"
-run/main_scene="uid://pd01dp4mpd0g"
+run/main_scene="uid://bcfxab7fqnlwg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/paste_clipboard_image/plugin.cfg")
-
-[global_group]
-
-refractor=""
 
 [layer_names]
 

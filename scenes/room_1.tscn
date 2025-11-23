@@ -5,16 +5,16 @@
 [ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="4_3wwl0"]
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="4_d0u7m"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="5_0akh5"]
-[ext_resource type="Script" uid="uid://b6688iclbied6" path="res://scenes/mirror.gd" id="5_3wwl0"]
+[ext_resource type="Script" uid="uid://b6688iclbied6" path="res://scripts/mirror.gd" id="5_3wwl0"]
 [ext_resource type="Texture2D" uid="uid://dwg3tqitqd41m" path="res://icon.svg" id="6_d0u7m"]
-[ext_resource type="Script" uid="uid://dxn338574k5cf" path="res://scenes/sphere.gd" id="6_wy464"]
+[ext_resource type="Script" uid="uid://bfuj631fbsdha" path="res://scripts/collision_polygon_2d.gd" id="7_4wlnl"]
 [ext_resource type="Texture2D" uid="uid://d06y05otxnoxq" path="res://images/light.png" id="7_wy464"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
 size = Vector2(164, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wlnl"]
-size = Vector2(126, 91.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wy464"]
+radius = 147.105
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_d0u7m")
@@ -54,7 +54,6 @@ offset_bottom = 293.0
 script = ExtResource("4_3wwl0")
 
 [node name="Line2D" type="Line2D" parent="Rays"]
-position = Vector2(206, 225)
 
 [node name="Laser" type="RayCast2D" parent="Rays"]
 collide_with_areas = true
@@ -71,15 +70,14 @@ grow_vertical = 2
 script = ExtResource("5_3wwl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/Mirror"]
-position = Vector2(540, 26)
+position = Vector2(558, 31)
 shape = SubResource("RectangleShape2D_3wwl0")
 
-[node name="SphereReflector" type="Node2D" parent="LightSystem" groups=["refractor"]]
-script = ExtResource("6_wy464")
+[node name="SphereReflector" type="Node2D" parent="LightSystem"]
 
-[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector" groups=["refractor"]]
+[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector"]
 
-[node name="Sphere" type="Button" parent="LightSystem/SphereReflector/Area2D" groups=["refractor"]]
+[node name="Sphere" type="Button" parent="LightSystem/SphereReflector/Area2D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,11 +91,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "ball"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector/Area2D" groups=["refractor"]]
-position = Vector2(441, 342)
-shape = SubResource("RectangleShape2D_4wlnl")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LightSystem/SphereReflector/Area2D"]
+position = Vector2(443, 328)
+polygon = PackedVector2Array(-16, -17, 23, 20, 7, 43, -19, 43, -30, 25)
+script = ExtResource("7_4wlnl")
 
-[node name="Sphere2" type="Button" parent="LightSystem" groups=["refractor"]]
+[node name="Sphere2" type="Button" parent="LightSystem"]
 layout_mode = 0
 offset_left = 623.0
 offset_top = 236.0
@@ -105,7 +104,7 @@ offset_right = 660.0
 offset_bottom = 267.0
 text = "ball"
 
-[node name="Sphere3" type="Button" parent="LightSystem" groups=["refractor"]]
+[node name="Sphere3" type="Button" parent="LightSystem"]
 layout_mode = 0
 offset_left = 310.0
 offset_top = 71.0
@@ -202,11 +201,20 @@ color = Color(0.554878, 0.452474, 0, 1)
 energy = 10.32
 texture = ExtResource("7_wy464")
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(870, 257)
+shape = SubResource("CircleShape2D_wy464")
+
 [connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
 [connection signal="pressed" from="Arrow" to="." method="_on_arrow_pressed"]
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="ShowPuzzleButton" to="Instructions" method="_on_show_puzzle_button_pressed"]
 [connection signal="pressed" from="LightSystem/SphereReflector/Area2D/Sphere" to="." method="_on_sphere_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector/Area2D/Sphere" to="LightSystem/SphereReflector/Area2D/CollisionPolygon2D" method="_on_sphere_pressed"]
 [connection signal="pressed" from="LightSystem/Sphere2" to="." method="_on_sphere_2_pressed"]
 [connection signal="pressed" from="LightSystem/Sphere3" to="." method="_on_sphere_3_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]

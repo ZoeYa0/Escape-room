@@ -1,0 +1,137 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcfxab7fqnlwg"]
+
+[ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_i4qgx"]
+[ext_resource type="Texture2D" uid="uid://c4xfiu5frv7bq" path="res://images/temp_bg.png" id="2_22a07"]
+[ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="4_wg0t4"]
+[ext_resource type="Script" uid="uid://b6688iclbied6" path="res://scripts/mirror.gd" id="5_2tqpo"]
+[ext_resource type="Script" uid="uid://7u6ep3cr23cg" path="res://scenes/sphere_reflector.gd" id="5_cs0ba"]
+[ext_resource type="Script" uid="uid://c6xxn60r3kclu" path="res://scenes/sphere.gd" id="6_kq2vq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
+size = Vector2(239, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qs3r0"]
+radius = 12.1655
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_i4qgx")
+
+[node name="TempBg" type="Sprite2D" parent="."]
+modulate = Color(0.481789, 0.481789, 0.481789, 1)
+position = Vector2(572.75, 322)
+scale = Vector2(1.09431, 1.03859)
+texture = ExtResource("2_22a07")
+
+[node name="Curtain" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 71.0
+offset_right = 254.0
+offset_bottom = 390.0
+mouse_filter = 2
+mouse_default_cursor_shape = 16
+text = "curtain
+"
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("4_wg0t4")
+
+[node name="Laser" type="RayCast2D" parent="Node2D"]
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="Node2D"]
+points = PackedVector2Array(1, -2, 216, 104, 410, -1, 112, -168, 334, -222)
+
+[node name="LightSystem" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mirror" type="Area2D" parent="LightSystem"]
+script = ExtResource("5_2tqpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/Mirror"]
+position = Vector2(555.5, 31)
+shape = SubResource("RectangleShape2D_3wwl0")
+
+[node name="SphereReflector" type="Node2D" parent="LightSystem"]
+script = ExtResource("5_cs0ba")
+
+[node name="Sphere" type="Button" parent="LightSystem/SphereReflector"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 421.0
+offset_top = 337.0
+offset_right = 458.0
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ball"
+script = ExtResource("6_kq2vq")
+
+[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector/Area2D"]
+position = Vector2(643, 250)
+shape = SubResource("CircleShape2D_qs3r0")
+
+[node name="SphereReflector2" type="Node2D" parent="LightSystem"]
+script = ExtResource("5_cs0ba")
+
+[node name="Sphere" type="Button" parent="LightSystem/SphereReflector2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 627.0
+offset_top = 233.0
+offset_right = 664.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ball"
+script = ExtResource("6_kq2vq")
+
+[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector2/Area2D"]
+position = Vector2(335, 82)
+shape = SubResource("CircleShape2D_qs3r0")
+
+[node name="SphereReflector3" type="Node2D" parent="LightSystem"]
+script = ExtResource("5_cs0ba")
+
+[node name="Sphere" type="Button" parent="LightSystem/SphereReflector3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 316.0
+offset_top = 65.0
+offset_right = 353.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ball"
+script = ExtResource("6_kq2vq")
+
+[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector3/Area2D"]
+position = Vector2(441, 352)
+shape = SubResource("CircleShape2D_qs3r0")
+
+[connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="." method="_on_sphere_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="LightSystem/SphereReflector/Sphere" method="_on_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector2/Sphere" to="." method="_on_sphere_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector2/Sphere" to="LightSystem/SphereReflector2/Sphere" method="_on_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector3/Sphere" to="." method="_on_sphere_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector3/Sphere" to="LightSystem/SphereReflector3/Sphere" method="_on_pressed"]

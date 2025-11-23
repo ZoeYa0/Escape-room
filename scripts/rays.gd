@@ -1,77 +1,82 @@
 extends Node2D
 
-@export var bounces := 4
-@export var collision_mask_bits := 1
-@onready var line := $Line2D
-@export var start_angle := 30.0  # degrees or radians your choice
+#var sender = "." no sender
+@onready var line = $Line2D
+@onready var sphere: Button = $"../LightSystem/SphereReflector/Sphere"
+@onready var sphere_reflector: SphereReflector = $"../LightSystem/SphereReflector"
 
 
-const MAX_LENGTH = 2000
-var max_target_position
-var rot:= 0.0
+var bounces := 4
+
+var rot := 0.0
+var starting_rot = -15.0
+
+const MAX_LENGTH := 590 # max length 
+
+
+var max_cast_to # vector that updates based on rotation
 
 var lasers := []
 
-func _ready() -> void:
-	lasers.append($Laser)
+func _ready():
 	
+	#sender = get_parent()
+	
+	lasers.append($Laser)
 	for i in range(bounces):
-		#make new raycast for each bounce and append
 		var raycast = $Laser.duplicate()
 		raycast.enabled = false
-		#raycast.add_exception(self)# just dont' add exception...
-#raycast.add_exception(sender) old. not work in 4?
+		#raycast.add_exception(sender)
 		add_child(raycast)
 		lasers.append(raycast)
-		raycast.global_position = global_position#neew
-	max_target_position = Vector2(MAX_LENGTH,0).rotated(rot)
 	
-	$Laser.target_position = max_target_position
-	#will not make the laser move in relation to its parent
-	line.top_level = true 
+	#max_cast_to = Vector2(MAX_LENGTH, 0).rotated(rot)
+	max_cast_to = Vector2(MAX_LENGTH, 0).rotated(starting_rot)
+	#$Laser.add_exception(sender)
+	$Laser.target_position = max_cast_to#updated from cast to
+	#$Line2D.set_as_toplevel(true) would be used to stop from following parent. is useless here
 	
-	
-func _process(delta: float) -> void:
-	lasers[0].enabled = true
-	
-	for i in range(1, lasers.size()):
-		lasers[i].enabled = false
-	#new code above
-	rot = get_local_mouse_position().angle()
-	#rot = deg_to_rad(start_angle)
 
+func _process(_delta):
 	
-	#reset points
+	#$End.emitting = true
+	rot = get_local_mouse_position().angle()
+	
 	line.clear_points()
-	
-	#add first point as laser's start pos
 	line.add_point(global_position)
 	
-	#set the farthest cast
-	max_target_position = Vector2(MAX_LENGTH,0).rotated(rot)
+	max_cast_to = Vector2(MAX_LENGTH, 0).rotated(rot)
+	#max_cast_to = Vector2(MAX_LENGTH, 0).rotated(starting_rot)
+	
+
+	var direction = Vector2.RIGHT.rotated(rotation)
 	
 	var idx = -1
 	for raycast in lasers:
-		idx += 1
-		var raycastcollison = raycast.get_collision_point()
-		raycast.target_position = max_target_position
 		
-		#if raycast detects coll
+		idx += 1
+		var raycastcollision = raycast.get_collision_point()
+		
+		raycast.target_position = max_cast_to#here is angle determined
+		
 		if raycast.is_colliding():
-			#place next lien point at the coll point
-			line.add_point(raycastcollison)
-			var collider = raycast.get_collider()#raycast instead of collison fix error
-			#move next raycast to the bounced vector off of the wall's normal
-			#if collider.is_in_group("refractor"):#THIS IS THE ONE I ADDED
-			max_target_position = max_target_position.bounce(raycast.get_collision_normal())
-			if idx < lasers.size() -1:#if not last raycast,enable next raycast
+			line.add_point(raycastcollision)
+			
+			#max_cast_to = max_cast_to.bounce(raycast.get_collision_normal())
+			max_cast_to = sphere_reflector.get_reflection_dir() * MAX_LENGTH
+			
+			if idx < lasers.size()-1:
 				lasers[idx+1].enabled = true
-				lasers[idx+1].global_position = raycastcollison + (1*max_target_position.normalized())
-			if idx == lasers.size() -1: # if last raycast, set end particle to collison
-				pass#no particle here
-		else: #if no coll
-			#place next line poitn max_dis away
-			line.add_point(global_position + max_target_position)
-			if idx == 0:
-				raycast.target_position = max_target_position
-				
+				lasers[idx+1].global_position = raycastcollision+(1*max_cast_to.normalized())
+			#if idx == lasers.size()-1:
+				#$End.global_position = raycastcollision
+			if lasers[idx].get_collider().name == "Mirror":
+				lasers[idx].get_collider().trigger_light()#somehow it hits mirror instead of collider??
+				print("mirror hit")
+				break
+		else:
+			line.add_point(global_position + max_cast_to)
+			#$End.emitting = false
+			break
+			
+		
