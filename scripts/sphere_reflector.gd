@@ -8,6 +8,7 @@ var output_angle_degrees: float = 0.0#don't export bc then it's stored on cloud
 func _ready() -> void:
 	sphere.angle_changed.connect(on_angle_changed)
 	
+	
 func get_reflection_dir() -> Vector2:
 	var total_deg := output_angle_degrees + rotation_degrees
 	return Vector2.RIGHT.rotated(deg_to_rad(total_deg)).normalized()

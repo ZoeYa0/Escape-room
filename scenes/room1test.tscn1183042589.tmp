@@ -1,0 +1,254 @@
+[gd_scene load_steps=14 format=3 uid="uid://bcfxab7fqnlwg"]
+
+[ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/Events.gd" id="1_i4qgx"]
+[ext_resource type="Texture2D" uid="uid://bosxnaqmvfy2b" path="res://images/ClipboardImage_2025-11-24T172057.png" id="2_cs0ba"]
+[ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="4_wg0t4"]
+[ext_resource type="Script" uid="uid://7u6ep3cr23cg" path="res://scripts/sphere_reflector.gd" id="5_cs0ba"]
+[ext_resource type="Texture2D" uid="uid://cnw20008h01ee" path="res://images/ClipboardImage_2025-11-24T172159.png" id="6_i4qgx"]
+[ext_resource type="Script" uid="uid://c6xxn60r3kclu" path="res://scripts/sphere.gd" id="6_kq2vq"]
+[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="8_1f2q5"]
+[ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="9_wg0t4"]
+[ext_resource type="Texture2D" uid="uid://dwg3tqitqd41m" path="res://icon.svg" id="10_2tqpo"]
+[ext_resource type="Texture2D" uid="uid://d06y05otxnoxq" path="res://images/light.png" id="11_ty1kq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
+size = Vector2(107, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22a07"]
+atlas = ExtResource("6_i4qgx")
+region = Rect2(538.403, 517.056, 144.037, 135.472)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qs3r0"]
+radius = 20.025
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_i4qgx")
+
+[node name="TempBg" type="Sprite2D" parent="."]
+modulate = Color(0.154876, 0.154876, 0.154876, 1)
+position = Vector2(581.531, 327)
+scale = Vector2(0.899992, 0.854167)
+texture = ExtResource("2_cs0ba")
+
+[node name="Curtain" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 143.0
+offset_top = 55.0
+offset_right = 442.0
+offset_bottom = 430.0
+mouse_filter = 2
+mouse_default_cursor_shape = 16
+action_mode = 0
+
+[node name="Rays" type="Node2D" parent="."]
+script = ExtResource("4_wg0t4")
+
+[node name="Laser" type="RayCast2D" parent="Rays"]
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="Rays"]
+points = PackedVector2Array(1, -2, 216, 104, 410, -1, 112, -168, 334, -222)
+default_color = Color(1, 1, 0.701961, 1)
+
+[node name="LightSystem" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mirror" type="Area2D" parent="LightSystem"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/Mirror"]
+position = Vector2(621.5, 31)
+shape = SubResource("RectangleShape2D_3wwl0")
+
+[node name="SphereReflector" type="Node2D" parent="LightSystem"]
+script = ExtResource("5_cs0ba")
+
+[node name="Sphere" type="Button" parent="LightSystem/SphereReflector"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 474.0
+offset_top = 331.0
+offset_right = 626.0
+offset_bottom = 474.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_22a07")
+script = ExtResource("6_kq2vq")
+
+[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector"]
+position = Vector2(127, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector/Area2D"]
+position = Vector2(441, 352)
+shape = SubResource("CircleShape2D_qs3r0")
+
+[node name="SphereReflector2" type="Node2D" parent="LightSystem"]
+script = ExtResource("5_cs0ba")
+
+[node name="Sphere2" type="Button" parent="LightSystem/SphereReflector2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 627.0
+offset_top = 233.0
+offset_right = 664.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ball"
+script = ExtResource("6_kq2vq")
+
+[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector2/Area2D"]
+position = Vector2(647, 249)
+shape = SubResource("CircleShape2D_qs3r0")
+
+[node name="SphereReflector3" type="Node2D" parent="LightSystem"]
+script = ExtResource("5_cs0ba")
+
+[node name="Sphere3" type="Button" parent="LightSystem/SphereReflector3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 494.0
+offset_top = 79.0
+offset_right = 531.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ball"
+script = ExtResource("6_kq2vq")
+
+[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector3"]
+position = Vector2(178, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector3/Area2D"]
+position = Vector2(335, 81)
+shape = SubResource("CircleShape2D_qs3r0")
+
+[node name="Arrow" type="Button" parent="."]
+visible = false
+offset_left = 10.0
+offset_top = 316.0
+offset_right = 100.0
+offset_bottom = 377.0
+text = "⬅️"
+script = ExtResource("8_1f2q5")
+destination_scene = 2
+
+[node name="ShowPuzzleButton" type="Button" parent="."]
+offset_left = 993.0
+offset_top = 329.0
+offset_right = 1144.0
+offset_bottom = 445.0
+
+[node name="Instructions" type="Node2D" parent="."]
+visible = false
+script = ExtResource("9_wg0t4")
+
+[node name="BgInstructions" type="Sprite2D" parent="Instructions"]
+position = Vector2(568.5, 307.25)
+scale = Vector2(7.46094, 4.70703)
+texture = ExtResource("10_2tqpo")
+
+[node name="CloseButton" type="Button" parent="Instructions"]
+offset_left = 929.0
+offset_top = 15.0
+offset_right = 1039.0
+offset_bottom = 81.0
+text = "X"
+
+[node name="Label" type="Label" parent="Instructions"]
+offset_left = 170.0
+offset_top = 36.0
+offset_right = 660.0
+offset_bottom = 449.0
+text = "
+Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunne jullie bepalen over welke hemellichaam het gaat? 
+
+Formule  
+
+Instructies: Fgrav = 3,52 * 10^22 N 
+
+G = constante(zelf opzoeken) 
+
+Maarde = (zelf opzoeken) 
+
+r = 1,496 * 10^11 
+
+m = niet bekende "
+autowrap_mode = 1
+
+[node name="Hints" type="Node2D" parent="."]
+visible = false
+script = ExtResource("9_wg0t4")
+
+[node name="bg" type="Sprite2D" parent="Hints"]
+position = Vector2(568.5, 307.25)
+scale = Vector2(7.46094, 4.70703)
+texture = ExtResource("10_2tqpo")
+
+[node name="CloseButton" type="Button" parent="Hints"]
+offset_left = 929.0
+offset_top = 15.0
+offset_right = 1039.0
+offset_bottom = 81.0
+text = "X"
+
+[node name="Label" type="Label" parent="Hints"]
+offset_left = 170.0
+offset_top = 36.0
+offset_right = 660.0
+offset_bottom = 449.0
+text = "
+Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunne jullie bepalen over welke hemellichaam het gaat? 
+
+Formule  
+
+Instructies: Fgrav = 3,52 * 10^22 N 
+
+G = constante(zelf opzoeken) 
+
+Maarde = (zelf opzoeken) 
+
+r = 1,496 * 10^11 
+
+m = niet bekende "
+autowrap_mode = 1
+
+[node name="Hint" type="Button" parent="."]
+offset_left = 1058.0
+offset_top = 12.0
+offset_right = 1137.0
+offset_bottom = 71.0
+text = "?"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1012, 403)
+scale = Vector2(1.35937, 1.22852)
+color = Color(0.554878, 0.452474, 0, 1)
+energy = 10.32
+texture = ExtResource("11_ty1kq")
+
+[connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="." method="_on_sphere_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="LightSystem/SphereReflector/Sphere" method="_on_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector2/Sphere2" to="LightSystem/SphereReflector2" method="_on_sphere_2_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector2/Sphere2" to="LightSystem/SphereReflector2/Sphere2" method="_on_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector3/Sphere3" to="LightSystem/SphereReflector3" method="_on_sphere_3_pressed"]
+[connection signal="pressed" from="LightSystem/SphereReflector3/Sphere3" to="LightSystem/SphereReflector3/Sphere3" method="_on_pressed"]
+[connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
+[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Hints/CloseButton" to="Hints" method="_on_close_button_pressed"]

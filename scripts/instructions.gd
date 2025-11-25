@@ -1,8 +1,5 @@
 extends Node2D
-
-
-func _on_hint_pressed() -> void:
-	visible = true
+@onready var answer_field = $AnswerField
 
 
 func _on_close_button_pressed() -> void:
@@ -11,3 +8,14 @@ func _on_close_button_pressed() -> void:
 
 func _on_show_puzzle_button_pressed() -> void:
 	visible = true
+
+
+func _on_submit_button_pressed() -> void:
+	
+	var answer = answer_field.text.strip_edges()
+
+	if answer.to_lower() == "zon":        # correct answer
+		print("Correct!")
+		Events.curtains_opened.emit()
+	else:
+		print("Wrong answer!")

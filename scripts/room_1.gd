@@ -1,5 +1,6 @@
 extends Node2D
-signal curtains_opened
+
+#this is controller! not event! autoload will break bc paths will be moved
 
 @onready var temp_bg: Sprite2D = $TempBg
 @onready var curtain: Button = $Curtain
@@ -16,7 +17,6 @@ signal curtains_opened
 @onready var sphere_2: Button = $LightSystem/SphereReflector2/Sphere2
 @onready var sphere_reflector_3: SphereReflector = $LightSystem/SphereReflector3
 @onready var sphere_3: Button = $LightSystem/SphereReflector3/Sphere3
-
 @onready var arrow: Button = $Arrow
 @onready var show_puzzle_button: Button = $ShowPuzzleButton
 @onready var instructions: Node2D = $Instructions
@@ -27,11 +27,14 @@ signal curtains_opened
 @onready var bg: Sprite2D = $Hints/bg
 @onready var hint: Button = $Hint
 @onready var point_light_2d: PointLight2D = $PointLight2D
-
-
+#---------------------------------------------------
+@export var intro: DialogueResource # attach dialogue file
+@export var dialogue_start: String = "start" #specify start
+#---------------------------------------------------
 func _ready() -> void:
 	curtain.disabled = false
 	rays.room_lit.connect(on_room_lit)
+	DialogueManager.show_dialogue_balloon(intro, "start")
 
 #func _on_sphere_pressed() -> void:
 	#sphere.pivot_offset = sphere.size * 0.5
@@ -50,7 +53,7 @@ func _on_sphere_3_pressed() -> void:
 
 
 func _on_curtain_pressed() -> void:
-	curtains_opened.emit()
+	Events.curtain_opened.emit()
 	curtain.disabled = true
 	
 func on_room_lit():
