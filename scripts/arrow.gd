@@ -5,7 +5,8 @@ func _on_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/room_" + str(destination_scene)+ ".tscn") 
 	
 func _ready() -> void:
-	visible = false
+	if Events.puzzle_solved == false:
+		visible = false
 	Events.room_lit.connect(on_room_lit)
 	
 func on_room_lit():

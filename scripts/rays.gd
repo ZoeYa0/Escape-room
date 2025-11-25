@@ -22,7 +22,7 @@ var max_cast_to # vector that updates based on rotation
 var lasers := []
 
 func _ready():
-	#line.visible = false
+	line.visible = false
 	#sender = get_parent()
 	
 	lasers.append($Laser)
@@ -78,8 +78,9 @@ func _process(_delta):
 			#---- replacement for new dir
 			var collider = raycast.get_collider().get_parent()
 			if lasers[idx].get_collider().name == "Mirror":#somehow it hits mirror instead of collider??
-				Events.emit_signal("room_lit")
+				Events.room_lit.emit()
 				print("mirror hit")
+				active = false
 				break
 			new_dir = collider.get_reflection_dir().normalized()
 			#----
@@ -92,7 +93,8 @@ func _process(_delta):
 				#$End.global_position = raycastcollision
 			if lasers[idx].get_collider().name == "Mirror":
 				lasers[idx].get_collider().trigger_light()#somehow it hits mirror instead of collider??
-				Events.emit_signal("room_lit")
+				Events.room_lit.emit()
+				active = false
 				break
 		else:
 			line.add_point(global_position + max_cast_to)

@@ -20,7 +20,6 @@ extends Node2D
 @onready var arrow: Button = $Arrow
 @onready var show_puzzle_button: Button = $ShowPuzzleButton
 @onready var instructions: Node2D = $Instructions
-@onready var bg_instructions: Sprite2D = $Instructions/BgInstructions
 @onready var close_button: Button = $Instructions/CloseButton
 @onready var label: Label = $Instructions/Label
 @onready var hints: Node2D = $Hints
@@ -29,36 +28,48 @@ extends Node2D
 @onready var point_light_2d: PointLight2D = $PointLight2D
 #---------------------------------------------------
 @export var intro: DialogueResource # attach dialogue file
+@export var room_finished: DialogueResource # attach dialogue file
+@export var curtains_stuck: DialogueResource
 @export var dialogue_start: String = "start" #specify start
 #---------------------------------------------------
 func _ready() -> void:
 	curtain.disabled = false
+	line_2d.visible = false
 	rays.room_lit.connect(on_room_lit)
 	DialogueManager.show_dialogue_balloon(intro, "start")
+	Events.curtains_opened.connect(on_curtains_opened)
+	Events.room_lit.connect(on_room_lit)
 
 #func _on_sphere_pressed() -> void:
 	#sphere.pivot_offset = sphere.size * 0.5
-	#sphere.rotation += deg_to_rad(90.0)#control nodes use rad
-	##collision_polygon_2d.pivot_offset = collision_polygon_2d.size * 0.5
-	##collision_polygon_2d.rotation += deg_to_rad(90.0)
+	#sphere.rotation += deg_to_rad(45.0)#control nodes use rad
 	##get_parent().rotation_degrees += 45.0
-
-func _on_sphere_2_pressed() -> void:
-	sphere_2.pivot_offset = sphere_2.size * 0.5
-	sphere_2.rotation += deg_to_rad(90.0)
-
-func _on_sphere_3_pressed() -> void:
-	sphere_3.pivot_offset = sphere_3.size * 0.5
-	sphere_3.rotation += deg_to_rad(90.0)
-
+#
+#func _on_sphere_2_pressed() -> void:
+	#sphere_2.pivot_offset = sphere_2.size * 0.5
+	#sphere_2.rotation += deg_to_rad(45.0)
+#
+#func _on_sphere_3_pressed() -> void:
+	#sphere_3.pivot_offset = sphere_3.size * 0.5
+	#sphere_3.rotation += deg_to_rad(45.0)
+#
 
 func _on_curtain_pressed() -> void:
-	Events.curtain_opened.emit()
-	curtain.disabled = true
+	if Events.puzzle_solved:
+		line_2d.visible = true	
+		curtain.disabled = true
+		
 	
 func on_room_lit():
 	temp_bg.modulate = Color(1,1,1,1)
+	DialogueManager.show_dialogue_balloon(room_finished,'start')
+	Events.puzzle_solved = true
 
+func on_curtains_opened():
+	show_puzzle_button.disabled = true
+	line_2d.visible = true
+	DialogueManager.show_dialogue_balloon(curtains_stuck,'start')
+	
 	
 	
 
