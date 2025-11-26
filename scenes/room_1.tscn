@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d06y05otxnoxq" path="res://images/light.png" id="4_1afn8"]
 [ext_resource type="Resource" uid="uid://whyoqi02iftq" path="res://dialogue/curtains_stuck.dialogue" id="4_gu0is"]
 [ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="5_y5mqv"]
-[ext_resource type="Texture2D" uid="uid://cikvo4txpx6hx" path="res://images/ClipboardImage_2025-11-25T185545.png" id="6_m0003"]
+[ext_resource type="Texture2D" uid="uid://cikvo4txpx6hx" path="res://images/lamp.png" id="6_m0003"]
 [ext_resource type="Script" uid="uid://7u6ep3cr23cg" path="res://scripts/sphere_reflector.gd" id="7_ncuik"]
 [ext_resource type="Texture2D" uid="uid://dcf0blgrmojm6" path="res://wheel_texture.tres" id="8_lwgnx"]
 [ext_resource type="Script" uid="uid://c6xxn60r3kclu" path="res://scripts/sphere.gd" id="9_4oupy"]
@@ -194,7 +194,6 @@ script = ExtResource("11_hvue4")
 destination_scene = 2
 
 [node name="Instructions" type="Node2D" parent="."]
-visible = false
 script = ExtResource("12_2ubtq")
 
 [node name="ColorRect" type="ColorRect" parent="Instructions"]
@@ -203,6 +202,7 @@ offset_top = 34.0
 offset_right = 1121.0
 offset_bottom = 622.0
 color = Color(0.696595, 0.466588, 0.558643, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CloseButton" type="Button" parent="Instructions"]
 offset_left = 929.0
@@ -210,6 +210,7 @@ offset_top = 15.0
 offset_right = 1039.0
 offset_bottom = 81.0
 text = "X"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Instructions"]
 offset_left = 156.0
@@ -231,12 +232,14 @@ r = 1,496 * 10^11
 
 m = niet bekende "
 autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnswerField" type="LineEdit" parent="Instructions"]
 offset_left = 167.0
 offset_top = 507.0
 offset_right = 933.0
 offset_bottom = 564.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SubmitButton" type="Button" parent="Instructions"]
 offset_left = 957.0
@@ -244,6 +247,7 @@ offset_top = 507.0
 offset_right = 1062.0
 offset_bottom = 565.0
 text = "Submit"
+metadata/_edit_use_anchors_ = true
 
 [node name="Hints" type="Node2D" parent="."]
 visible = false
