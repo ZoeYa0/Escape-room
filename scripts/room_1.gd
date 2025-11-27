@@ -28,6 +28,7 @@ extends Node2D
 @onready var hint_label: Label = $Hints/Label
 @onready var timer: Label = $Timer
 @onready var closed_curtain: ColorRect = $ClosedCurtain
+@onready var curtains_opened: Sprite2D = $CurtainsOpened
 
 @onready var point_light_2d: PointLight2D = $PointLight2D
 #---------------------------------------------------
@@ -41,6 +42,7 @@ var start_time = 0
 func _ready() -> void:
 	start_time = Time.get_ticks_msec()
 	line_2d.visible = false
+	curtains_opened.visible = false
 	closed_curtain.visible = true
 	rays.room_lit.connect(on_room_lit)
 	#DialogueManager.show_dialogue_balloon(intro, "start")
@@ -66,10 +68,12 @@ func _process(delta: float) -> void:
 
 func _on_curtain_pressed() -> void:
 	print("curtainspressed")
-	if Events.puzzle_solved:
+	if Events.can_curtains_open:
+		curtains_opened.visible = true
 		closed_curtain.visible = false
 		line_2d.visible = true	
 		curtain.disabled = true
+		DialogueManager.show_dialogue_balloon(curtains_stuck,'start')
 	else:
 		DialogueManager.show_dialogue_balloon(curtains_cant_open,'start')
 		
@@ -81,8 +85,7 @@ func on_room_lit():
 
 func on_curtains_opened():
 	show_puzzle_button.disabled = true
-	line_2d.visible = true
-	DialogueManager.show_dialogue_balloon(curtains_stuck,'start')
+	
 	
 	
 	

@@ -2,7 +2,8 @@ extends Node2D
 @onready var arrow: Button = $ArrowLeft
 @onready var ph_image: Sprite2D = $PHImage
 @onready var timer: Label = $Timer
-
+@onready var hints: Node2D = $Hints
+#-------------------------
 @export var start_dialogue: DialogueResource
 @export var room_2_finished: DialogueResource
 @export var wrong_drink: DialogueResource
@@ -14,6 +15,7 @@ var start_time = 0
 var health = 3
 
 func _ready() -> void:
+	Events.current_room = 2
 	start_time = Time.get_ticks_msec()
 	arrow.visible = false
 	ph_image.visible = false
@@ -28,6 +30,8 @@ func _on_small_ph_pressed() -> void:
 
 
 func _on_good_pressed() -> void:
+	#puzzle solved!
+	Events.hints_room2 = hints.hint
 	arrow.visible = true
 	DialogueManager.show_dialogue_balloon(room_2_finished,"start")
 

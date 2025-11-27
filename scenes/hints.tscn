@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1kk6wsakirc4"]
+
+[ext_resource type="Script" uid="uid://b6n6b8i3mblge" path="res://scripts/hints.gd" id="1_wixqs"]
+
+[node name="Hints" type="Node2D"]
+visible = false
+script = ExtResource("1_wixqs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+light_mask = 0
+offset_left = 59.0
+offset_top = 85.0
+offset_right = 1099.0
+offset_bottom = 271.0
+color = Color(0.584314, 0.584314, 0.584314, 1)
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 972.0
+offset_top = 95.0
+offset_right = 1082.0
+offset_bottom = 161.0
+text = "X"
+
+[node name="ActualHint" type="Label" parent="."]
+offset_left = 171.0
+offset_top = 167.0
+offset_right = 1012.0
+offset_bottom = 258.0
+autowrap_mode = 1
+
+[node name="Hitn" type="Label" parent="."]
+offset_left = 546.0
+offset_top = 100.0
+offset_right = 586.0
+offset_bottom = 123.0
+text = "Hint"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

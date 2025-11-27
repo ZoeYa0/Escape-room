@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=23 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/intro_room1.dialogue" id="2_hv3v0"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="11_hvue4"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="12_2ubtq"]
 [ext_resource type="Script" uid="uid://b6n6b8i3mblge" path="res://scripts/hints.gd" id="13_sl6s1"]
+[ext_resource type="Texture2D" uid="uid://csggdvfsq03i2" path="res://images/curtains_opened.png" id="13_y5mqv"]
+[ext_resource type="Texture2D" uid="uid://b4gu1vistwmu6" path="res://images/instruction_sun.png" id="16_m0003"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
 size = Vector2(131, 28)
@@ -158,7 +160,7 @@ offset_bottom = 532.0
 scale = Vector2(0.61, 0.61)
 icon = SubResource("AtlasTexture_2tqpo")
 
-[node name="Hint" type="Button" parent="."]
+[node name="ShowHint" type="Button" parent="."]
 offset_left = 1069.0
 offset_top = 12.0
 offset_right = 1137.0
@@ -172,6 +174,10 @@ offset_top = 54.0
 offset_right = 436.0
 offset_bottom = 426.0
 color = Color(0, 0, 0, 1)
+
+[node name="CurtainsOpened" type="Sprite2D" parent="."]
+position = Vector2(286, 225)
+texture = ExtResource("13_y5mqv")
 
 [node name="Curtain" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -192,9 +198,11 @@ destination_scene = 2
 
 [node name="Instructions" type="Node2D" parent="."]
 visible = false
+light_mask = 0
 script = ExtResource("12_2ubtq")
 
 [node name="ColorRect" type="ColorRect" parent="Instructions"]
+light_mask = 0
 offset_left = 37.0
 offset_top = 34.0
 offset_right = 1121.0
@@ -203,24 +211,22 @@ color = Color(0.696595, 0.466588, 0.558643, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="CloseButton" type="Button" parent="Instructions"]
-offset_left = 929.0
-offset_top = 15.0
-offset_right = 1039.0
-offset_bottom = 81.0
+offset_left = 980.0
+offset_top = 53.0
+offset_right = 1090.0
+offset_bottom = 119.0
 text = "X"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Instructions"]
 offset_left = 156.0
 offset_top = 67.0
-offset_right = 646.0
+offset_right = 920.0
 offset_bottom = 480.0
-text = "
-Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunne jullie bepalen over welke hemellichaam het gaat? 
+text = "Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunnen jullie bepalen over welke hemellichaam het gaat? 
 
-Formule  
 
-Instructies: Fgrav = 3,52 * 10^22 N 
+Fgrav = 3,52 * 10^22 N 
 
 G = constante(zelf opzoeken) 
 
@@ -228,9 +234,11 @@ Maarde = (zelf opzoeken)
 
 r = 1,496 * 10^11 
 
-m = niet bekende "
+m = niet bekende 
+
+Hulpmiddelen: 
+Binas tabel 31 +  7A "
 autowrap_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="AnswerField" type="LineEdit" parent="Instructions"]
 offset_left = 167.0
@@ -247,6 +255,10 @@ offset_bottom = 565.0
 text = "Submit"
 metadata/_edit_use_anchors_ = true
 
+[node name="InstructionSun" type="Sprite2D" parent="Instructions"]
+position = Vector2(553, 239)
+texture = ExtResource("16_m0003")
+
 [node name="Hints" type="Node2D" parent="."]
 visible = false
 script = ExtResource("13_sl6s1")
@@ -254,37 +266,46 @@ script = ExtResource("13_sl6s1")
 [node name="ColorRect" type="ColorRect" parent="Hints"]
 light_mask = 0
 offset_left = 59.0
-offset_top = 28.0
+offset_top = 85.0
 offset_right = 1099.0
-offset_bottom = 614.0
+offset_bottom = 271.0
 color = Color(0.584314, 0.584314, 0.584314, 0.929412)
 
 [node name="CloseButton" type="Button" parent="Hints"]
 offset_left = 972.0
-offset_top = 42.0
+offset_top = 95.0
 offset_right = 1082.0
-offset_bottom = 108.0
+offset_bottom = 161.0
 text = "X"
 
-[node name="Label" type="Label" parent="Hints"]
-offset_left = 170.0
-offset_top = 36.0
-offset_right = 660.0
-offset_bottom = 449.0
+[node name="ActualHint" type="Label" parent="Hints"]
+offset_left = 171.0
+offset_top = 167.0
+offset_right = 1012.0
+offset_bottom = 258.0
 text = "Jullie moeten de kracht van de zon gebruiken om licht te creëren in de ruimte. De stralen van de zon moeten op het plafond terechtkomen."
 autowrap_mode = 1
+
+[node name="Hitn" type="Label" parent="Hints"]
+offset_left = 546.0
+offset_top = 100.0
+offset_right = 586.0
+offset_bottom = 123.0
+text = "Hint"
 
 [node name="Timer" type="Label" parent="."]
 offset_right = 93.0
 offset_bottom = 33.0
 
 [node name="Rays" type="Node2D" parent="."]
+position = Vector2(350, 266)
 script = ExtResource("5_y5mqv")
 
 [node name="Laser" type="RayCast2D" parent="Rays"]
 collide_with_areas = true
 
 [node name="Line2D" type="Line2D" parent="Rays"]
+position = Vector2(-351, -272)
 points = PackedVector2Array(1, -2, 216, 104, 410, -1, 112, -168, 334, -222)
 default_color = Color(1, 1, 0.701961, 1)
 
@@ -295,7 +316,7 @@ default_color = Color(1, 1, 0.701961, 1)
 [connection signal="pressed" from="LightSystem/SphereReflector3/Sphere3" to="." method="_on_sphere_3_pressed"]
 [connection signal="pressed" from="LightSystem/SphereReflector3/Sphere3" to="LightSystem/SphereReflector3/Sphere3" method="_on_pressed"]
 [connection signal="pressed" from="ShowPuzzleButton" to="Instructions" method="_on_show_puzzle_button_pressed"]
-[connection signal="pressed" from="Hint" to="Hints" method="_on_hint_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]

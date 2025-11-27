@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfw5mxix0bb2e"]
+[gd_scene load_steps=7 format=3 uid="uid://dfw5mxix0bb2e"]
 
 [ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_rjoje"]
 [ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/intro_room3.dialogue" id="2_6w2ej"]
 [ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="2_bg4i0"]
 [ext_resource type="Resource" uid="uid://72d1i30g4idv" path="res://dialogue/microscope.dialogue" id="3_6w2ej"]
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_144u1"]
+[ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="6_yvqia"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rjoje")
@@ -12,7 +13,7 @@ start_dialogue = ExtResource("2_6w2ej")
 microscope = ExtResource("3_6w2ej")
 
 [node name="Room3" type="Sprite2D" parent="."]
-position = Vector2(579, 303)
+position = Vector2(577, 301)
 scale = Vector2(0.904948, 0.904948)
 texture = ExtResource("2_bg4i0")
 
@@ -94,10 +95,19 @@ offset_right = 423.0
 offset_bottom = 452.0
 
 [node name="Button" type="Button" parent="."]
-offset_left = 962.0
-offset_top = 300.0
-offset_right = 987.0
-offset_bottom = 323.0
+offset_left = 953.0
+offset_top = 355.0
+offset_right = 998.0
+offset_bottom = 394.0
+
+[node name="ShowHint" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 149.0
+offset_top = 52.0
+offset_right = 287.0
+offset_bottom = 196.0
+
+[node name="Hints" parent="." instance=ExtResource("6_yvqia")]
 
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Microscope" to="." method="_on_microscope_pressed"]
@@ -105,3 +115,4 @@ offset_bottom = 323.0
 [connection signal="pressed" from="Answers/Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Answers/Gray" to="." method="_on_gray_pressed"]
 [connection signal="pressed" from="Answers/Brown" to="." method="_on_brown_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]

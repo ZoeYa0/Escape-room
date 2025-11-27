@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://va8auh0esjem"]
+
+[ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_o8owr"]
+[ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/intro_room3.dialogue" id="2_1sfdy"]
+[ext_resource type="Resource" uid="uid://72d1i30g4idv" path="res://dialogue/microscope.dialogue" id="3_fkic7"]
+[ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="4_23hl6"]
+[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="5_rb4hd"]
+[ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="6_3cbqk"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_o8owr")
+start_dialogue = ExtResource("2_1sfdy")
+microscope = ExtResource("3_fkic7")
+
+[node name="Room3" type="Sprite2D" parent="."]
+position = Vector2(577, 301)
+scale = Vector2(0.904948, 0.904948)
+texture = ExtResource("4_23hl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_top = 36.0
+offset_right = 946.0
+offset_bottom = 631.0
+text = "Begin: Het is donker hier, jullie kunnen niets zien en dus kunnen het geheime raadsel van verdwijnen van de professor Kamilla Andrien niet oplossen. Misschien helpt dit jullie om iets in de ruimte te kunnen zien. 
+
+ 
+
+ 
+
+Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunne jullie bepalen over welke hemellichaam het gaat? 
+
+Formule  
+
+ 
+
+Instructies: Fgrav = 3,52 * 10^22 N 
+
+G = constante(zelf opzoeken) 
+
+Maarde = (zelf opzoeken) 
+
+r = 1,496 * 10^11 
+
+m = niet bekende "
+autowrap_mode = 1
+
+[node name="Arrow" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 292.0
+offset_right = 99.0
+offset_bottom = 353.0
+text = "⬅️"
+script = ExtResource("5_rb4hd")
+destination_scene = 4
+
+[node name="Microscope" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 793.0
+offset_top = 345.0
+offset_right = 881.0
+offset_bottom = 447.0
+mouse_default_cursor_shape = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 953.0
+offset_top = 355.0
+offset_right = 998.0
+offset_bottom = 394.0
+
+[node name="ShowHint" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 149.0
+offset_top = 52.0
+offset_right = 287.0
+offset_bottom = 196.0
+
+[node name="Hints" parent="." instance=ExtResource("6_3cbqk")]
+
+[connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
+[connection signal="pressed" from="Microscope" to="." method="_on_microscope_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]

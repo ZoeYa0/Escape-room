@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Escape Room"
-run/main_scene="uid://bcfxab7fqnlwg"
+run/main_scene="uid://tvd1lxbox6ak"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://images/icon.svg"
 

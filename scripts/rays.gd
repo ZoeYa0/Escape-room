@@ -2,6 +2,8 @@ extends Node2D
 
 #var sender = "." no sender
 @onready var line = $Line2D
+@onready var laser: RayCast2D = $Laser
+
 @onready var sphere: Button = $"../LightSystem/SphereReflector/Sphere"
 @onready var sphere_reflector_1: SphereReflector = $"../LightSystem/SphereReflector"
 @onready var sphere_reflector_2: SphereReflector = $"../LightSystem/SphereReflector2"
@@ -41,6 +43,18 @@ func _ready():
 	
 
 func _process(_delta):
+
+	var start = Vector2.ZERO   # ray starts at node origin
+	var end = Vector2.RIGHT * 500
+
+	# APPLY TO RAYCAST
+	laser.position = start
+	laser.target_position = end - start
+
+	# APPLY TO LINE2D
+	line.set_point_position(0, start)
+	line.set_point_position(1, end)
+
 	if not active:
 		return
 	#$End.emitting = true

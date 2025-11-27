@@ -16,7 +16,7 @@ func _on_submit_button_pressed() -> void:
 
 	if answer.to_lower() == "zon":        # correct answer
 		print("Correct!")
-		Events.curtains_opened.emit()
+		Events.can_curtains_open = true
 		visible = false
 		
 	else:

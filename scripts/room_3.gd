@@ -11,6 +11,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Events.current_room = 3
 	DialogueManager.show_dialogue_balloon(start_dialogue,"start")
 	arrow.visible = false
 

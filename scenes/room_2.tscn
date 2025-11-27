@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://tvd1lxbox6ak"]
+[gd_scene load_steps=17 format=3 uid="uid://tvd1lxbox6ak"]
 
 [ext_resource type="Script" uid="uid://csqu4u4py4nd2" path="res://scripts/room_2.gd" id="1_ktm03"]
 [ext_resource type="Texture2D" uid="uid://cvbsgcngdoxhp" path="res://images/ClipboardImage_2025-11-25T123017.png" id="1_w0ydv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5kl1vyv3gbr7" path="res://scenes/ph_paper.tscn" id="6_63qte"]
 [ext_resource type="Texture2D" uid="uid://ccqlgmimeq534" path="res://images/instructions.png" id="7_flmds"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="8_hbe2o"]
+[ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="13_h8dvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u14ju"]
 atlas = ExtResource("1_w0ydv")
@@ -55,7 +56,7 @@ script = ExtResource("3_6wv7r")
 destination_scene = 1
 
 [node name="PHImage" type="Sprite2D" parent="."]
-position = Vector2(981, 151)
+position = Vector2(928, 176)
 scale = Vector2(0.288426, 0.291481)
 texture = ExtResource("3_4et86")
 
@@ -84,24 +85,24 @@ offset_bottom = 525.0
 
 [node name="GreenButton4" type="Button" parent="AnswerChoices"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 119.0
-offset_top = 625.0
-offset_right = 143.0
-offset_bottom = 648.0
+offset_left = 120.0
+offset_top = 610.0
+offset_right = 144.0
+offset_bottom = 633.0
 
 [node name="GreenButton5" type="Button" parent="AnswerChoices"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 173.0
-offset_top = 624.0
-offset_right = 197.0
-offset_bottom = 647.0
+offset_left = 175.0
+offset_top = 609.0
+offset_right = 199.0
+offset_bottom = 632.0
 
 [node name="GreenButton6" type="Button" parent="AnswerChoices"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 220.0
-offset_top = 624.0
-offset_right = 244.0
-offset_bottom = 647.0
+offset_left = 221.0
+offset_top = 608.0
+offset_right = 245.0
+offset_bottom = 631.0
 
 [node name="Cups" type="Node2D" parent="."]
 
@@ -209,6 +210,15 @@ offset_bottom = 487.0
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="Hints" parent="." instance=ExtResource("13_h8dvq")]
+
+[node name="ShowHint" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 105.0
+offset_top = 71.0
+offset_right = 406.0
+offset_bottom = 227.0
+
 [connection signal="pressed" from="ArrowLeft" to="ArrowLeft" method="_on_pressed"]
 [connection signal="pressed" from="ArrowRight" to="ArrowRight" method="_on_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
@@ -222,3 +232,4 @@ offset_bottom = 23.0
 [connection signal="pressed" from="Instructions2/Opdracht" to="." method="_on_opdracht_pressed"]
 [connection signal="pressed" from="SmallPH" to="." method="_on_small_ph_pressed"]
 [connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
