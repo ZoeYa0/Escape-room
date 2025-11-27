@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=21 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/intro_room1.dialogue" id="2_hv3v0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cu4qwu8lg5nfx" path="res://dialogue/room1_finished.dialogue" id="3_hv3v0"]
 [ext_resource type="Texture2D" uid="uid://d06y05otxnoxq" path="res://images/light.png" id="4_1afn8"]
 [ext_resource type="Resource" uid="uid://whyoqi02iftq" path="res://dialogue/curtains_stuck.dialogue" id="4_gu0is"]
+[ext_resource type="Resource" uid="uid://c0gaop61k20lw" path="res://dialogue/curtains_can't_open.dialogue" id="5_1afn8"]
 [ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="5_y5mqv"]
 [ext_resource type="Texture2D" uid="uid://cikvo4txpx6hx" path="res://images/lamp.png" id="6_m0003"]
 [ext_resource type="Script" uid="uid://7u6ep3cr23cg" path="res://scripts/sphere_reflector.gd" id="7_ncuik"]
@@ -35,6 +36,7 @@ script = ExtResource("1_4xhvh")
 intro = ExtResource("2_hv3v0")
 room_finished = ExtResource("3_hv3v0")
 curtains_stuck = ExtResource("4_gu0is")
+curtains_cant_open = ExtResource("5_1afn8")
 
 [node name="TempBg" type="Sprite2D" parent="."]
 modulate = Color(0.219501, 0.219501, 0.219501, 1)
@@ -48,16 +50,6 @@ scale = Vector2(1.35937, 1.22852)
 color = Color(0.554878, 0.452474, 0, 1)
 energy = 10.32
 texture = ExtResource("4_1afn8")
-
-[node name="Rays" type="Node2D" parent="."]
-script = ExtResource("5_y5mqv")
-
-[node name="Laser" type="RayCast2D" parent="Rays"]
-collide_with_areas = true
-
-[node name="Line2D" type="Line2D" parent="Rays"]
-points = PackedVector2Array(1, -2, 216, 104, 410, -1, 112, -168, 334, -222)
-default_color = Color(1, 1, 0.701961, 1)
 
 [node name="LightSystem" type="Control" parent="."]
 layout_mode = 3
@@ -174,14 +166,19 @@ offset_bottom = 71.0
 tooltip_text = "open hint"
 text = "?"
 
+[node name="ClosedCurtain" type="ColorRect" parent="."]
+offset_left = 139.0
+offset_top = 54.0
+offset_right = 436.0
+offset_bottom = 426.0
+color = Color(0, 0, 0, 1)
+
 [node name="Curtain" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_left = 143.0
 offset_top = 55.0
 offset_right = 442.0
 offset_bottom = 430.0
-mouse_filter = 2
-mouse_default_cursor_shape = 16
 action_mode = 0
 
 [node name="Arrow" type="Button" parent="."]
@@ -194,6 +191,7 @@ script = ExtResource("11_hvue4")
 destination_scene = 2
 
 [node name="Instructions" type="Node2D" parent="."]
+visible = false
 script = ExtResource("12_2ubtq")
 
 [node name="ColorRect" type="ColorRect" parent="Instructions"]
@@ -254,6 +252,7 @@ visible = false
 script = ExtResource("13_sl6s1")
 
 [node name="ColorRect" type="ColorRect" parent="Hints"]
+light_mask = 0
 offset_left = 59.0
 offset_top = 28.0
 offset_right = 1099.0
@@ -261,10 +260,10 @@ offset_bottom = 614.0
 color = Color(0.584314, 0.584314, 0.584314, 0.929412)
 
 [node name="CloseButton" type="Button" parent="Hints"]
-offset_left = 1005.0
-offset_top = 28.0
-offset_right = 1115.0
-offset_bottom = 94.0
+offset_left = 972.0
+offset_top = 42.0
+offset_right = 1082.0
+offset_bottom = 108.0
 text = "X"
 
 [node name="Label" type="Label" parent="Hints"]
@@ -272,8 +271,22 @@ offset_left = 170.0
 offset_top = 36.0
 offset_right = 660.0
 offset_bottom = 449.0
-text = "hint hint"
+text = "Jullie moeten de kracht van de zon gebruiken om licht te creëren in de ruimte. De stralen van de zon moeten op het plafond terechtkomen."
 autowrap_mode = 1
+
+[node name="Timer" type="Label" parent="."]
+offset_right = 93.0
+offset_bottom = 33.0
+
+[node name="Rays" type="Node2D" parent="."]
+script = ExtResource("5_y5mqv")
+
+[node name="Laser" type="RayCast2D" parent="Rays"]
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="Rays"]
+points = PackedVector2Array(1, -2, 216, 104, 410, -1, 112, -168, 334, -222)
+default_color = Color(1, 1, 0.701961, 1)
 
 [connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="." method="_on_sphere_pressed"]
 [connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="LightSystem/SphereReflector/Sphere" method="_on_pressed"]

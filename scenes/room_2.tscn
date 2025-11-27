@@ -1,13 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://tvd1lxbox6ak"]
+[gd_scene load_steps=16 format=3 uid="uid://tvd1lxbox6ak"]
 
 [ext_resource type="Script" uid="uid://csqu4u4py4nd2" path="res://scripts/room_2.gd" id="1_ktm03"]
 [ext_resource type="Texture2D" uid="uid://cvbsgcngdoxhp" path="res://images/ClipboardImage_2025-11-25T123017.png" id="1_w0ydv"]
+[ext_resource type="Resource" uid="uid://ceq1b84kn5y8l" path="res://dialogue/intro_room2.dialogue" id="2_guunk"]
 [ext_resource type="Texture2D" uid="uid://c2l72fe2gt6ps" path="res://images/ph_poster.png" id="3_4et86"]
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_6wv7r"]
+[ext_resource type="Resource" uid="uid://be384mky1jnp0" path="res://dialogue/room2_finished.dialogue" id="3_u14ju"]
+[ext_resource type="Resource" uid="uid://ctdvupgimnh8q" path="res://dialogue/wrong_drink.dialogue" id="4_h8145"]
 [ext_resource type="Script" uid="uid://bgp56ipsth20x" path="res://scripts/ph_spawner.gd" id="5_lsxps"]
+[ext_resource type="Resource" uid="uid://bnuallc5n342w" path="res://dialogue/died_room2.dialogue" id="5_yg87s"]
 [ext_resource type="PackedScene" uid="uid://b5kl1vyv3gbr7" path="res://scenes/ph_paper.tscn" id="6_63qte"]
 [ext_resource type="Texture2D" uid="uid://ccqlgmimeq534" path="res://images/instructions.png" id="7_flmds"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="8_hbe2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u14ju"]
+atlas = ExtResource("1_w0ydv")
+region = Rect2(306, 94, 1306, 792)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63qte"]
 size = Vector2(38, 51.75)
@@ -17,11 +25,15 @@ size = Vector2(38, 40.875)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ktm03")
+start_dialogue = ExtResource("2_guunk")
+room_2_finished = ExtResource("3_u14ju")
+wrong_drink = ExtResource("4_h8145")
+died = ExtResource("5_yg87s")
 
 [node name="TempBg" type="Sprite2D" parent="."]
-position = Vector2(583, 363)
-scale = Vector2(0.895833, 0.844466)
-texture = ExtResource("1_w0ydv")
+position = Vector2(581.51, 339.796)
+scale = Vector2(0.893552, 0.785869)
+texture = SubResource("AtlasTexture_u14ju")
 
 [node name="ArrowLeft" type="Button" parent="."]
 offset_left = 9.0
@@ -42,7 +54,7 @@ text = "⬅️"
 script = ExtResource("3_6wv7r")
 destination_scene = 1
 
-[node name="ClipboardImage2025-11-26t130830" type="Sprite2D" parent="."]
+[node name="PHImage" type="Sprite2D" parent="."]
 position = Vector2(981, 151)
 scale = Vector2(0.288426, 0.291481)
 texture = ExtResource("3_4et86")
@@ -63,12 +75,12 @@ offset_top = 508.0
 offset_right = 191.0
 offset_bottom = 531.0
 
-[node name="GreenButton3" type="Button" parent="AnswerChoices"]
+[node name="Good" type="Button" parent="AnswerChoices"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 216.0
-offset_top = 509.0
-offset_right = 240.0
-offset_bottom = 532.0
+offset_left = 218.0
+offset_top = 502.0
+offset_right = 242.0
+offset_bottom = 525.0
 
 [node name="GreenButton4" type="Button" parent="AnswerChoices"]
 modulate = Color(1, 1, 1, 0)
@@ -91,57 +103,37 @@ offset_top = 624.0
 offset_right = 244.0
 offset_bottom = 647.0
 
-[node name="PH_spawner" type="Node2D" parent="."]
-script = ExtResource("5_lsxps")
-ph_strip = ExtResource("6_63qte")
-
-[node name="Button" type="Button" parent="PH_spawner"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 527.0
-offset_top = 432.0
-offset_right = 644.0
-offset_bottom = 487.0
-
 [node name="Cups" type="Node2D" parent="."]
 
-[node name="PHGreen" type="Area2D" parent="Cups"]
+[node name="PHYellow_Green" type="Area2D" parent="Cups"]
 
-[node name="PHGreen" type="CollisionShape2D" parent="Cups/PHGreen"]
+[node name="PHGreen" type="CollisionShape2D" parent="Cups/PHYellow_Green"]
 position = Vector2(831, 394.25)
 shape = SubResource("RectangleShape2D_63qte")
 
-[node name="PHOrange" type="Area2D" parent="Cups"]
+[node name="PHGreen_Yellow" type="Area2D" parent="Cups"]
 
-[node name="PHOrange" type="CollisionShape2D" parent="Cups/PHOrange"]
+[node name="PHOrange" type="CollisionShape2D" parent="Cups/PHGreen_Yellow"]
 position = Vector2(979, 421)
-shape = SubResource("RectangleShape2D_63qte")
-
-[node name="PHRed" type="Area2D" parent="Cups"]
-
-[node name="PHRed" type="CollisionShape2D" parent="Cups/PHRed"]
-position = Vector2(936, 391)
-shape = SubResource("RectangleShape2D_63qte")
-
-[node name="PHPurple" type="Area2D" parent="Cups"]
-
-[node name="PHPurple" type="CollisionShape2D" parent="Cups/PHPurple"]
-position = Vector2(892, 414)
 shape = SubResource("RectangleShape2D_63qte")
 
 [node name="PHYellow" type="Area2D" parent="Cups"]
 
-[node name="PHYellow" type="CollisionShape2D" parent="Cups/PHYellow"]
+[node name="PHRed" type="CollisionShape2D" parent="Cups/PHYellow"]
+position = Vector2(936, 391)
+shape = SubResource("RectangleShape2D_63qte")
+
+[node name="PHGreen" type="Area2D" parent="Cups"]
+
+[node name="PHPurple" type="CollisionShape2D" parent="Cups/PHGreen"]
+position = Vector2(892, 414)
+shape = SubResource("RectangleShape2D_63qte")
+
+[node name="PHOrange" type="Area2D" parent="Cups"]
+
+[node name="PHYellow" type="CollisionShape2D" parent="Cups/PHOrange"]
 position = Vector2(831, 464.438)
 shape = SubResource("RectangleShape2D_flmds")
-
-[node name="Instructions" type="Sprite2D" parent="Cups"]
-position = Vector2(361, 372)
-scale = Vector2(0.697917, 0.697917)
-texture = ExtResource("7_flmds")
-
-[node name="Opdracht" type="Button" parent="Cups/Instructions"]
-offset_right = 8.0
-offset_bottom = 8.0
 
 [node name="Instructions" type="Node2D" parent="."]
 visible = false
@@ -185,14 +177,48 @@ m = niet bekende "
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Instructions2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(361, 372)
+scale = Vector2(0.697917, 0.697917)
+texture = ExtResource("7_flmds")
+
+[node name="Opdracht" type="Button" parent="Instructions2"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="SmallPH" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 488.0
+offset_top = 409.0
+offset_right = 546.0
+offset_bottom = 441.0
+
+[node name="PH_spawner" type="Node2D" parent="."]
+script = ExtResource("5_lsxps")
+ph_strip = ExtResource("6_63qte")
+
+[node name="Button" type="Button" parent="PH_spawner"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 527.0
+offset_top = 432.0
+offset_right = 644.0
+offset_bottom = 487.0
+
+[node name="Timer" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="pressed" from="ArrowLeft" to="ArrowLeft" method="_on_pressed"]
 [connection signal="pressed" from="ArrowRight" to="ArrowRight" method="_on_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton3" to="." method="_on_green_button_3_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton4" to="." method="_on_green_button_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_pressed"]
-[connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]
-[connection signal="pressed" from="Cups/Instructions/Opdracht" to="." method="_on_opdracht_pressed"]
+[connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_2_pressed"]
+[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_green_button_3_pressed"]
+[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
+[connection signal="pressed" from="AnswerChoices/GreenButton4" to="." method="_on_green_button_4_pressed"]
+[connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_5_pressed"]
+[connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_6_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Instructions2/Opdracht" to="." method="_on_opdracht_pressed"]
+[connection signal="pressed" from="SmallPH" to="." method="_on_small_ph_pressed"]
+[connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]

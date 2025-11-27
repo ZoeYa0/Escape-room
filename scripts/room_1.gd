@@ -23,23 +23,33 @@ extends Node2D
 @onready var close_button: Button = $Instructions/CloseButton
 @onready var label: Label = $Instructions/Label
 @onready var hints: Node2D = $Hints
-@onready var bg: Sprite2D = $Hints/bg
-@onready var hint: Button = $Hint
+@onready var color_rect: ColorRect = $Hints/ColorRect
+@onready var hint_close_button: Button = $Hints/CloseButton
+@onready var hint_label: Label = $Hints/Label
+@onready var timer: Label = $Timer
+@onready var closed_curtain: ColorRect = $ClosedCurtain
+
 @onready var point_light_2d: PointLight2D = $PointLight2D
 #---------------------------------------------------
 @export var intro: DialogueResource # attach dialogue file
-@export var room_finished: DialogueResource # attach dialogue file
+@export var room_finished: DialogueResource
 @export var curtains_stuck: DialogueResource
-@export var dialogue_start: String = "start" #specify start
+@export var curtains_cant_open: DialogueResource
 #---------------------------------------------------
+var start_time = 0
+
 func _ready() -> void:
-	curtain.disabled = false
+	start_time = Time.get_ticks_msec()
 	line_2d.visible = false
+	closed_curtain.visible = true
 	rays.room_lit.connect(on_room_lit)
-	DialogueManager.show_dialogue_balloon(intro, "start")
+	#DialogueManager.show_dialogue_balloon(intro, "start")
 	Events.curtains_opened.connect(on_curtains_opened)
 	Events.room_lit.connect(on_room_lit)
-
+	
+	
+func _process(delta: float) -> void:
+	timer.text = str((Time.get_ticks_msec() - start_time) / 1000.0)
 #func _on_sphere_pressed() -> void:
 	#sphere.pivot_offset = sphere.size * 0.5
 	#sphere.rotation += deg_to_rad(45.0)#control nodes use rad
@@ -55,9 +65,13 @@ func _ready() -> void:
 #
 
 func _on_curtain_pressed() -> void:
+	print("curtainspressed")
 	if Events.puzzle_solved:
+		closed_curtain.visible = false
 		line_2d.visible = true	
 		curtain.disabled = true
+	else:
+		DialogueManager.show_dialogue_balloon(curtains_cant_open,'start')
 		
 	
 func on_room_lit():
