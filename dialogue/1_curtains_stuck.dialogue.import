@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://whyoqi02iftq"
+path="res://.godot/imported/1_curtains_stuck.dialogue-a2b480fd0a7ceca013d5001b911e3800.tres"
+
+[deps]
+
+source_file="res://dialogue/1_curtains_stuck.dialogue"
+dest_files=["res://.godot/imported/1_curtains_stuck.dialogue-a2b480fd0a7ceca013d5001b911e3800.tres"]
+
+[params]
+
+defaults=true

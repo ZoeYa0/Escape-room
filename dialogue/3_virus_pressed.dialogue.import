@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d3jbg4jjhq1ux"
+path="res://.godot/imported/3_virus_pressed.dialogue-d0f5234650f511e7da420f141c8352ee.tres"
+
+[deps]
+
+source_file="res://dialogue/3_virus_pressed.dialogue"
+dest_files=["res://.godot/imported/3_virus_pressed.dialogue-d0f5234650f511e7da420f141c8352ee.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://va8auh0esjem"]
+
+[ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_gofo1"]
+[ext_resource type="Texture2D" uid="uid://cvbsgcngdoxhp" path="res://images/ClipboardImage_2025-11-25T123017.png" id="4_vbud4"]
+[ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="5_sh8yd"]
+[ext_resource type="Script" uid="uid://b5xyc1pxr7iv5" path="res://scripts/box_stats.gd" id="6_5foij"]
+[ext_resource type="Texture2D" uid="uid://b6q68i6sahlng" path="res://images/1_room.png" id="7_mqkto"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_gofo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1177.0
+offset_bottom = 660.0
+color = Color(0.796557, 0.468665, 0.300691, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 37.0
+offset_right = 729.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 36
+text = "Thanks for playing!"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 508.0
+offset_top = 105.0
+offset_right = 603.0
+offset_bottom = 128.0
+text = "Your scores:"
+
+[node name="Room2" type="Sprite2D" parent="."]
+position = Vector2(576, 224)
+scale = Vector2(0.143934, 0.143934)
+texture = ExtResource("4_vbud4")
+
+[node name="Room3" type="Sprite2D" parent="."]
+position = Vector2(911, 227)
+scale = Vector2(0.130482, 0.130482)
+texture = ExtResource("5_sh8yd")
+
+[node name="Room6" type="Label" parent="."]
+offset_left = 790.0
+offset_top = 449.0
+offset_right = 1040.0
+offset_bottom = 621.0
+text = "Total stats:
+
+Total Time:
+Total Wrong attempts:
+Total Hints:"
+
+[node name="BoxStats" type="Node2D" parent="."]
+position = Vector2(788, 407)
+script = ExtResource("6_5foij")
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxStats"]
+position = Vector2(-546, -182)
+scale = Vector2(0.195964, 0.195964)
+texture = ExtResource("7_mqkto")
+
+[node name="Label" type="Label" parent="BoxStats"]
+offset_left = -671.0
+offset_top = -98.0
+offset_right = -526.0
+offset_bottom = 3.0
+text = "Room 1:
+Time:
+# Wrong attempts:
+# Hints:"

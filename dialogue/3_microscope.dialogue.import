@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://72d1i30g4idv"
+path="res://.godot/imported/3_microscope.dialogue-959acb50c43f76c4be34fcb82e523b74.tres"
+
+[deps]
+
+source_file="res://dialogue/3_microscope.dialogue"
+dest_files=["res://.godot/imported/3_microscope.dialogue-959acb50c43f76c4be34fcb82e523b74.tres"]
+
+[params]
+
+defaults=true

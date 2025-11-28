@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ctdvupgimnh8q"
+path="res://.godot/imported/2_wrong_drink.dialogue-4fec31df13ab52f1a105545b652487db.tres"
+
+[deps]
+
+source_file="res://dialogue/2_wrong_drink.dialogue"
+dest_files=["res://.godot/imported/2_wrong_drink.dialogue-4fec31df13ab52f1a105545b652487db.tres"]
+
+[params]
+
+defaults=true

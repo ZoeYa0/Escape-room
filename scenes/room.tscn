@@ -1,21 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://va8auh0esjem"]
+[gd_scene load_steps=4 format=3 uid="uid://d0krwqxhf5y1l"]
 
-[ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_o8owr"]
-[ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/intro_room3.dialogue" id="2_1sfdy"]
-[ext_resource type="Resource" uid="uid://72d1i30g4idv" path="res://dialogue/microscope.dialogue" id="3_fkic7"]
-[ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="4_23hl6"]
-[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="5_rb4hd"]
-[ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="6_3cbqk"]
+[ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_jxe34"]
+[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="4_7dqbv"]
+[ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="5_ybpoa"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_o8owr")
-start_dialogue = ExtResource("2_1sfdy")
-microscope = ExtResource("3_fkic7")
-
-[node name="Room3" type="Sprite2D" parent="."]
-position = Vector2(577, 301)
-scale = Vector2(0.904948, 0.904948)
-texture = ExtResource("4_23hl6")
+script = ExtResource("1_jxe34")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -53,7 +43,7 @@ offset_top = 292.0
 offset_right = 99.0
 offset_bottom = 353.0
 text = "⬅️"
-script = ExtResource("5_rb4hd")
+script = ExtResource("4_7dqbv")
 destination_scene = 4
 
 [node name="Microscope" type="Button" parent="."]
@@ -64,12 +54,6 @@ offset_right = 881.0
 offset_bottom = 447.0
 mouse_default_cursor_shape = 2
 
-[node name="Button" type="Button" parent="."]
-offset_left = 953.0
-offset_top = 355.0
-offset_right = 998.0
-offset_bottom = 394.0
-
 [node name="ShowHint" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_left = 149.0
@@ -77,7 +61,7 @@ offset_top = 52.0
 offset_right = 287.0
 offset_bottom = 196.0
 
-[node name="Hints" parent="." instance=ExtResource("6_3cbqk")]
+[node name="Hints" parent="." instance=ExtResource("5_ybpoa")]
 
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Microscope" to="." method="_on_microscope_pressed"]

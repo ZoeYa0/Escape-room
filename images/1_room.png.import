@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuxt6fjo045uf"
-path="res://.godot/imported/BINAS-CONSTANT.png-0c319bba24f384b2a72ee10b6b6f0f4c.ctex"
+uid="uid://b6q68i6sahlng"
+path="res://.godot/imported/1_room.png-6015f4cdb7cd9256344ca2520b3bee68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/BINAS-CONSTANT.png"
-dest_files=["res://.godot/imported/BINAS-CONSTANT.png-0c319bba24f384b2a72ee10b6b6f0f4c.ctex"]
+source_file="res://images/1_room.png"
+dest_files=["res://.godot/imported/1_room.png-6015f4cdb7cd9256344ca2520b3bee68.ctex"]
 
 [params]
 

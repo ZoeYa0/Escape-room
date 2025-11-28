@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c0gaop61k20lw"
+path="res://.godot/imported/1_curtains_can't_open.dialogue-71030493080fb430377f49aaeef4e708.tres"
+
+[deps]
+
+source_file="res://dialogue/1_curtains_can't_open.dialogue"
+dest_files=["res://.godot/imported/1_curtains_can't_open.dialogue-71030493080fb430377f49aaeef4e708.tres"]
+
+[params]
+
+defaults=true

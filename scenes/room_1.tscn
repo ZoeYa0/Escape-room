@@ -1,12 +1,12 @@
 [gd_scene load_steps=22 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
-[ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/intro_room1.dialogue" id="2_hv3v0"]
-[ext_resource type="Texture2D" uid="uid://b6q68i6sahlng" path="res://images/ClipboardImage_2025-11-25T184424.png" id="3_gu0is"]
-[ext_resource type="Resource" uid="uid://cu4qwu8lg5nfx" path="res://dialogue/room1_finished.dialogue" id="3_hv3v0"]
+[ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/1_intro.dialogue" id="2_y5mqv"]
+[ext_resource type="Texture2D" uid="uid://b6q68i6sahlng" path="res://images/1_room.png" id="3_gu0is"]
+[ext_resource type="Resource" uid="uid://cu4qwu8lg5nfx" path="res://dialogue/1_finished.dialogue" id="3_hv3v0"]
 [ext_resource type="Texture2D" uid="uid://d06y05otxnoxq" path="res://images/light.png" id="4_1afn8"]
-[ext_resource type="Resource" uid="uid://whyoqi02iftq" path="res://dialogue/curtains_stuck.dialogue" id="4_gu0is"]
-[ext_resource type="Resource" uid="uid://c0gaop61k20lw" path="res://dialogue/curtains_can't_open.dialogue" id="5_1afn8"]
+[ext_resource type="Resource" uid="uid://whyoqi02iftq" path="res://dialogue/1_curtains_stuck.dialogue" id="4_m0003"]
+[ext_resource type="Resource" uid="uid://c0gaop61k20lw" path="res://dialogue/1_curtains_can't_open.dialogue" id="5_1afn8"]
 [ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="5_y5mqv"]
 [ext_resource type="Texture2D" uid="uid://cikvo4txpx6hx" path="res://images/lamp.png" id="6_m0003"]
 [ext_resource type="Script" uid="uid://7u6ep3cr23cg" path="res://scripts/sphere_reflector.gd" id="7_ncuik"]
@@ -34,9 +34,9 @@ region = Rect2(1657.52, 587.981, 238.372, 194.659)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4xhvh")
-intro = ExtResource("2_hv3v0")
+intro = ExtResource("2_y5mqv")
 room_finished = ExtResource("3_hv3v0")
-curtains_stuck = ExtResource("4_gu0is")
+curtains_stuck = ExtResource("4_m0003")
 curtains_cant_open = ExtResource("5_1afn8")
 
 [node name="TempBg" type="Sprite2D" parent="."]

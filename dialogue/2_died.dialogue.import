@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bnuallc5n342w"
+path="res://.godot/imported/2_died.dialogue-bb0404d0c597c6f0a4a45e005c4ea20a.tres"
+
+[deps]
+
+source_file="res://dialogue/2_died.dialogue"
+dest_files=["res://.godot/imported/2_died.dialogue-bb0404d0c597c6f0a4a45e005c4ea20a.tres"]
+
+[params]
+
+defaults=true

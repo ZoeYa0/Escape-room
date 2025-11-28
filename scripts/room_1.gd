@@ -42,17 +42,19 @@ var start_time = 0
 func _ready() -> void:
 	Events.current_room = 1
 	start_time = Time.get_ticks_msec()
-	line_2d.visible = false
-	curtains_opened.visible = false
-	closed_curtain.visible = true
 	rays.room_lit.connect(on_room_lit)
 	DialogueManager.show_dialogue_balloon(intro, "start")
 	Events.curtains_opened.connect(on_curtains_opened)
 	Events.room_lit.connect(on_room_lit)
 	
+	line_2d.visible = false
+	curtains_opened.visible = false
+	closed_curtain.visible = true
+	
 	
 func _process(delta: float) -> void:
 	timer.text = str((Time.get_ticks_msec() - start_time) / 1000.0)
+	Events.rooms["room1"]["time"] = str((Time.get_ticks_msec() - start_time) / 1000.0)
 #func _on_sphere_pressed() -> void:
 	#sphere.pivot_offset = sphere.size * 0.5
 	#sphere.rotation += deg_to_rad(45.0)#control nodes use rad

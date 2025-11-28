@@ -1,13 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfw5mxix0bb2e"]
+[gd_scene load_steps=9 format=3 uid="uid://dfw5mxix0bb2e"]
 
 [ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_rjoje"]
-[ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/intro_room3.dialogue" id="2_6w2ej"]
 [ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="2_bg4i0"]
-[ext_resource type="Resource" uid="uid://72d1i30g4idv" path="res://dialogue/microscope.dialogue" id="3_6w2ej"]
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_144u1"]
-[ext_resource type="Resource" uid="uid://b30wd4yet2jhu" path="res://dialogue/correct_virus.dialogue" id="4_0hvyo"]
-[ext_resource type="Resource" uid="uid://d3jbg4jjhq1ux" path="res://dialogue/virus_pressed.dialogue" id="4_reu6s"]
-[ext_resource type="Resource" uid="uid://bnx3od1fs4ovi" path="res://dialogue/wrong_virus.dialogue" id="5_gkoet"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="6_yvqia"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="7_1bltn"]
 [ext_resource type="Texture2D" uid="uid://cx45inlgfxh2" path="res://images/diary.png" id="8_reu6s"]
@@ -16,11 +11,6 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rjoje")
-start_dialogue = ExtResource("2_6w2ej")
-microscope = ExtResource("3_6w2ej")
-correct_virus = ExtResource("4_0hvyo")
-wrong_virus = ExtResource("5_gkoet")
-virus_pressed = ExtResource("4_reu6s")
 
 [node name="Room3" type="Sprite2D" parent="."]
 position = Vector2(575, 324)
@@ -64,7 +54,7 @@ offset_right = 99.0
 offset_bottom = 353.0
 text = "⬅️"
 script = ExtResource("3_144u1")
-destination_scene = 4
+destination_scene = 6
 
 [node name="Microscope" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

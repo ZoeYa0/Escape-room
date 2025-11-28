@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bnx3od1fs4ovi"
+path="res://.godot/imported/3_wrong_virus.dialogue-933f0b9f534d90cbd5c4d7f0c6953707.tres"
+
+[deps]
+
+source_file="res://dialogue/3_wrong_virus.dialogue"
+dest_files=["res://.godot/imported/3_wrong_virus.dialogue-933f0b9f534d90cbd5c4d7f0c6953707.tres"]
+
+[params]
+
+defaults=true
