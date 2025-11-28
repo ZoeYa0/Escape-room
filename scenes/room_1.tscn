@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=22 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/intro_room1.dialogue" id="2_hv3v0"]
@@ -10,14 +10,13 @@
 [ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="5_y5mqv"]
 [ext_resource type="Texture2D" uid="uid://cikvo4txpx6hx" path="res://images/lamp.png" id="6_m0003"]
 [ext_resource type="Script" uid="uid://7u6ep3cr23cg" path="res://scripts/sphere_reflector.gd" id="7_ncuik"]
-[ext_resource type="Texture2D" uid="uid://dcf0blgrmojm6" path="res://wheel_texture.tres" id="8_lwgnx"]
+[ext_resource type="Texture2D" uid="uid://dcf0blgrmojm6" path="res://other assets/wheel_texture.tres" id="8_lwgnx"]
 [ext_resource type="Script" uid="uid://c6xxn60r3kclu" path="res://scripts/sphere.gd" id="9_4oupy"]
 [ext_resource type="Texture2D" uid="uid://cnw20008h01ee" path="res://images/ClipboardImage_2025-11-24T172159.png" id="10_fa2c2"]
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="11_hvue4"]
-[ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="12_2ubtq"]
 [ext_resource type="Script" uid="uid://b6n6b8i3mblge" path="res://scripts/hints.gd" id="13_sl6s1"]
 [ext_resource type="Texture2D" uid="uid://csggdvfsq03i2" path="res://images/curtains_opened.png" id="13_y5mqv"]
-[ext_resource type="Texture2D" uid="uid://b4gu1vistwmu6" path="res://images/instruction_sun.png" id="16_m0003"]
+[ext_resource type="PackedScene" uid="uid://ccpdb5jctequm" path="res://scenes/instructions.tscn" id="15_y5mqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
 size = Vector2(131, 28)
@@ -196,68 +195,7 @@ text = "⬅️"
 script = ExtResource("11_hvue4")
 destination_scene = 2
 
-[node name="Instructions" type="Node2D" parent="."]
-visible = false
-light_mask = 0
-script = ExtResource("12_2ubtq")
-
-[node name="ColorRect" type="ColorRect" parent="Instructions"]
-light_mask = 0
-offset_left = 37.0
-offset_top = 34.0
-offset_right = 1121.0
-offset_bottom = 622.0
-color = Color(0.696595, 0.466588, 0.558643, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CloseButton" type="Button" parent="Instructions"]
-offset_left = 980.0
-offset_top = 53.0
-offset_right = 1090.0
-offset_bottom = 119.0
-text = "X"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Instructions"]
-offset_left = 156.0
-offset_top = 67.0
-offset_right = 920.0
-offset_bottom = 480.0
-text = "Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunnen jullie bepalen over welke hemellichaam het gaat? 
-
-
-Fgrav = 3,52 * 10^22 N 
-
-G = constante(zelf opzoeken) 
-
-Maarde = (zelf opzoeken) 
-
-r = 1,496 * 10^11 
-
-m = niet bekende 
-
-Hulpmiddelen: 
-Binas tabel 31 +  7A "
-autowrap_mode = 1
-
-[node name="AnswerField" type="LineEdit" parent="Instructions"]
-offset_left = 167.0
-offset_top = 507.0
-offset_right = 933.0
-offset_bottom = 564.0
-metadata/_edit_use_anchors_ = true
-
-[node name="SubmitButton" type="Button" parent="Instructions"]
-offset_left = 957.0
-offset_top = 507.0
-offset_right = 1062.0
-offset_bottom = 565.0
-text = "Submit"
-metadata/_edit_use_anchors_ = true
-
-[node name="InstructionSun" type="Sprite2D" parent="Instructions"]
-position = Vector2(553, 239)
-texture = ExtResource("16_m0003")
+[node name="Instructions" parent="." instance=ExtResource("15_y5mqv")]
 
 [node name="Hints" type="Node2D" parent="."]
 visible = false
@@ -319,6 +257,4 @@ default_color = Color(1, 1, 0.701961, 1)
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
-[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
-[connection signal="pressed" from="Instructions/SubmitButton" to="Instructions" method="_on_submit_button_pressed"]
 [connection signal="pressed" from="Hints/CloseButton" to="Hints" method="_on_close_button_pressed"]

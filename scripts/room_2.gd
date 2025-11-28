@@ -12,7 +12,7 @@ extends Node2D
 
 #-------------
 var start_time = 0
-var health = 3
+var health = 1
 
 func _ready() -> void:
 	Events.current_room = 2

@@ -40,12 +40,13 @@ extends Node2D
 var start_time = 0
 
 func _ready() -> void:
+	Events.current_room = 1
 	start_time = Time.get_ticks_msec()
 	line_2d.visible = false
 	curtains_opened.visible = false
 	closed_curtain.visible = true
 	rays.room_lit.connect(on_room_lit)
-	#DialogueManager.show_dialogue_balloon(intro, "start")
+	DialogueManager.show_dialogue_balloon(intro, "start")
 	Events.curtains_opened.connect(on_curtains_opened)
 	Events.room_lit.connect(on_room_lit)
 	
@@ -87,7 +88,7 @@ func on_curtains_opened():
 	show_puzzle_button.disabled = true
 	
 	
-	
-	
 
-	
+
+func _on_show_puzzle_button_pressed() -> void:
+	pass # Replace with function body.

@@ -21,3 +21,7 @@ func _on_submit_button_pressed() -> void:
 		
 	else:
 		print("Wrong answer!")
+
+
+func _on_show_instructions_pressed() -> void:
+	visible = true

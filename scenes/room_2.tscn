@@ -56,8 +56,8 @@ script = ExtResource("3_6wv7r")
 destination_scene = 1
 
 [node name="PHImage" type="Sprite2D" parent="."]
-position = Vector2(928, 176)
-scale = Vector2(0.288426, 0.291481)
+position = Vector2(874, 171)
+scale = Vector2(0.389027, 0.393148)
 texture = ExtResource("3_4et86")
 
 [node name="AnswerChoices" type="Node2D" parent="."]
@@ -115,7 +115,7 @@ shape = SubResource("RectangleShape2D_63qte")
 [node name="PHGreen_Yellow" type="Area2D" parent="Cups"]
 
 [node name="PHOrange" type="CollisionShape2D" parent="Cups/PHGreen_Yellow"]
-position = Vector2(979, 421)
+position = Vector2(981, 418)
 shape = SubResource("RectangleShape2D_63qte")
 
 [node name="PHYellow" type="Area2D" parent="Cups"]
@@ -206,6 +206,15 @@ offset_top = 432.0
 offset_right = 644.0
 offset_bottom = 487.0
 
+[node name="Label" type="Label" parent="."]
+offset_left = 101.0
+offset_top = 391.0
+offset_right = 216.0
+offset_bottom = 436.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Answer"
+
 [node name="Timer" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
@@ -223,8 +232,8 @@ offset_bottom = 227.0
 [connection signal="pressed" from="ArrowRight" to="ArrowRight" method="_on_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_2_pressed"]
-[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_green_button_3_pressed"]
 [connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
+[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_green_button_3_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton4" to="." method="_on_green_button_4_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_5_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_6_pressed"]

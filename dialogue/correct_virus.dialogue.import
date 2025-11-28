@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b30wd4yet2jhu"
+path="res://.godot/imported/correct_virus.dialogue-776a363cbec7d575381a73b89b3adf6f.tres"
+
+[deps]
+
+source_file="res://dialogue/correct_virus.dialogue"
+dest_files=["res://.godot/imported/correct_virus.dialogue-776a363cbec7d575381a73b89b3adf6f.tres"]
+
+[params]
+
+defaults=true

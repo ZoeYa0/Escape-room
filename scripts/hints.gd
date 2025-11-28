@@ -35,8 +35,8 @@ func _on_show_hint_pressed() -> void:
 		hint += 1
 		match hint:
 			1:
-				actual_hint.text = "goed naar de kleur van streepjes kijken!"
+				actual_hint.text = "+ betekent neuraliseren. - betekent niet en +- betekent gedeeltelijk"
 			2:
 				actual_hint.text = "Jullie moeten een strookje met indicator in een drank plaatsen en vervolgens kijken welke kleur verschijnt. Vergelijk die kleur met het schema. Als de kleur dicht bij de pH-waarde van 6 ligt, dan is het een geschikte drank. "
 			3:
-				actual_hint.text = "Antwoord is bio-synergy(paars)"
+				actual_hint.text = "Antwoord is Helix A (bruin)"
