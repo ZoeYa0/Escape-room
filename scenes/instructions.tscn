@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b4gu1vistwmu6" path="res://images/instruction_sun.png" id="2_njqp3"]
 
 [node name="Instructions" type="Node2D"]
-visible = false
 light_mask = 0
 script = ExtResource("1_nisbi")
 
@@ -30,21 +29,20 @@ offset_left = 156.0
 offset_top = 67.0
 offset_right = 920.0
 offset_bottom = 480.0
-text = "Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunnen jullie bepalen over welke hemellichaam het gaat? 
+text = "This riddle is about the force in space between different celestial bodies. Can you determine which celestial body it is?
 
+Fgrav = 3.52 * 10^22 N
 
-Fgrav = 3,52 * 10^22 N 
+G = constant (find it yourself)
 
-G = constante(zelf opzoeken) 
+M earth = (find it yourself)
 
-Maarde = (zelf opzoeken) 
+r = 1.496 * 10^11
 
-r = 1,496 * 10^11 
+m = unknown
 
-m = niet bekende 
-
-Hulpmiddelen: 
-Binas tabel 31 +  7A "
+Resources:
+Binas table 31 + 7A"
 autowrap_mode = 1
 
 [node name="AnswerField" type="LineEdit" parent="."]

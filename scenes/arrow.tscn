@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1w12aapnq4dr"]
+
+[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="1_umosx"]
+
+[node name="Arrow" type="Button"]
+offset_left = 10.0
+offset_top = 316.0
+offset_right = 100.0
+offset_bottom = 377.0
+text = "<--
+"
+script = ExtResource("1_umosx")
+destination_scene = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

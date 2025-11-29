@@ -1,16 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfw5mxix0bb2e"]
+[gd_scene load_steps=14 format=3 uid="uid://dfw5mxix0bb2e"]
 
 [ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_rjoje"]
+[ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/3_intro.dialogue" id="2_0hvyo"]
 [ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="2_bg4i0"]
-[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_144u1"]
+[ext_resource type="Resource" uid="uid://72d1i30g4idv" path="res://dialogue/3_microscope.dialogue" id="3_gkoet"]
+[ext_resource type="Resource" uid="uid://b30wd4yet2jhu" path="res://dialogue/3_correct_virus.dialogue" id="4_7y5po"]
+[ext_resource type="Resource" uid="uid://bnx3od1fs4ovi" path="res://dialogue/3_wrong_virus.dialogue" id="5_7vc6b"]
+[ext_resource type="Resource" uid="uid://d3jbg4jjhq1ux" path="res://dialogue/3_virus_pressed.dialogue" id="6_g3wdu"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="6_yvqia"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="7_1bltn"]
+[ext_resource type="PackedScene" uid="uid://b1w12aapnq4dr" path="res://scenes/arrow.tscn" id="8_0hvyo"]
 [ext_resource type="Texture2D" uid="uid://cx45inlgfxh2" path="res://images/diary.png" id="8_reu6s"]
 [ext_resource type="FontFile" uid="uid://bwaxmsxhkpxo0" path="res://other assets/HomemadeApple-Regular.ttf" id="9_twgjl"]
 [ext_resource type="Texture2D" uid="uid://c44c25ky44n0a" path="res://images/table.png" id="10_0hvyo"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rjoje")
+start_dialogue = ExtResource("2_0hvyo")
+microscope = ExtResource("3_gkoet")
+correct_virus = ExtResource("4_7y5po")
+wrong_virus = ExtResource("5_7vc6b")
+virus_pressed = ExtResource("6_g3wdu")
 
 [node name="Room3" type="Sprite2D" parent="."]
 position = Vector2(575, 324)
@@ -47,16 +57,10 @@ r = 1,496 * 10^11
 m = niet bekende "
 autowrap_mode = 1
 
-[node name="Arrow" type="Button" parent="."]
-offset_left = 9.0
-offset_top = 292.0
-offset_right = 99.0
-offset_bottom = 353.0
-text = "⬅️"
-script = ExtResource("3_144u1")
-destination_scene = 6
+[node name="Arrow2" parent="." instance=ExtResource("8_0hvyo")]
+destination_scene = 4
 
-[node name="Microscope" type="Button" parent="."]
+[node name="Microscope" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 793.0
 offset_top = 345.0
@@ -95,14 +99,14 @@ offset_top = 419.0
 offset_right = 423.0
 offset_bottom = 452.0
 
-[node name="ShowHint" type="Button" parent="."]
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 34.0
 offset_top = 18.0
 offset_right = 172.0
 offset_bottom = 162.0
 
-[node name="ShowInstructions" type="Button" parent="."]
+[node name="ShowInstructions" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 947.0
 offset_top = 304.0
@@ -176,35 +180,34 @@ texture = ExtResource("10_0hvyo")
 
 [node name="Virus" type="Node2D" parent="."]
 
-[node name="Nexa" type="Button" parent="Virus"]
+[node name="Nexa" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 954.0
 offset_top = 373.0
 offset_right = 987.0
 offset_bottom = 404.0
 
-[node name="Zytphera" type="Button" parent="Virus"]
+[node name="Zytphera" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 905.0
 offset_top = 372.0
 offset_right = 938.0
 offset_bottom = 403.0
 
-[node name="PandoraX" type="Button" parent="Virus"]
+[node name="PandoraX" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 908.0
 offset_top = 409.0
 offset_right = 941.0
 offset_bottom = 440.0
 
-[node name="Helixona" type="Button" parent="Virus"]
+[node name="Helixona" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 954.0
 offset_top = 410.0
 offset_right = 987.0
 offset_bottom = 441.0
 
-[connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Microscope" to="." method="_on_microscope_pressed"]
 [connection signal="pressed" from="Answers/Red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="Answers/Blue" to="." method="_on_blue_pressed"]

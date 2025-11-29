@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cvbsgcngdoxhp" path="res://images/ClipboardImage_2025-11-25T123017.png" id="1_w0ydv"]
 [ext_resource type="Resource" uid="uid://ceq1b84kn5y8l" path="res://dialogue/2_intro.dialogue" id="2_guunk"]
 [ext_resource type="Texture2D" uid="uid://c2l72fe2gt6ps" path="res://images/ph_poster.png" id="3_4et86"]
-[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_6wv7r"]
 [ext_resource type="Resource" uid="uid://be384mky1jnp0" path="res://dialogue/2_finished.dialogue" id="3_u14ju"]
 [ext_resource type="Resource" uid="uid://ctdvupgimnh8q" path="res://dialogue/2_wrong_drink.dialogue" id="4_h8145"]
 [ext_resource type="Script" uid="uid://bgp56ipsth20x" path="res://scripts/ph_spawner.gd" id="5_lsxps"]
 [ext_resource type="Resource" uid="uid://bnuallc5n342w" path="res://dialogue/2_died.dialogue" id="5_yg87s"]
 [ext_resource type="PackedScene" uid="uid://b5kl1vyv3gbr7" path="res://scenes/ph_paper.tscn" id="6_63qte"]
 [ext_resource type="Texture2D" uid="uid://ccqlgmimeq534" path="res://images/instructions.png" id="7_flmds"]
+[ext_resource type="PackedScene" uid="uid://b1w12aapnq4dr" path="res://scenes/arrow.tscn" id="7_h8dvq"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="8_hbe2o"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="13_h8dvq"]
 
@@ -36,24 +36,8 @@ position = Vector2(581.51, 339.796)
 scale = Vector2(0.893552, 0.785869)
 texture = SubResource("AtlasTexture_u14ju")
 
-[node name="ArrowLeft" type="Button" parent="."]
-offset_left = 9.0
-offset_top = 292.0
-offset_right = 99.0
-offset_bottom = 353.0
-text = "⬅️"
-script = ExtResource("3_6wv7r")
+[node name="Arrow" parent="." instance=ExtResource("7_h8dvq")]
 destination_scene = 3
-
-[node name="ArrowRight" type="Button" parent="."]
-visible = false
-offset_left = 1002.0
-offset_top = 315.0
-offset_right = 1092.0
-offset_bottom = 376.0
-text = "⬅️"
-script = ExtResource("3_6wv7r")
-destination_scene = 1
 
 [node name="PHImage" type="Sprite2D" parent="."]
 position = Vector2(874, 171)
@@ -228,12 +212,10 @@ offset_top = 71.0
 offset_right = 406.0
 offset_bottom = 227.0
 
-[connection signal="pressed" from="ArrowLeft" to="ArrowLeft" method="_on_pressed"]
-[connection signal="pressed" from="ArrowRight" to="ArrowRight" method="_on_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_2_pressed"]
-[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
 [connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_green_button_3_pressed"]
+[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton4" to="." method="_on_green_button_4_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_5_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_6_pressed"]

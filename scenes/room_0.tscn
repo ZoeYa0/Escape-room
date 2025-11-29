@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://c60fe6qmqf3us"]
+
+[ext_resource type="Script" uid="uid://4h6pmhr18abp" path="res://scripts/language_screen.gd" id="2_1ak2e"]
+[ext_resource type="Texture2D" uid="uid://b6q68i6sahlng" path="res://images/1_room.png" id="6_1007u"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TempBg" type="Sprite2D" parent="."]
+modulate = Color(0.219501, 0.219501, 0.219501, 1)
+position = Vector2(578, 324.5)
+scale = Vector2(0.9, 0.845052)
+texture = ExtResource("6_1007u")
+
+[node name="LanguageScreen" type="Node2D" parent="."]
+script = ExtResource("2_1ak2e")
+
+[node name="ColorRect" type="ColorRect" parent="LanguageScreen"]
+light_mask = 0
+offset_left = 59.0
+offset_top = 48.0
+offset_right = 1099.0
+offset_bottom = 593.0
+color = Color(0.584314, 0.584314, 0.584314, 0.929412)
+
+[node name="ActualHint" type="Label" parent="LanguageScreen"]
+offset_left = 395.0
+offset_top = 111.0
+offset_right = 770.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 36
+text = "Select your language"
+autowrap_mode = 1
+
+[node name="English" type="Button" parent="LanguageScreen"]
+offset_left = 237.0
+offset_top = 282.0
+offset_right = 397.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 36
+text = "ENGLISH"
+
+[node name="Dutch" type="Button" parent="LanguageScreen"]
+offset_left = 690.0
+offset_top = 283.0
+offset_right = 850.0
+offset_bottom = 341.0
+theme_override_font_sizes/font_size = 36
+text = "DUTCH"
+
+[node name="Label" type="Label" parent="LanguageScreen"]
+offset_left = 690.0
+offset_top = 361.0
+offset_right = 854.0
+offset_bottom = 393.0
+text = "Neem je BINAS mee!"
+
+[node name="Label2" type="Label" parent="LanguageScreen"]
+offset_left = 239.0
+offset_top = 480.0
+offset_right = 945.0
+offset_bottom = 503.0
+text = "Disclaimer: For now a lot of stuff will be in a mix of English and Dutch, I'm working on it TOT"
+
+[connection signal="pressed" from="LanguageScreen/English" to="LanguageScreen" method="_on_english_pressed"]
+[connection signal="pressed" from="LanguageScreen/Dutch" to="LanguageScreen" method="_on_dutch_pressed"]

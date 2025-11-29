@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dcf0blgrmojm6" path="res://other assets/wheel_texture.tres" id="8_lwgnx"]
 [ext_resource type="Script" uid="uid://c6xxn60r3kclu" path="res://scripts/sphere.gd" id="9_4oupy"]
 [ext_resource type="Texture2D" uid="uid://cnw20008h01ee" path="res://images/ClipboardImage_2025-11-24T172159.png" id="10_fa2c2"]
-[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="11_hvue4"]
 [ext_resource type="Script" uid="uid://b6n6b8i3mblge" path="res://scripts/hints.gd" id="13_sl6s1"]
 [ext_resource type="Texture2D" uid="uid://csggdvfsq03i2" path="res://images/curtains_opened.png" id="13_y5mqv"]
+[ext_resource type="PackedScene" uid="uid://b1w12aapnq4dr" path="res://scenes/arrow.tscn" id="14_y5mqv"]
 [ext_resource type="PackedScene" uid="uid://ccpdb5jctequm" path="res://scenes/instructions.tscn" id="15_y5mqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
@@ -186,16 +186,10 @@ offset_right = 442.0
 offset_bottom = 430.0
 action_mode = 0
 
-[node name="Arrow" type="Button" parent="."]
-offset_left = 10.0
-offset_top = 316.0
-offset_right = 100.0
-offset_bottom = 377.0
-text = "⬅️"
-script = ExtResource("11_hvue4")
-destination_scene = 2
+[node name="Arrow" parent="." instance=ExtResource("14_y5mqv")]
 
 [node name="Instructions" parent="." instance=ExtResource("15_y5mqv")]
+visible = false
 
 [node name="Hints" type="Node2D" parent="."]
 visible = false
@@ -256,5 +250,4 @@ default_color = Color(1, 1, 0.701961, 1)
 [connection signal="pressed" from="ShowPuzzleButton" to="Instructions" method="_on_show_puzzle_button_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
-[connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Hints/CloseButton" to="Hints" method="_on_close_button_pressed"]

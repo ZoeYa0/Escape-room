@@ -8,30 +8,39 @@ func _on_close_button_pressed() -> void:
 
 func _on_show_hint_pressed() -> void:
 	visible = true
-	if Events.current_room == 1:
-		if Events.can_curtains_open == false:
-			Events.rooms["room1"]["hints"] += 1
-			match Events.rooms["room1"]["hints"]:
+	match Events.current_room:
+		1:
+			if Events.can_curtains_open == false:
+				Events.rooms["room1"]["hints"] += 1
+				match Events.rooms["room1"]["hints"]:
+					1:
+						actual_hint.text = "G=6,674e-11 \n
+						m aarde = 5,972e34 kg"
+					2:
+						actual_hint.text = "M = 1,9884e30 kg"
+					3:
+						actual_hint.text = "Antwoord is zon"
+		2:
+			Events.rooms["room2"]["hints"] += 1
+			match Events.rooms["room2"]["hints"]:
 				1:
-					actual_hint.text = "G=6,674e-11 \n
-					m aarde = 5,972e34 kg"
+					actual_hint.text = "goed naar de kleur van streepjes kijken!"
 				2:
-					actual_hint.text = "M = 1,9884e30 kg"
+					actual_hint.text = "Jullie moeten een strookje met indicator in een drank plaatsen en vervolgens kijken welke kleur verschijnt. Vergelijk die kleur met het schema. Als de kleur dicht bij de pH-waarde van 6 ligt, dan is het een geschikte drank. "
 				3:
-					actual_hint.text = "Antwoord is zon"
-	if Events.current_room == 2:
-		Events.rooms["room2"]["hints"] += 1
-		match Events.rooms["room2"]["hints"]:
-			1:
-				actual_hint.text = "goed naar de kleur van streepjes kijken!"
-			2:
-				actual_hint.text = "Jullie moeten een strookje met indicator in een drank plaatsen en vervolgens kijken welke kleur verschijnt. Vergelijk die kleur met het schema. Als de kleur dicht bij de pH-waarde van 6 ligt, dan is het een geschikte drank. "
-			3:
-				actual_hint.text = "Antwoord is bio-synergy(paars)"
-	if Events.current_room == 3:
-		Events.rooms["room3"]["hints"] += 1
-		match Events.rooms["room3"]["hints"]:
-			1:
-				actual_hint.text = "+ betekent neuraliseren. - betekent niet en +- betekent gedeeltelijk"
-			2:
-				actual_hint.text = "Antwoord is Helix A (bruin)"
+					actual_hint.text = "Antwoord is bio-synergy(paars)"
+		3:
+			Events.rooms["room3"]["hints"] += 1
+			match Events.rooms["room3"]["hints"]:
+				1:
+					actual_hint.text = "+ betekent neuraliseren. - betekent niet en +- betekent gedeeltelijk"
+				2:
+					actual_hint.text = "Antwoord is Helix A (bruin)"
+		4:
+			Events.rooms["room4"]["hints"] += 1
+			match Events.rooms["room4"]["hints"]:
+				1:
+					actual_hint.text = "Combinaties met Pyreon zijn onbetrouwbaar."
+				2:
+					actual_hint.text = "Het ‘High’-paar bevat precies één stof die in een ‘None’ met Pyreon voorkomt"
+					

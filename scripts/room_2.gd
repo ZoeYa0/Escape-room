@@ -31,7 +31,6 @@ func _on_small_ph_pressed() -> void:
 
 func _on_good_pressed() -> void:
 	#puzzle solved!
-	Events.hints_room2 = hints.hint
 	arrow.visible = true
 	DialogueManager.show_dialogue_balloon(room_2_finished,"start")
 
