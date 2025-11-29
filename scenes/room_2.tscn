@@ -36,7 +36,7 @@ position = Vector2(581.51, 339.796)
 scale = Vector2(0.893552, 0.785869)
 texture = SubResource("AtlasTexture_u14ju")
 
-[node name="Arrow" parent="." instance=ExtResource("7_h8dvq")]
+[node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("7_h8dvq")]
 destination_scene = 3
 
 [node name="PHImage" type="Sprite2D" parent="."]
@@ -168,11 +168,11 @@ position = Vector2(361, 372)
 scale = Vector2(0.697917, 0.697917)
 texture = ExtResource("7_flmds")
 
-[node name="Opdracht" type="Button" parent="Instructions2"]
+[node name="Opdracht" type="Button" parent="Instructions2" groups=["Buttons"]]
 offset_right = 8.0
 offset_bottom = 8.0
 
-[node name="SmallPH" type="Button" parent="."]
+[node name="SmallPH" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 488.0
 offset_top = 409.0
@@ -205,7 +205,7 @@ offset_bottom = 23.0
 
 [node name="Hints" parent="." instance=ExtResource("13_h8dvq")]
 
-[node name="ShowHint" type="Button" parent="."]
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 105.0
 offset_top = 71.0

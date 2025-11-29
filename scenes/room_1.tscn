@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=24 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/1_intro.dialogue" id="2_y5mqv"]
@@ -20,6 +20,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
 size = Vector2(131, 28)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5mqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0003"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22a07"]
 atlas = ExtResource("8_lwgnx")
@@ -67,6 +71,7 @@ position = Vector2(655.5, 31)
 shape = SubResource("RectangleShape2D_3wwl0")
 
 [node name="Sprite2D" type="Sprite2D" parent="LightSystem/Mirror"]
+modulate = Color(0.219501, 0.219501, 0.219501, 1)
 position = Vector2(699.5, 25)
 scale = Vector2(0.756667, 0.636364)
 texture = ExtResource("6_m0003")
@@ -74,7 +79,7 @@ texture = ExtResource("6_m0003")
 [node name="SphereReflector" type="Node2D" parent="LightSystem"]
 script = ExtResource("7_ncuik")
 
-[node name="Sphere" type="Button" parent="LightSystem/SphereReflector"]
+[node name="Sphere" type="Button" parent="LightSystem/SphereReflector" groups=["Buttons"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -87,6 +92,8 @@ grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_y5mqv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m0003")
 icon = SubResource("AtlasTexture_22a07")
 script = ExtResource("9_4oupy")
 
@@ -100,7 +107,7 @@ shape = SubResource("CircleShape2D_qs3r0")
 [node name="SphereReflector2" type="Node2D" parent="LightSystem"]
 script = ExtResource("7_ncuik")
 
-[node name="Sphere2" type="Button" parent="LightSystem/SphereReflector2"]
+[node name="Sphere2" type="Button" parent="LightSystem/SphereReflector2" groups=["Buttons"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -127,7 +134,7 @@ shape = SubResource("CircleShape2D_qs3r0")
 [node name="SphereReflector3" type="Node2D" parent="LightSystem"]
 script = ExtResource("7_ncuik")
 
-[node name="Sphere3" type="Button" parent="LightSystem/SphereReflector3"]
+[node name="Sphere3" type="Button" parent="LightSystem/SphereReflector3" groups=["Buttons"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -151,7 +158,7 @@ position = Vector2(204, 66)
 position = Vector2(335, 81)
 shape = SubResource("CircleShape2D_qs3r0")
 
-[node name="ShowPuzzleButton" type="Button" parent="."]
+[node name="ShowPuzzleButton" type="Button" parent="." groups=["Buttons"]]
 offset_left = 991.0
 offset_top = 330.0
 offset_right = 1237.0
@@ -159,7 +166,7 @@ offset_bottom = 532.0
 scale = Vector2(0.61, 0.61)
 icon = SubResource("AtlasTexture_2tqpo")
 
-[node name="ShowHint" type="Button" parent="."]
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 offset_left = 1069.0
 offset_top = 12.0
 offset_right = 1137.0
@@ -178,7 +185,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(286, 225)
 texture = ExtResource("13_y5mqv")
 
-[node name="Curtain" type="Button" parent="."]
+[node name="Curtain" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 143.0
 offset_top = 55.0
@@ -186,7 +193,7 @@ offset_right = 442.0
 offset_bottom = 430.0
 action_mode = 0
 
-[node name="Arrow" parent="." instance=ExtResource("14_y5mqv")]
+[node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("14_y5mqv")]
 
 [node name="Instructions" parent="." instance=ExtResource("15_y5mqv")]
 visible = false

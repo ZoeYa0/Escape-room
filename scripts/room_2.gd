@@ -1,5 +1,5 @@
 extends Node2D
-@onready var arrow: Button = $ArrowLeft
+@onready var arrow: Button = $Arrow
 @onready var ph_image: Sprite2D = $PHImage
 @onready var timer: Label = $Timer
 @onready var hints: Node2D = $Hints

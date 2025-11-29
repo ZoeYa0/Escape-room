@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmvnec3nuyjdq"]
+[gd_scene load_steps=12 format=3 uid="uid://cmvnec3nuyjdq"]
 
 [ext_resource type="Script" uid="uid://bskn7vvywygq5" path="res://scripts/room_4.gd" id="1_fkic7"]
 [ext_resource type="Resource" uid="uid://8gf5so7e87n5" path="res://dialogue/4_computer.dialogue" id="2_23hl6"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cx45inlgfxh2" path="res://images/diary.png" id="6_4rsdj"]
 [ext_resource type="FontFile" uid="uid://bwaxmsxhkpxo0" path="res://other assets/HomemadeApple-Regular.ttf" id="7_3rrnb"]
 [ext_resource type="Texture2D" uid="uid://c44c25ky44n0a" path="res://images/table.png" id="8_l2fmq"]
+[ext_resource type="PackedScene" uid="uid://cyy0ug8bcqum4" path="res://scenes/object.tscn" id="10_3cbqk"]
+[ext_resource type="PackedScene" uid="uid://c18jo8lkljcts" path="res://scenes/dragable.tscn" id="11_16up7"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fkic7")
@@ -19,7 +21,7 @@ position = Vector2(577.649, 325.5)
 scale = Vector2(0.898254, 0.847656)
 texture = ExtResource("2_fkic7")
 
-[node name="Arrow" type="Button" parent="."]
+[node name="Arrow" type="Button" parent="." groups=["Buttons"]]
 offset_left = 14.0
 offset_top = 184.0
 offset_right = 104.0
@@ -28,44 +30,13 @@ text = "⬅️"
 script = ExtResource("3_rb4hd")
 destination_scene = 6
 
-[node name="Computer" type="Button" parent="."]
+[node name="Computer" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 840.0
 offset_top = 313.0
 offset_right = 971.0
 offset_bottom = 466.0
 mouse_default_cursor_shape = 2
-
-[node name="Answers" type="Node2D" parent="."]
-position = Vector2(-3, 13)
-
-[node name="Red" type="Button" parent="Answers"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 93.0
-offset_top = 418.0
-offset_right = 140.0
-offset_bottom = 451.0
-
-[node name="Blue" type="Button" parent="Answers"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 189.0
-offset_top = 419.0
-offset_right = 236.0
-offset_bottom = 452.0
-
-[node name="Gray" type="Button" parent="Answers"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 292.0
-offset_top = 419.0
-offset_right = 339.0
-offset_bottom = 452.0
-
-[node name="Brown" type="Button" parent="Answers"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 376.0
-offset_top = 419.0
-offset_right = 423.0
-offset_bottom = 452.0
 
 [node name="ShowHint" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -176,14 +147,90 @@ offset_top = 402.0
 offset_right = 675.0
 offset_bottom = 433.0
 
-[node name="Node" type="Node" parent="."]
+[node name="Node2D" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(526, 419)
+scale = Vector2(0.25, 0.25)
+
+[node name="Node2D2" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(568, 420)
+scale = Vector2(0.25, 0.25)
+
+[node name="Node2D3" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(615, 419)
+scale = Vector2(0.25, 0.25)
+
+[node name="Node2D4" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(657, 419)
+scale = Vector2(0.25, 0.25)
+
+[node name="Answers" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Answers" instance=ExtResource("11_16up7")]
+position = Vector2(246, 610)
+scale = Vector2(0.3, 0.3)
+
+[node name="StaticBody2D2" parent="Answers" instance=ExtResource("11_16up7")]
+position = Vector2(295, 610)
+scale = Vector2(0.3, 0.3)
+
+[node name="HomeFuel" type="Node2D" parent="."]
+position = Vector2(1, -81)
+
+[node name="StaticBody2D3" parent="HomeFuel" instance=ExtResource("11_16up7")]
+position = Vector2(525, 419)
+scale = Vector2(0.25, 0.25)
+
+[node name="StaticBody2D4" parent="HomeFuel" instance=ExtResource("11_16up7")]
+position = Vector2(567, 418)
+scale = Vector2(0.25, 0.25)
+
+[node name="StaticBody2D5" parent="HomeFuel" instance=ExtResource("11_16up7")]
+position = Vector2(615, 419)
+scale = Vector2(0.25, 0.25)
+
+[node name="StaticBody2D6" parent="HomeFuel" instance=ExtResource("11_16up7")]
+position = Vector2(656, 419)
+scale = Vector2(0.25, 0.25)
+
+[node name="PowerButton" type="Button" parent="." groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 412.0
+offset_top = 616.0
+offset_right = 435.0
+offset_bottom = 637.0
+
+[node name="PowerLight" type="ColorRect" parent="."]
+offset_left = 429.0
+offset_top = 540.0
+offset_right = 448.0
+offset_bottom = 554.0
+color = Color(1, 0, 0, 1)
+
+[node name="PowerIndicator" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="PowerIndicator"]
+offset_left = 353.0
+offset_top = 570.0
+offset_right = 438.0
+offset_bottom = 582.0
+color = Color(0.750132, 2.80602e-05, 0.2213, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="PowerIndicator"]
+offset_left = 353.0
+offset_top = 570.0
+offset_right = 412.0
+offset_bottom = 582.0
+color = Color(0.904227, 0.357879, 0.189646, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="PowerIndicator"]
+offset_left = 353.0
+offset_top = 570.0
+offset_right = 381.0
+offset_bottom = 582.0
+color = Color(0, 1, 0.5, 1)
 
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
-[connection signal="pressed" from="Answers/Red" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="Answers/Blue" to="." method="_on_blue_pressed"]
-[connection signal="pressed" from="Answers/Gray" to="." method="_on_gray_pressed"]
-[connection signal="pressed" from="Answers/Brown" to="." method="_on_brown_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
@@ -191,3 +238,4 @@ offset_bottom = 433.0
 [connection signal="pressed" from="Fuel/Calmisol" to="." method="_on_calmisol_pressed"]
 [connection signal="pressed" from="Fuel/Endryl" to="." method="_on_endryl_pressed"]
 [connection signal="pressed" from="Fuel/Inertase" to="." method="_on_inertase_pressed"]
+[connection signal="pressed" from="PowerButton" to="." method="_on_power_button_pressed"]

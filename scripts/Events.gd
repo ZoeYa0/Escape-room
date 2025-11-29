@@ -5,6 +5,7 @@ signal room_lit
 
 var current_room := 1
 var language
+var is_dragging = false
 var rooms = {
 	"room1": {"time": 0, "wrong": 0, "hints": 0},
 	"room2": {"time": 0, "wrong": 0, "hints": 0},
@@ -19,3 +20,4 @@ var can_curtains_open = false
 #-----------ROOM 3 virus
 var virus = ""
 #-----------ROOM 4 computer
+var power_on = false

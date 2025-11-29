@@ -57,7 +57,7 @@ r = 1,496 * 10^11
 m = niet bekende "
 autowrap_mode = 1
 
-[node name="Arrow2" parent="." instance=ExtResource("8_0hvyo")]
+[node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("8_0hvyo")]
 destination_scene = 4
 
 [node name="Microscope" type="Button" parent="." groups=["Buttons"]]
