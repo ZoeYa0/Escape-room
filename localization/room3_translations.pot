@@ -1,0 +1,197 @@
+# LANGUAGE translation for Escape Room for the following files:
+# res://dialogue/1_curtains_can't_open.dialogue
+# res://dialogue/1_curtains_stuck.dialogue
+# res://dialogue/2_died.dialogue
+# res://dialogue/1_intro.dialogue
+# res://dialogue/2_intro.dialogue
+# res://dialogue/3_intro.dialogue
+# res://dialogue/1_finished.dialogue
+# res://dialogue/2_finished.dialogue
+# res://dialogue/3_finished.dialogue
+# res://dialogue/2_wrong_drink.dialogue
+# res://dialogue/3_correct_virus.dialogue
+# res://dialogue/3_microscope.dialogue
+# res://dialogue/3_virus_pressed.dialogue
+# res://dialogue/3_wrong_virus.dialogue
+# res://dialogue/4_computer.dialogue
+# res://scenes/room_3.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Escape Room\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#. TRANSLATORS: Character name
+#: dialogue/1_curtains_can't_open.dialogue
+#: dialogue/1_curtains_stuck.dialogue
+#: dialogue/2_died.dialogue
+#: dialogue/1_intro.dialogue
+#: dialogue/2_intro.dialogue
+#: dialogue/3_intro.dialogue
+#: dialogue/1_finished.dialogue
+#: dialogue/2_finished.dialogue
+#: dialogue/3_finished.dialogue
+#: dialogue/2_wrong_drink.dialogue
+#: dialogue/3_correct_virus.dialogue
+#: dialogue/3_microscope.dialogue
+#: dialogue/3_virus_pressed.dialogue
+#: dialogue/3_wrong_virus.dialogue
+#: dialogue/4_computer.dialogue
+msgctxt "dialogue"
+msgid "You"
+msgstr ""
+
+#: dialogue/1_curtains_can't_open.dialogue
+msgid "[i]pulls curtains[/i] It won't budge."
+msgstr ""
+
+#: dialogue/1_curtains_stuck.dialogue
+msgid "These curtains won't open further."
+msgstr ""
+
+#: dialogue/2_died.dialogue
+msgid "You fainted from smelling the experimental drinks too many times. Restarting room now..."
+msgstr ""
+
+#: dialogue/1_intro.dialogue
+msgid "this is where professor Kamilla was last seen."
+msgstr ""
+
+#: dialogue/1_intro.dialogue
+msgid "let's see what we can find here."
+msgstr ""
+
+#: dialogue/1_intro.dialogue
+msgid "It's quite dark though, we should light up the room first"
+msgstr ""
+
+#: dialogue/2_intro.dialogue
+msgid "This is Kamilla's workspace. There's a lot of drinks here."
+msgstr ""
+
+#: dialogue/2_intro.dialogue
+msgid "I know that Kamilla had a sensitive tooth and couldn't drink anything with a [wave]pH below 7[/wave]. Maybe figuring out what she drank before she disappeared can help us understand where she went?"
+msgstr ""
+
+#: dialogue/3_intro.dialogue
+msgid "Kamilla was working on antivirus for some kind of virus before she got kidnapped. Although I'm not sure which antivirus she created, I have a feeling it must have something to do with her kidnapping..."
+msgstr ""
+
+#: dialogue/1_finished.dialogue
+msgid "The room is lit up!"
+msgstr ""
+
+#: dialogue/1_finished.dialogue
+msgid "Now we can go to the next room."
+msgstr ""
+
+#: dialogue/2_finished.dialogue
+msgid "A ha! So she was drinking Bio-Synergy before she disappeared."
+msgstr ""
+
+#: dialogue/2_finished.dialogue
+msgid "Let me see... There's some white powder left on the walls after the liquid has dried out. It seems to be some remainent of a kind of [wave]sleeping powder[/wave]..."
+msgstr ""
+
+#: dialogue/2_finished.dialogue
+msgid "This means that Kamilla was kidnapped! Now we need to figure out why she was kidnapped. What special thing did she develop? Let's look at the instrument Kamilla uses so often in the lab."
+msgstr ""
+
+#: dialogue/3_finished.dialogue
+msgid "So Kamilla was working on the antiVirus HelixA. We're closer to the truth..."
+msgstr ""
+
+#: dialogue/2_wrong_drink.dialogue
+msgid "[i]smells drink[/i] Uh oh, something in the drink is making me dizzy. This doesn't seem to be the right drink...(hint: choosing the wrong drink too many times will have consequences)"
+msgstr ""
+
+#: dialogue/3_correct_virus.dialogue
+msgid "This seems to be the correct virus!"
+msgstr ""
+
+#: dialogue/3_microscope.dialogue
+msgid "Can the substances destroy each other? There is already an antivirus in the microscope. Perhaps we can try adding the virus to decipher which antivirus Kamilla was making?"
+msgstr ""
+
+#: dialogue/3_virus_pressed.dialogue
+msgid "[i]*You added {{Events.virus}} to the antivirus.*[i]"
+msgstr ""
+
+#: dialogue/3_virus_pressed.dialogue
+msgid "You observed that nexa_3 was not neutralized."
+msgstr ""
+
+#: dialogue/3_virus_pressed.dialogue
+msgid "You observed zytphera was partially neutralized."
+msgstr ""
+
+#: dialogue/3_virus_pressed.dialogue
+msgid "You observed that pandora_x was neutralized."
+msgstr ""
+
+#: dialogue/3_virus_pressed.dialogue
+msgid "You observed that Helixona was not neutralized."
+msgstr ""
+
+#: dialogue/3_wrong_virus.dialogue
+msgid "This doesn't seem to be the correct virus."
+msgstr ""
+
+#: dialogue/4_computer.dialogue
+msgid "There's no electricity to power the computer."
+msgstr ""
+
+#: scenes/room_3.tscn
+msgid ""
+"Begin: Het is donker hier, jullie kunnen niets zien en dus kunnen het geheime raadsel van verdwijnen van de professor Kamilla Andrien niet oplossen. Misschien helpt dit jullie om iets in de ruimte te kunnen zien. \n"
+"\n"
+" \n"
+"\n"
+" \n"
+"\n"
+"Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunne jullie bepalen over welke hemellichaam het gaat? \n"
+"\n"
+"Formule  \n"
+"\n"
+" \n"
+"\n"
+"Instructies: Fgrav = 3,52 * 10^22 N \n"
+"\n"
+"G = constante(zelf opzoeken) \n"
+"\n"
+"Maarde = (zelf opzoeken) \n"
+"\n"
+"r = 1,496 * 10^11 \n"
+"\n"
+"m = niet bekende "
+msgstr ""
+
+#: scenes/room_3.tscn
+msgid "X"
+msgstr ""
+
+#: scenes/room_3.tscn
+msgid ""
+"REGELS\n"
+"\n"
+"1. Het antivirus is het enige middel dat precies één virus volledig neutraliseert\n"
+"\n"
+"2. Middelen die geen virussen neutraliseren vallen ook af.\n"
+"\n"
+"3. Gedeeltelijke effecten tellen niet als neutralisatie."
+msgstr ""
+
+#: scenes/room_3.tscn
+msgid ""
+"Logboek \n"
+"15.11\n"
+"\n"
+"Vandaag heb ik mijn antivirus getest op 4 virussen,\n"
+" en het werkt! Ik heb hieronder wat regels geschrven\n"
+"om mij te herinneren welke virus het gaat."
+msgstr ""

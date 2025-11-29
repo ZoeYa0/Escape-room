@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 func _on_small_ph_pressed() -> void:
 	ph_image.visible = true
-
+	Events.can_puzzle_be_solved = true
 
 func _on_good_pressed() -> void:
 	#puzzle solved!

@@ -17,6 +17,7 @@ var rooms = {
 var puzzle_solved = false
 var can_curtains_open = false
 #-----------ROOM 2 ph
+var can_puzzle_be_solved = false
 #-----------ROOM 3 virus
 var virus = ""
 #-----------ROOM 4 computer

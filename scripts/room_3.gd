@@ -45,7 +45,7 @@ func wrong_virus_clicked():
 
 #---------------viruses
 func _on_nexa_pressed() -> void:
-	adding_virus("nexa")
+	adding_virus("nexa_3")
 
 
 func _on_zytphera_pressed() -> void:
@@ -61,4 +61,4 @@ func _on_helixona_pressed() -> void:
 
 func adding_virus(virus):
 	Events.virus = str(virus)
-	DialogueManager.show_dialogue_balloon(wrong_virus,"start")
+	DialogueManager.show_dialogue_balloon(virus_pressed,"start")

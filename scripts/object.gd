@@ -1,4 +1,5 @@
 extends Node2D
+@onready var label: Label = $Label
 
 var draggable = false
 var is_inside_dropable = false
@@ -6,6 +7,10 @@ var body_ref
 var offset: Vector2
 var initialPos: Vector2
 
+
+func _ready() -> void:
+	label.text = name
+	
 func _process(delta: float) -> void:
 	if draggable:
 		if Input.is_action_just_pressed('click'):
@@ -19,15 +24,16 @@ func _process(delta: float) -> void:
 			var tween = get_tree().create_tween()
 			if is_inside_dropable:
 				tween.tween_property(self, "position",body_ref.position,0.2).set_ease(Tween.EASE_OUT)
+				#Events.fuel_1 = name
 			else:
 				tween.tween_property(self, 'global_position',initialPos,0.2).set_ease(Tween.EASE_OUT)
 
+
 func _on_area_2d_mouse_entered() -> void:
 	if not Events.is_dragging:
-		draggable = true
 		scale = Vector2(0.3,0.3)
-
-
+		draggable = true
+		
 func _on_area_2d_mouse_exited() -> void:
 	if not Events.is_dragging:
 		draggable = false

@@ -10,8 +10,5 @@ match Events.virus
 	when "pandora_x":
 		You: You observed that pandora_x was neutralized.
 	when "helixona":
-		You: You observed that Helixona was not neutralized.
-		
-		
-		
+		You: You observed that Helixona was not neutralized.		
 => END

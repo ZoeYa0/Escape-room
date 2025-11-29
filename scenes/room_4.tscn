@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmvnec3nuyjdq"]
+[gd_scene load_steps=13 format=3 uid="uid://cmvnec3nuyjdq"]
 
 [ext_resource type="Script" uid="uid://bskn7vvywygq5" path="res://scripts/room_4.gd" id="1_fkic7"]
 [ext_resource type="Resource" uid="uid://8gf5so7e87n5" path="res://dialogue/4_computer.dialogue" id="2_23hl6"]
 [ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="2_fkic7"]
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_rb4hd"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="4_3cbqk"]
+[ext_resource type="Texture2D" uid="uid://bavpvpkfsrevu" path="res://images/catridge.png" id="4_16up7"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="5_16up7"]
 [ext_resource type="Texture2D" uid="uid://cx45inlgfxh2" path="res://images/diary.png" id="6_4rsdj"]
 [ext_resource type="FontFile" uid="uid://bwaxmsxhkpxo0" path="res://other assets/HomemadeApple-Regular.ttf" id="7_3rrnb"]
 [ext_resource type="Texture2D" uid="uid://c44c25ky44n0a" path="res://images/table.png" id="8_l2fmq"]
 [ext_resource type="PackedScene" uid="uid://cyy0ug8bcqum4" path="res://scenes/object.tscn" id="10_3cbqk"]
-[ext_resource type="PackedScene" uid="uid://c18jo8lkljcts" path="res://scenes/dragable.tscn" id="11_16up7"]
+[ext_resource type="PackedScene" uid="uid://c18jo8lkljcts" path="res://scenes/dropable.tscn" id="11_16up7"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fkic7")
@@ -20,6 +21,11 @@ computer = ExtResource("2_23hl6")
 position = Vector2(577.649, 325.5)
 scale = Vector2(0.898254, 0.847656)
 texture = ExtResource("2_fkic7")
+
+[node name="Catridge" type="Sprite2D" parent="."]
+position = Vector2(590, 405)
+scale = Vector2(0.459128, 0.459128)
+texture = ExtResource("4_16up7")
 
 [node name="Arrow" type="Button" parent="." groups=["Buttons"]]
 offset_left = 14.0
@@ -119,59 +125,49 @@ texture = ExtResource("8_l2fmq")
 
 [node name="Fuel" type="Node2D" parent="."]
 
-[node name="Pyreon" type="Button" parent="Fuel"]
+[node name="d" type="Button" parent="Fuel"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 508.0
 offset_top = 401.0
 offset_right = 541.0
 offset_bottom = 432.0
 
-[node name="Calmisol" type="Button" parent="Fuel"]
+[node name="s" type="Button" parent="Fuel"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 554.0
 offset_top = 402.0
 offset_right = 587.0
 offset_bottom = 433.0
 
-[node name="Endryl" type="Button" parent="Fuel"]
+[node name="5" type="Button" parent="Fuel"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 596.0
 offset_top = 401.0
 offset_right = 629.0
 offset_bottom = 432.0
 
-[node name="Inertase" type="Button" parent="Fuel"]
+[node name="d2" type="Button" parent="Fuel"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 642.0
 offset_top = 402.0
 offset_right = 675.0
 offset_bottom = 433.0
 
-[node name="Node2D" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(526, 419)
+[node name="Pyreon" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(530, 413)
 scale = Vector2(0.25, 0.25)
 
-[node name="Node2D2" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(568, 420)
+[node name="Calmisol" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(569, 413)
 scale = Vector2(0.25, 0.25)
 
-[node name="Node2D3" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(615, 419)
+[node name="Endryl" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(608, 411)
 scale = Vector2(0.25, 0.25)
 
-[node name="Node2D4" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(657, 419)
+[node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(649, 407)
 scale = Vector2(0.25, 0.25)
-
-[node name="Answers" type="Node2D" parent="."]
-
-[node name="StaticBody2D" parent="Answers" instance=ExtResource("11_16up7")]
-position = Vector2(246, 610)
-scale = Vector2(0.3, 0.3)
-
-[node name="StaticBody2D2" parent="Answers" instance=ExtResource("11_16up7")]
-position = Vector2(295, 610)
-scale = Vector2(0.3, 0.3)
 
 [node name="HomeFuel" type="Node2D" parent="."]
 position = Vector2(1, -81)
@@ -204,7 +200,6 @@ offset_left = 429.0
 offset_top = 540.0
 offset_right = 448.0
 offset_bottom = 554.0
-color = Color(1, 0, 0, 1)
 
 [node name="PowerIndicator" type="Node2D" parent="."]
 
@@ -229,13 +224,31 @@ offset_right = 381.0
 offset_bottom = 582.0
 color = Color(0, 1, 0.5, 1)
 
+[node name="Answers" type="Node2D" parent="."]
+
+[node name="FuelSlot" parent="Answers" instance=ExtResource("11_16up7")]
+position = Vector2(241, 605)
+scale = Vector2(0.4, 0.4)
+
+[node name="FuelSlot2" parent="Answers" instance=ExtResource("11_16up7")]
+position = Vector2(301, 605)
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 260.0
+offset_top = 72.0
+offset_right = 879.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 72
+text = "IN DEVELOPMENT"
+
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
-[connection signal="pressed" from="Fuel/Pyreon" to="." method="_on_pyreon_pressed"]
-[connection signal="pressed" from="Fuel/Calmisol" to="." method="_on_calmisol_pressed"]
-[connection signal="pressed" from="Fuel/Endryl" to="." method="_on_endryl_pressed"]
-[connection signal="pressed" from="Fuel/Inertase" to="." method="_on_inertase_pressed"]
+[connection signal="pressed" from="Fuel/d" to="." method="_on_pyreon_pressed"]
+[connection signal="pressed" from="Fuel/s" to="." method="_on_calmisol_pressed"]
+[connection signal="pressed" from="Fuel/5" to="." method="_on_endryl_pressed"]
+[connection signal="pressed" from="Fuel/d2" to="." method="_on_inertase_pressed"]
 [connection signal="pressed" from="PowerButton" to="." method="_on_power_button_pressed"]

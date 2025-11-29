@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 
-# Called when the node enters the scene tree for the first time.
+# colorrect also detects mouse. disable
 func _ready() -> void:
 	modulate = Color(Color.PALE_VIOLET_RED,0.7)
 

@@ -144,6 +144,7 @@ text = "X"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Instructions"]
+visible = false
 offset_left = 640.0
 offset_top = 75.0
 offset_right = 1102.0
@@ -157,7 +158,22 @@ text = "REGELS
 3. Gedeeltelijke effecten tellen niet als neutralisatie."
 autowrap_mode = 2
 
+[node name="Label4" type="Label" parent="Instructions"]
+offset_left = 640.0
+offset_top = 75.0
+offset_right = 1102.0
+offset_bottom = 351.0
+text = "RULES
+
+1. The antivirus is the only agent that completely neutralizes exactly one virus.
+
+2. Agents that do not neutralize viruses are also eliminated.
+
+3. Partial effects do not count as neutralization."
+autowrap_mode = 2
+
 [node name="Label2" type="Label" parent="Instructions"]
+visible = false
 offset_left = 99.0
 offset_top = 61.0
 offset_right = 514.0
@@ -171,6 +187,22 @@ text = "Logboek
 Vandaag heb ik mijn antivirus getest op 4 virussen,
  en het werkt! Ik heb hieronder wat regels geschrven
 om mij te herinneren welke virus het gaat."
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Instructions"]
+offset_left = 99.0
+offset_top = 61.0
+offset_right = 514.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_twgjl")
+theme_override_font_sizes/font_size = 22
+text = "Diary
+15.11
+
+Today I tested my antivirus for four viruses,
+and it works! I've written a few lines below
+to help me remember which virus it is."
 autowrap_mode = 2
 
 [node name="Table" type="Sprite2D" parent="Instructions"]
