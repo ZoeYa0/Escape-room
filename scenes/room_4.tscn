@@ -125,67 +125,20 @@ texture = ExtResource("8_l2fmq")
 
 [node name="Fuel" type="Node2D" parent="."]
 
-[node name="d" type="Button" parent="Fuel"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 508.0
-offset_top = 401.0
-offset_right = 541.0
-offset_bottom = 432.0
-
-[node name="s" type="Button" parent="Fuel"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 554.0
-offset_top = 402.0
-offset_right = 587.0
-offset_bottom = 433.0
-
-[node name="5" type="Button" parent="Fuel"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 596.0
-offset_top = 401.0
-offset_right = 629.0
-offset_bottom = 432.0
-
-[node name="d2" type="Button" parent="Fuel"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 642.0
-offset_top = 402.0
-offset_right = 675.0
-offset_bottom = 433.0
-
 [node name="Pyreon" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(530, 413)
+position = Vector2(552, 411)
 scale = Vector2(0.25, 0.25)
 
 [node name="Calmisol" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(569, 413)
+position = Vector2(648, 414)
 scale = Vector2(0.25, 0.25)
 
 [node name="Endryl" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(608, 411)
+position = Vector2(546, 503)
 scale = Vector2(0.25, 0.25)
 
 [node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(649, 407)
-scale = Vector2(0.25, 0.25)
-
-[node name="HomeFuel" type="Node2D" parent="."]
-position = Vector2(1, -81)
-
-[node name="StaticBody2D3" parent="HomeFuel" instance=ExtResource("11_16up7")]
-position = Vector2(525, 419)
-scale = Vector2(0.25, 0.25)
-
-[node name="StaticBody2D4" parent="HomeFuel" instance=ExtResource("11_16up7")]
-position = Vector2(567, 418)
-scale = Vector2(0.25, 0.25)
-
-[node name="StaticBody2D5" parent="HomeFuel" instance=ExtResource("11_16up7")]
-position = Vector2(615, 419)
-scale = Vector2(0.25, 0.25)
-
-[node name="StaticBody2D6" parent="HomeFuel" instance=ExtResource("11_16up7")]
-position = Vector2(656, 419)
+position = Vector2(645, 499)
 scale = Vector2(0.25, 0.25)
 
 [node name="PowerButton" type="Button" parent="." groups=["Buttons"]]
@@ -203,26 +156,32 @@ offset_bottom = 554.0
 
 [node name="PowerIndicator" type="Node2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="PowerIndicator"]
+[node name="Red" type="ColorRect" parent="PowerIndicator"]
+visible = false
 offset_left = 353.0
 offset_top = 570.0
 offset_right = 438.0
 offset_bottom = 582.0
 color = Color(0.750132, 2.80602e-05, 0.2213, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="PowerIndicator"]
+[node name="Orange" type="ColorRect" parent="PowerIndicator"]
+visible = false
 offset_left = 353.0
 offset_top = 570.0
 offset_right = 412.0
 offset_bottom = 582.0
 color = Color(0.904227, 0.357879, 0.189646, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="PowerIndicator"]
+[node name="Green" type="ColorRect" parent="PowerIndicator"]
+visible = false
 offset_left = 353.0
 offset_top = 570.0
 offset_right = 381.0
 offset_bottom = 582.0
 color = Color(0, 1, 0.5, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Answers" type="Node2D" parent="."]
 
@@ -235,6 +194,7 @@ position = Vector2(301, 605)
 scale = Vector2(0.4, 0.4)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 260.0
 offset_top = 72.0
 offset_right = 879.0
@@ -242,13 +202,16 @@ offset_bottom = 171.0
 theme_override_font_sizes/font_size = 72
 text = "IN DEVELOPMENT"
 
+[node name="PullButton" type="Button" parent="."]
+offset_left = 146.0
+offset_top = 585.0
+offset_right = 161.0
+offset_bottom = 601.0
+
 [connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
-[connection signal="pressed" from="Fuel/d" to="." method="_on_pyreon_pressed"]
-[connection signal="pressed" from="Fuel/s" to="." method="_on_calmisol_pressed"]
-[connection signal="pressed" from="Fuel/5" to="." method="_on_endryl_pressed"]
-[connection signal="pressed" from="Fuel/d2" to="." method="_on_inertase_pressed"]
 [connection signal="pressed" from="PowerButton" to="." method="_on_power_button_pressed"]
+[connection signal="pressed" from="PullButton" to="." method="_on_pull_button_pressed"]

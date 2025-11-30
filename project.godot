@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Escape Room"
-run/main_scene="uid://c60fe6qmqf3us"
+run/main_scene="uid://cmvnec3nuyjdq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://images/icon.svg"
 
@@ -23,6 +23,12 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/mix_rate=8000
+movie_writer/movie_file="C:/Users/Lu000020/OneDrive - Universiteit Utrecht/7788/Zoe/GODOT-PROJECTS/escape-room/movie/movie.avi"
+movie_writer/fps=30
 
 [editor_plugins]
 

@@ -22,3 +22,26 @@ var can_puzzle_be_solved = false
 var virus = ""
 #-----------ROOM 4 computer
 var power_on = false
+var dropable_states = {}
+const REACTION_TABLE = {
+	"Pyreon": {
+		"Calmisol": "Low",
+		"Endryl": "Endotherm",
+		"Inertase": "None",
+	},
+	"Calmisol": {
+		"Pyreon": "Low",
+		"Endryl": "None",
+		"Inertase": "High",
+	},
+	"Endryl": {
+		"Pyreon": "Endotherm",
+		"Calmisol": "None",
+		"Inertase": "Low",
+	},
+	"Inertase": {
+		"Pyreon": "None",
+		"Calmisol": "High",
+		"Endryl": "Low",
+	}
+}
