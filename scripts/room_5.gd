@@ -12,7 +12,7 @@ var energy
 @onready var green: ColorRect = $PowerIndicator/Green
 @onready var show_hint: Button = $ShowHint
 @onready var arrow: Button = $Arrow
-@onready var windows: Button = $Windows
+@onready var windows: Sprite2D = $Windows
 
 func _ready():
 	windows.visible = false
@@ -80,4 +80,4 @@ func _on_straw_pressed() -> void:
 
 
 func _on_windows_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/room_5.tscn") 
+	pass # Replace with function body.

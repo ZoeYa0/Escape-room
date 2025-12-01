@@ -2,6 +2,7 @@ extends Node
 
 signal curtains_opened
 signal room_lit
+signal generator_powered
 
 var current_room := 1
 var language
@@ -21,12 +22,13 @@ var can_puzzle_be_solved = false
 #-----------ROOM 3 virus
 var virus = ""
 #-----------ROOM 4 computer
+var straw_connected = false
 var power_on = false
 var dropable_states = {}
 const REACTION_TABLE = {
 	"Pyreon": {
 		"Calmisol": "Low",
-		"Endryl": "Endotherm",
+		"Endryl": "None",
 		"Inertase": "None",
 	},
 	"Calmisol": {
@@ -35,7 +37,7 @@ const REACTION_TABLE = {
 		"Inertase": "High",
 	},
 	"Endryl": {
-		"Pyreon": "Endotherm",
+		"Pyreon": "None",
 		"Calmisol": "None",
 		"Inertase": "Low",
 	},

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmvnec3nuyjdq"]
+[gd_scene load_steps=10 format=3 uid="uid://cmvnec3nuyjdq"]
 
 [ext_resource type="Script" uid="uid://bskn7vvywygq5" path="res://scripts/room_4.gd" id="1_fkic7"]
 [ext_resource type="Resource" uid="uid://8gf5so7e87n5" path="res://dialogue/4_computer.dialogue" id="2_23hl6"]
@@ -6,10 +6,7 @@
 [ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_rb4hd"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="4_3cbqk"]
 [ext_resource type="Texture2D" uid="uid://bavpvpkfsrevu" path="res://images/catridge.png" id="4_16up7"]
-[ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="5_16up7"]
-[ext_resource type="Texture2D" uid="uid://cx45inlgfxh2" path="res://images/diary.png" id="6_4rsdj"]
-[ext_resource type="FontFile" uid="uid://bwaxmsxhkpxo0" path="res://other assets/HomemadeApple-Regular.ttf" id="7_3rrnb"]
-[ext_resource type="Texture2D" uid="uid://c44c25ky44n0a" path="res://images/table.png" id="8_l2fmq"]
+[ext_resource type="Texture2D" uid="uid://ba1nj42o0ytj7" path="res://images/windows.png" id="6_23hl6"]
 [ext_resource type="PackedScene" uid="uid://cyy0ug8bcqum4" path="res://scenes/object.tscn" id="10_3cbqk"]
 [ext_resource type="PackedScene" uid="uid://c18jo8lkljcts" path="res://scenes/dropable.tscn" id="11_16up7"]
 
@@ -23,11 +20,13 @@ scale = Vector2(0.898254, 0.847656)
 texture = ExtResource("2_fkic7")
 
 [node name="Catridge" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(590, 405)
 scale = Vector2(0.459128, 0.459128)
 texture = ExtResource("4_16up7")
 
 [node name="Arrow" type="Button" parent="." groups=["Buttons"]]
+visible = false
 offset_left = 14.0
 offset_top = 184.0
 offset_right = 104.0
@@ -44,12 +43,20 @@ offset_right = 971.0
 offset_bottom = 466.0
 mouse_default_cursor_shape = 2
 
+[node name="Windows" type="Button" parent="."]
+offset_left = 854.0
+offset_top = 326.0
+offset_right = 1662.0
+offset_bottom = 934.0
+scale = Vector2(0.117917, 0.117917)
+icon = ExtResource("6_23hl6")
+
 [node name="ShowHint" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 34.0
-offset_top = 18.0
-offset_right = 172.0
-offset_bottom = 162.0
+offset_left = 62.0
+offset_top = 28.0
+offset_right = 187.0
+offset_bottom = 146.0
 
 [node name="ShowInstructions" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -60,85 +67,22 @@ offset_bottom = 341.0
 
 [node name="Hints" parent="." instance=ExtResource("4_3cbqk")]
 
-[node name="Instructions" type="Node2D" parent="."]
-visible = false
-light_mask = 0
-script = ExtResource("5_16up7")
-
-[node name="ColorRect" type="ColorRect" parent="Instructions"]
-visible = false
-light_mask = 0
-offset_left = 37.0
-offset_top = 34.0
-offset_right = 1121.0
-offset_bottom = 622.0
-color = Color(0.167168, 0.0861916, 0.119708, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Diary" type="Sprite2D" parent="Instructions"]
-position = Vector2(586.5, 320)
-scale = Vector2(1.81833, 1.46837)
-texture = ExtResource("6_4rsdj")
-
-[node name="CloseButton" type="Button" parent="Instructions"]
-offset_left = 1006.0
-offset_top = 34.0
-offset_right = 1116.0
-offset_bottom = 100.0
-text = "X"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Instructions"]
-offset_left = 640.0
-offset_top = 75.0
-offset_right = 1102.0
-offset_bottom = 351.0
-text = "REGELS
-
-1. Het antivirus is het enige middel dat precies één virus volledig neutraliseert
-
-2. Middelen die geen virussen neutraliseren vallen ook af.
-
-3. Gedeeltelijke effecten tellen niet als neutralisatie."
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="Instructions"]
-offset_left = 99.0
-offset_top = 61.0
-offset_right = 514.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_3rrnb")
-theme_override_font_sizes/font_size = 22
-text = "Logboek 
-15.11
-
-Vandaag heb ik mijn antivirus getest op 4 virussen,
- en het werkt! Ik heb hieronder wat regels geschrven
-om mij te herinneren welke virus het gaat."
-autowrap_mode = 2
-
-[node name="Table" type="Sprite2D" parent="Instructions"]
-position = Vector2(868.5, 433.75)
-scale = Vector2(0.504742, 0.642606)
-texture = ExtResource("8_l2fmq")
-
 [node name="Fuel" type="Node2D" parent="."]
 
 [node name="Pyreon" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(552, 411)
+position = Vector2(547, 390)
 scale = Vector2(0.25, 0.25)
 
 [node name="Calmisol" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(648, 414)
+position = Vector2(633, 386)
 scale = Vector2(0.25, 0.25)
 
 [node name="Endryl" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(546, 503)
+position = Vector2(549, 475)
 scale = Vector2(0.25, 0.25)
 
 [node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(645, 499)
+position = Vector2(638, 474)
 scale = Vector2(0.25, 0.25)
 
 [node name="PowerButton" type="Button" parent="." groups=["Buttons"]]
@@ -208,10 +152,13 @@ offset_top = 585.0
 offset_right = 161.0
 offset_bottom = 601.0
 
-[connection signal="pressed" from="Arrow" to="Arrow" method="_on_pressed"]
+[node name="Straw" type="Button" parent="."]
+offset_left = 69.0
+offset_top = 368.0
+offset_right = 103.0
+offset_bottom = 429.0
+
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
-[connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
-[connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
-[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
 [connection signal="pressed" from="PowerButton" to="." method="_on_power_button_pressed"]
 [connection signal="pressed" from="PullButton" to="." method="_on_pull_button_pressed"]
+[connection signal="pressed" from="Straw" to="." method="_on_straw_pressed"]

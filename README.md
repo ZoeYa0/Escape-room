@@ -1,6 +1,8 @@
 # Escape-room
 Godot 4 game which tests the player's ability to use interdisciplinary skills
 
+https://hackatime-badge.hackclub.com/U09D27K9XU5/escape-room
+
 # Daily Workflow 
  1. Update your local repo(before editing anything)
 
