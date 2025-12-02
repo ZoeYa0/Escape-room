@@ -13,19 +13,3 @@ func _ready():
 		data["wrong"],
 		data["hints"]
 		)
-
-
-func _on_pyreon_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_calmisol_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_endryl_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_inertase_pressed() -> void:
-	pass # Replace with function body.

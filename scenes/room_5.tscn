@@ -1,100 +1,140 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkidjdfh87eir"]
+[gd_scene load_steps=10 format=3 uid="uid://dkidjdfh87eir"]
 
 [ext_resource type="Script" uid="uid://ce4tcp7kl1ond" path="res://scripts/room_5.gd" id="1_coxy2"]
-[ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="2_2whii"]
 [ext_resource type="Resource" uid="uid://c8ylp6y6u26aa" path="res://dialogue/5_intro.dialogue" id="2_xnd4n"]
+[ext_resource type="Texture2D" uid="uid://c11htgdm6e5yw" path="res://images/5.png" id="3_4p6mq"]
 [ext_resource type="Script" uid="uid://cioap3ti8b1pc" path="res://scripts/six_answers.gd" id="4_4p6mq"]
 [ext_resource type="Script" uid="uid://gotfqc6elmwe" path="res://scripts/sticky_note.gd" id="4_sn1g8"]
 [ext_resource type="Texture2D" uid="uid://csadt0ewrp7nx" path="res://images/5_stickyh.png" id="5_sn1g8"]
+[ext_resource type="Texture2D" uid="uid://qhp8oqccjc18" path="res://images/Picture1.png" id="7_bkyhs"]
+[ext_resource type="Texture2D" uid="uid://dc307dammkt6k" path="res://images/Picture2.png" id="8_hbosg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p6mq"]
 atlas = ExtResource("5_sn1g8")
-region = Rect2(45.1318, 963.393, 693.907, 628.314)
+region = Rect2(764.344, 1046.21, 525.823, 584.771)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_coxy2")
 intro = ExtResource("2_xnd4n")
 
 [node name="4" type="Sprite2D" parent="."]
-position = Vector2(-1108, 75)
-scale = Vector2(2.91289, 2.60822)
-texture = ExtResource("2_2whii")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 444.0
-offset_top = 235.0
-offset_right = 573.0
-offset_bottom = 258.0
-text = "Type password..."
+position = Vector2(616.572, 335.132)
+scale = Vector2(0.960044, 0.866843)
+texture = ExtResource("3_4p6mq")
 
 [node name="Stickynotes" type="Node2D" parent="."]
 
-[node name="Button" type="Button" parent="Stickynotes"]
+[node name="1" type="Button" parent="Stickynotes"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 101.0
-offset_top = 348.0
-offset_right = 232.0
-offset_bottom = 479.0
+offset_left = 131.0
+offset_top = 47.0
+offset_right = 262.0
+offset_bottom = 178.0
+
+[node name="2" type="Button" parent="Stickynotes"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 979.0
+offset_top = 106.0
+offset_right = 1110.0
+offset_bottom = 237.0
+
+[node name="Three" type="Button" parent="Stickynotes"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 25.0
+offset_top = 219.0
+offset_right = 156.0
+offset_bottom = 350.0
+
+[node name="Four" type="Button" parent="Stickynotes"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 274.0
+offset_top = 184.0
+offset_right = 362.0
+offset_bottom = 288.0
 
 [node name="SixAnswers" type="Node2D" parent="."]
 script = ExtResource("4_4p6mq")
 
 [node name="L1" type="LineEdit" parent="SixAnswers"]
-offset_left = 313.0
-offset_top = 313.0
-offset_right = 381.563
-offset_bottom = 344.0
+custom_minimum_size = Vector2(1, 0)
+offset_left = 465.0
+offset_top = 230.0
+offset_right = 500.0
+offset_bottom = 261.0
+theme_override_constants/minimum_character_width = 0
+max_length = 1
+emoji_menu_enabled = false
 
 [node name="L2" type="LineEdit" parent="SixAnswers"]
-offset_left = 387.0
-offset_top = 313.0
-offset_right = 456.0
-offset_bottom = 344.0
+custom_minimum_size = Vector2(1, 0)
+offset_left = 502.0
+offset_top = 230.0
+offset_right = 537.0
+offset_bottom = 261.0
+theme_override_constants/minimum_character_width = 0
+max_length = 1
+emoji_menu_enabled = false
 
 [node name="L3" type="LineEdit" parent="SixAnswers"]
-offset_left = 456.0
-offset_top = 312.0
-offset_right = 525.0
-offset_bottom = 343.0
+custom_minimum_size = Vector2(1, 0)
+offset_left = 539.0
+offset_top = 230.0
+offset_right = 574.0
+offset_bottom = 261.0
+theme_override_constants/minimum_character_width = 0
+max_length = 1
+emoji_menu_enabled = false
 
 [node name="L4" type="LineEdit" parent="SixAnswers"]
-offset_left = 525.0
-offset_top = 312.0
-offset_right = 594.0
-offset_bottom = 343.0
+custom_minimum_size = Vector2(1, 0)
+offset_left = 576.0
+offset_top = 230.0
+offset_right = 611.0
+offset_bottom = 261.0
+theme_override_constants/minimum_character_width = 0
+max_length = 1
+emoji_menu_enabled = false
 
 [node name="L5" type="LineEdit" parent="SixAnswers"]
-offset_left = 592.0
-offset_top = 312.0
-offset_right = 661.0
-offset_bottom = 343.0
+custom_minimum_size = Vector2(1, 0)
+offset_left = 613.0
+offset_top = 230.0
+offset_right = 648.0
+offset_bottom = 261.0
+theme_override_constants/minimum_character_width = 0
+max_length = 1
+emoji_menu_enabled = false
 
 [node name="L6" type="LineEdit" parent="SixAnswers"]
-offset_left = 652.0
-offset_top = 313.0
-offset_right = 721.0
-offset_bottom = 344.0
+custom_minimum_size = Vector2(1, 0)
+offset_left = 650.0
+offset_top = 230.0
+offset_right = 685.0
+offset_bottom = 261.0
+theme_override_constants/minimum_character_width = 0
+max_length = 1
+emoji_menu_enabled = false
 
 [node name="SubmitButton" type="Button" parent="SixAnswers"]
-offset_left = 724.0
-offset_top = 312.0
-offset_right = 732.0
-offset_bottom = 320.0
+offset_left = 698.0
+offset_top = 230.0
+offset_right = 761.0
+offset_bottom = 261.0
 text = "Submit"
 
-[node name="Instructions" type="Control" parent="."]
+[node name="1" type="Control" parent="."]
 visible = false
 light_mask = 0
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("4_sn1g8")
 
-[node name="5Stickyh" type="Sprite2D" parent="Instructions"]
+[node name="5Stickyh" type="Sprite2D" parent="1"]
 position = Vector2(537, 296)
 rotation = 0.117164
 texture = SubResource("AtlasTexture_4p6mq")
 
-[node name="Label" type="Label" parent="Instructions"]
+[node name="Label" type="Label" parent="1"]
 layout_mode = 0
 offset_left = 351.0
 offset_top = 253.0
@@ -112,6 +152,7 @@ anchors_preset = 0
 script = ExtResource("4_sn1g8")
 
 [node name="5Stickyh" type="Sprite2D" parent="Instructions2"]
+modulate = Color(0.92, 0.1104, 0.299306, 1)
 position = Vector2(537, 296)
 rotation = 0.117164
 texture = SubResource("AtlasTexture_4p6mq")
@@ -134,31 +175,40 @@ anchors_preset = 0
 script = ExtResource("4_sn1g8")
 
 [node name="5Stickyh" type="Sprite2D" parent="Instructions3"]
-position = Vector2(560, 445)
+modulate = Color(0.67451, 0.0117647, 1, 1)
+position = Vector2(566, 340)
 rotation = 0.117164
+scale = Vector2(1.13158, 1.15662)
 texture = SubResource("AtlasTexture_4p6mq")
 
 [node name="Label" type="Label" parent="Instructions3"]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 19.0
-offset_right = 1148.0
-offset_bottom = 387.0
-theme_override_font_sizes/font_size = 36
-text = "Instructie: Een verticale asymptoot is een bijzonder en een beetje tragisch verschijnsel: een lijn die de functie steeds nadert, maar nooit kan raken. Bij het vinden van deze lijn gebruik je de regels eigenlijk omgekeerd. Meestal moet de teller gelijk zijn aan nul en de noemer niet, maar hier is dat juist andersom.  "
+offset_left = 334.0
+offset_top = 160.0
+offset_right = 804.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 20
+text = "Instructie: Een verticale asymptoot is een bijzonder en een beetje tragisch verschijnsel: een lijn die de functie steeds nadert, maar nooit kan raken. Bij het vinden van deze lijn gebruik de nummer gelijk zijn aan nul en de teller niet."
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Instructions3"]
+[node name="Label2" type="RichTextLabel" parent="Instructions3"]
 layout_mode = 0
-offset_left = 386.0
-offset_top = 305.0
-offset_right = 819.0
-offset_bottom = 726.0
-theme_override_font_sizes/font_size = 36
-text = "Wat is de verticale asymptoot van f(x)= (4x^2-1):(x^2-x-6)? 
+offset_left = 394.0
+offset_top = 377.0
+offset_right = 827.0
+offset_bottom = 798.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Wat is de verticale asymptoot van f(x)= (4x²−1)/(x²−x−6)? 
 
 Ik heb een klein hondje thuis; een grote hond vind ik te gevaarlijk. "
 autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 161.0
+offset_top = 60.0
+offset_right = 169.0
+offset_bottom = 68.0
 
 [node name="Instructions4" type="Control" parent="."]
 visible = false
@@ -167,20 +217,56 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("4_sn1g8")
 
+[node name="5Stickyh2" type="Sprite2D" parent="Instructions4"]
+modulate = Color(0.800479, 0.292714, 0.239659, 1)
+position = Vector2(371, 367)
+rotation = -0.257089
+scale = Vector2(0.962952, 0.974086)
+texture = SubResource("AtlasTexture_4p6mq")
+flip_h = true
+
 [node name="5Stickyh" type="Sprite2D" parent="Instructions4"]
-position = Vector2(560, 445)
+modulate = Color(0.96, 0.8888, 0.1056, 1)
+position = Vector2(799.006, 363.501)
 rotation = 0.117164
+scale = Vector2(1.10234, 1.10234)
 texture = SubResource("AtlasTexture_4p6mq")
 
 [node name="Label2" type="Label" parent="Instructions4"]
 layout_mode = 0
-offset_left = 257.0
-offset_top = 281.0
-offset_right = 934.0
-offset_bottom = 702.0
-theme_override_font_sizes/font_size = 36
+offset_left = 562.82
+offset_top = 121.683
+offset_right = 1022.82
+offset_bottom = 542.683
+theme_override_font_sizes/font_size = 26
 text = "Als je twee stoffen met elkaar mengt, duurt het even voordat ze met elkaar reageren. Hoeveel seconden duurt de reactie tussen magnesium en zoutzuur om 3.3 mg waterstof te vormen als de reactie onder zeer hoge temperatuur plaatsvindt?"
 autowrap_mode = 2
 
-[connection signal="pressed" from="Stickynotes/Button" to="Instructions" method="_on_button_pressed"]
+[node name="Picture1" type="Sprite2D" parent="Instructions4"]
+position = Vector2(914.82, 567.683)
+texture = ExtResource("7_bkyhs")
+
+[node name="Label" type="Label" parent="Instructions4"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 125.0
+offset_right = 580.0
+offset_bottom = 278.0
+text = "Donkerpaarse lijn is een hond
+Paarse is een pinguin
+Groene is een cameel 
+Oranje is een beer
+Molaire gasvolume Vm =24,465 L/mol
+"
+
+[node name="Picture2" type="Sprite2D" parent="Instructions4"]
+position = Vector2(269, 452)
+scale = Vector2(0.242431, 0.242431)
+texture = ExtResource("8_hbosg")
+
+[connection signal="pressed" from="Stickynotes/1" to="1" method="_on_button_pressed"]
+[connection signal="pressed" from="Stickynotes/2" to="Instructions2" method="_on__pressed"]
+[connection signal="pressed" from="Stickynotes/Three" to="Instructions3" method="_on_three_pressed"]
+[connection signal="pressed" from="Stickynotes/Four" to="Instructions4" method="_on_four_pressed"]
 [connection signal="pressed" from="SixAnswers/SubmitButton" to="SixAnswers" method="_on_submit_button_pressed"]
+[connection signal="pressed" from="Button" to="1" method="_on_button_pressed"]

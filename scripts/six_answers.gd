@@ -17,6 +17,7 @@ func _ready():
 	for f in fields:
 		f.max_length = 1
 		f.text = ""
+		#f.minimum_character_width = 0
 
 
 func _on_submit_button_pressed() -> void:
@@ -42,13 +43,11 @@ func _on_submit_button_pressed() -> void:
 # FEEDBACK FUNCTIONS – customize these however you like
 # -------------------------------------------------------------
 func _set_feedback_correct(field: LineEdit):
-	# Example: turn the background green
-	field.add_theme_color_override("modulate", Color.GREEN) # green
+	field.modulate = Color.GREEN
 
 
 func _set_feedback_incorrect(field: LineEdit):
-	# Example: turn the background red
-	field.add_theme_color_override("modulate", Color.RED) # red
+	field.modulate = Color.RED
 
 
 func _unlock_puzzle():

@@ -15,3 +15,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_button_pressed() -> void:
 	visible = true
+
+
+func _on__pressed() -> void:
+	visible = true
+
+
+func _on_three_pressed() -> void:
+	visible = true
+
+
+func _on_four_pressed() -> void:
+	visible = true
