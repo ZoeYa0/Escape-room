@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://gbcvu55oee3i"
+path="res://.godot/imported/4_fuel_combined.dialogue-72f1766ba49e7db4d09ee7782d6b181a.tres"
+
+[deps]
+
+source_file="res://dialogue/4_fuel_combined.dialogue"
+dest_files=["res://.godot/imported/4_fuel_combined.dialogue-72f1766ba49e7db4d09ee7782d6b181a.tres"]
+
+[params]
+
+defaults=true

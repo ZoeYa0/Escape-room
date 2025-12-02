@@ -3,6 +3,7 @@ extends Node
 signal room_lit
 signal show_crank
 signal generator_powered
+signal tube_clicked
 
 var current_room := 1
 var language
@@ -21,6 +22,7 @@ var can_puzzle_be_solved = false
 #-----------ROOM 3 virus
 var virus = ""
 #-----------ROOM 4 computer
+var energy
 var straw_connected = false
 var power_on = false
 var dropable_states = {}

@@ -1,0 +1,10 @@
+~ start
+You: *pulls cord*
+match Events.energy
+	when "Low":
+		You: These 2 fuels aren't providing enough energy
+	when "None":
+		You: These 2 fuels aren't triggering any reactions...
+	when "High":
+		You: this is the one!
+=> END

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkidjdfh87eir"]
+[gd_scene load_steps=8 format=3 uid="uid://dkidjdfh87eir"]
 
 [ext_resource type="Script" uid="uid://ce4tcp7kl1ond" path="res://scripts/room_5.gd" id="1_coxy2"]
 [ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="2_2whii"]
 [ext_resource type="Resource" uid="uid://c8ylp6y6u26aa" path="res://dialogue/5_intro.dialogue" id="2_xnd4n"]
+[ext_resource type="Script" uid="uid://cioap3ti8b1pc" path="res://scripts/six_answers.gd" id="4_4p6mq"]
 [ext_resource type="Script" uid="uid://gotfqc6elmwe" path="res://scripts/sticky_note.gd" id="4_sn1g8"]
 [ext_resource type="Texture2D" uid="uid://csadt0ewrp7nx" path="res://images/5_stickyh.png" id="5_sn1g8"]
 
@@ -15,8 +16,8 @@ script = ExtResource("1_coxy2")
 intro = ExtResource("2_xnd4n")
 
 [node name="4" type="Sprite2D" parent="."]
-position = Vector2(-629, 84.0001)
-scale = Vector2(3.15478, 3.15478)
+position = Vector2(-1108, 75)
+scale = Vector2(2.91289, 2.60822)
 texture = ExtResource("2_2whii")
 
 [node name="Label" type="Label" parent="."]
@@ -35,15 +36,54 @@ offset_top = 348.0
 offset_right = 232.0
 offset_bottom = 479.0
 
-[node name="Answers" type="Node2D" parent="."]
+[node name="SixAnswers" type="Node2D" parent="."]
+script = ExtResource("4_4p6mq")
 
-[node name="LineEdit" type="LineEdit" parent="Answers"]
-offset_left = 363.0
-offset_top = 302.0
-offset_right = 432.0
-offset_bottom = 333.0
+[node name="L1" type="LineEdit" parent="SixAnswers"]
+offset_left = 313.0
+offset_top = 313.0
+offset_right = 381.563
+offset_bottom = 344.0
+
+[node name="L2" type="LineEdit" parent="SixAnswers"]
+offset_left = 387.0
+offset_top = 313.0
+offset_right = 456.0
+offset_bottom = 344.0
+
+[node name="L3" type="LineEdit" parent="SixAnswers"]
+offset_left = 456.0
+offset_top = 312.0
+offset_right = 525.0
+offset_bottom = 343.0
+
+[node name="L4" type="LineEdit" parent="SixAnswers"]
+offset_left = 525.0
+offset_top = 312.0
+offset_right = 594.0
+offset_bottom = 343.0
+
+[node name="L5" type="LineEdit" parent="SixAnswers"]
+offset_left = 592.0
+offset_top = 312.0
+offset_right = 661.0
+offset_bottom = 343.0
+
+[node name="L6" type="LineEdit" parent="SixAnswers"]
+offset_left = 652.0
+offset_top = 313.0
+offset_right = 721.0
+offset_bottom = 344.0
+
+[node name="SubmitButton" type="Button" parent="SixAnswers"]
+offset_left = 724.0
+offset_top = 312.0
+offset_right = 732.0
+offset_bottom = 320.0
+text = "Submit"
 
 [node name="Instructions" type="Control" parent="."]
+visible = false
 light_mask = 0
 layout_mode = 3
 anchors_preset = 0
@@ -55,10 +95,92 @@ rotation = 0.117164
 texture = SubResource("AtlasTexture_4p6mq")
 
 [node name="Label" type="Label" parent="Instructions"]
+layout_mode = 0
 offset_left = 351.0
 offset_top = 253.0
 offset_right = 821.0
 offset_bottom = 514.0
 theme_override_font_sizes/font_size = 36
-text = "1. Een woord dat kan beschrijven hoeveelheid stof per volume "
+text = "Eerste letter van een woord dat kan beschrijven hoeveelheid stof per volume "
 autowrap_mode = 2
+
+[node name="Instructions2" type="Control" parent="."]
+visible = false
+light_mask = 0
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_sn1g8")
+
+[node name="5Stickyh" type="Sprite2D" parent="Instructions2"]
+position = Vector2(537, 296)
+rotation = 0.117164
+texture = SubResource("AtlasTexture_4p6mq")
+
+[node name="Label" type="Label" parent="Instructions2"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 212.0
+offset_right = 814.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 36
+text = "Als ik de langste ben van mijn vrienden en wij samen een rechthoekige driehoek vormen, wat is mijn naam?"
+autowrap_mode = 2
+
+[node name="Instructions3" type="Control" parent="."]
+visible = false
+light_mask = 0
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_sn1g8")
+
+[node name="5Stickyh" type="Sprite2D" parent="Instructions3"]
+position = Vector2(560, 445)
+rotation = 0.117164
+texture = SubResource("AtlasTexture_4p6mq")
+
+[node name="Label" type="Label" parent="Instructions3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 19.0
+offset_right = 1148.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 36
+text = "Instructie: Een verticale asymptoot is een bijzonder en een beetje tragisch verschijnsel: een lijn die de functie steeds nadert, maar nooit kan raken. Bij het vinden van deze lijn gebruik je de regels eigenlijk omgekeerd. Meestal moet de teller gelijk zijn aan nul en de noemer niet, maar hier is dat juist andersom.  "
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Instructions3"]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 305.0
+offset_right = 819.0
+offset_bottom = 726.0
+theme_override_font_sizes/font_size = 36
+text = "Wat is de verticale asymptoot van f(x)= (4x^2-1):(x^2-x-6)? 
+
+Ik heb een klein hondje thuis; een grote hond vind ik te gevaarlijk. "
+autowrap_mode = 2
+
+[node name="Instructions4" type="Control" parent="."]
+visible = false
+light_mask = 0
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_sn1g8")
+
+[node name="5Stickyh" type="Sprite2D" parent="Instructions4"]
+position = Vector2(560, 445)
+rotation = 0.117164
+texture = SubResource("AtlasTexture_4p6mq")
+
+[node name="Label2" type="Label" parent="Instructions4"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 281.0
+offset_right = 934.0
+offset_bottom = 702.0
+theme_override_font_sizes/font_size = 36
+text = "Als je twee stoffen met elkaar mengt, duurt het even voordat ze met elkaar reageren. Hoeveel seconden duurt de reactie tussen magnesium en zoutzuur om 3.3 mg waterstof te vormen als de reactie onder zeer hoge temperatuur plaatsvindt?"
+autowrap_mode = 2
+
+[connection signal="pressed" from="Stickynotes/Button" to="Instructions" method="_on_button_pressed"]
+[connection signal="pressed" from="SixAnswers/SubmitButton" to="SixAnswers" method="_on_submit_button_pressed"]

@@ -1,40 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmvnec3nuyjdq"]
+[gd_scene load_steps=14 format=3 uid="uid://cmvnec3nuyjdq"]
 
 [ext_resource type="Script" uid="uid://bskn7vvywygq5" path="res://scripts/room_4.gd" id="1_fkic7"]
 [ext_resource type="Resource" uid="uid://8gf5so7e87n5" path="res://dialogue/4_computer.dialogue" id="2_23hl6"]
 [ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="2_fkic7"]
-[ext_resource type="Script" uid="uid://fmo17p8nnbg1" path="res://scripts/arrow.gd" id="3_rb4hd"]
+[ext_resource type="Resource" uid="uid://gbcvu55oee3i" path="res://dialogue/4_fuel_combined.dialogue" id="3_16up7"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="4_3cbqk"]
-[ext_resource type="Texture2D" uid="uid://bavpvpkfsrevu" path="res://images/catridge.png" id="4_16up7"]
 [ext_resource type="Texture2D" uid="uid://ba1nj42o0ytj7" path="res://images/windows.png" id="6_23hl6"]
+[ext_resource type="Texture2D" uid="uid://bqp3qtajya6hd" path="res://images/pngwing.com.png" id="7_3cbqk"]
 [ext_resource type="PackedScene" uid="uid://cyy0ug8bcqum4" path="res://scenes/object.tscn" id="10_3cbqk"]
+[ext_resource type="Script" uid="uid://ck67go8juv5mp" path="res://scripts/tube.gd" id="10_16up7"]
 [ext_resource type="Texture2D" uid="uid://2pcmnmdwepom" path="res://images/straw.png" id="10_rb4hd"]
+[ext_resource type="Texture2D" uid="uid://c7jr4r7g05x5d" path="res://images/Untitled12_20251202184007.PNG" id="11_4rsdj"]
 [ext_resource type="PackedScene" uid="uid://c18jo8lkljcts" path="res://scenes/dropable.tscn" id="11_16up7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rrnb"]
+atlas = ExtResource("7_3cbqk")
+region = Rect2(0, 0, 448, 349.215)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fkic7")
 computer = ExtResource("2_23hl6")
+fuel_combined = ExtResource("3_16up7")
 
 [node name="Room3" type="Sprite2D" parent="."]
-position = Vector2(577.649, 325.5)
-scale = Vector2(0.898254, 0.847656)
+position = Vector2(576, 322)
+scale = Vector2(0.575, 0.546667)
 texture = ExtResource("2_fkic7")
-
-[node name="Catridge" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(590, 405)
-scale = Vector2(0.459128, 0.459128)
-texture = ExtResource("4_16up7")
-
-[node name="Arrow" type="Button" parent="." groups=["Buttons"]]
-visible = false
-offset_left = 14.0
-offset_top = 184.0
-offset_right = 104.0
-offset_bottom = 245.0
-text = "⬅️"
-script = ExtResource("3_rb4hd")
-destination_scene = 6
 
 [node name="Computer" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
@@ -45,10 +36,10 @@ offset_bottom = 466.0
 mouse_default_cursor_shape = 2
 
 [node name="Windows" type="Button" parent="." groups=["Buttons"]]
-offset_left = 854.0
-offset_top = 326.0
-offset_right = 1662.0
-offset_bottom = 934.0
+offset_left = 852.0
+offset_top = 323.0
+offset_right = 1660.0
+offset_bottom = 931.0
 scale = Vector2(0.117917, 0.117917)
 icon = ExtResource("6_23hl6")
 
@@ -72,93 +63,33 @@ offset_bottom = 341.0
 [node name="Fuel" type="Node2D" parent="."]
 
 [node name="Pyreon" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(547, 390)
+position = Vector2(538, 400)
 scale = Vector2(0.25, 0.25)
 
 [node name="Calmisol" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(633, 386)
+position = Vector2(622, 402)
 scale = Vector2(0.25, 0.25)
 
 [node name="Endryl" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(549, 475)
+position = Vector2(535, 483)
 scale = Vector2(0.25, 0.25)
 
 [node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(638, 474)
+position = Vector2(622, 485)
 scale = Vector2(0.25, 0.25)
 
-[node name="PowerButton" type="Button" parent="." groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 412.0
-offset_top = 616.0
-offset_right = 435.0
-offset_bottom = 637.0
-
-[node name="PowerLight" type="ColorRect" parent="."]
-offset_left = 423.0
-offset_top = 535.0
-offset_right = 448.0
-offset_bottom = 554.0
-
-[node name="PowerIndicator" type="Node2D" parent="."]
-
-[node name="Red" type="ColorRect" parent="PowerIndicator"]
-visible = false
-offset_left = 353.0
-offset_top = 570.0
-offset_right = 438.0
-offset_bottom = 582.0
-color = Color(0.750132, 2.80602e-05, 0.2213, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Orange" type="ColorRect" parent="PowerIndicator"]
-visible = false
-offset_left = 353.0
-offset_top = 570.0
-offset_right = 412.0
-offset_bottom = 582.0
-color = Color(0.904227, 0.357879, 0.189646, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Green" type="ColorRect" parent="PowerIndicator"]
-visible = false
-offset_left = 353.0
-offset_top = 570.0
-offset_right = 381.0
-offset_bottom = 582.0
-color = Color(0, 1, 0.5, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Answers" type="Node2D" parent="."]
-
-[node name="FuelSlot" parent="Answers" instance=ExtResource("11_16up7")]
-position = Vector2(241, 605)
-scale = Vector2(0.4, 0.4)
-
-[node name="FuelSlot2" parent="Answers" instance=ExtResource("11_16up7")]
-position = Vector2(314, 605)
-scale = Vector2(0.4, 0.4)
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 260.0
-offset_top = 72.0
-offset_right = 879.0
-offset_bottom = 171.0
-theme_override_font_sizes/font_size = 72
-text = "IN DEVELOPMENT"
-
 [node name="PullButton" type="Button" parent="." groups=["Buttons"]]
-offset_left = 146.0
-offset_top = 585.0
-offset_right = 161.0
-offset_bottom = 601.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 70.0
+offset_top = 610.0
+offset_right = 201.0
+offset_bottom = 649.0
 
-[node name="StrawButton" type="Button" parent="." groups=["Buttons"]]
-offset_left = 69.0
-offset_top = 368.0
-offset_right = 103.0
-offset_bottom = 429.0
+[node name="Pngwing_com" type="Sprite2D" parent="."]
+position = Vector2(139, 613)
+rotation = -1.21044
+scale = Vector2(0.327225, 0.327225)
+texture = SubResource("AtlasTexture_3rrnb")
 
 [node name="Reset" type="Button" parent="." groups=["Buttons"]]
 offset_left = 1012.0
@@ -169,15 +100,81 @@ tooltip_text = "If the fuels aren't functioning as they should, click here to re
 text = "RESET ROOM"
 
 [node name="Straw" type="Sprite2D" parent="."]
-position = Vector2(557, 333)
-scale = Vector2(0.527917, 0.527917)
+visible = false
+position = Vector2(570.541, 324.375)
+scale = Vector2(0.541458, 0.542292)
 texture = ExtResource("10_rb4hd")
+
+[node name="Generator" type="Node2D" parent="."]
+
+[node name="PowerButton" type="Button" parent="Generator" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 412.0
+offset_top = 616.0
+offset_right = 435.0
+offset_bottom = 637.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PowerLight" type="ColorRect" parent="Generator"]
+offset_left = 423.0
+offset_top = 535.0
+offset_right = 448.0
+offset_bottom = 554.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PowerIndicator" type="Node2D" parent="Generator"]
+
+[node name="Red" type="ColorRect" parent="Generator/PowerIndicator"]
+visible = false
+offset_left = 353.0
+offset_top = 570.0
+offset_right = 438.0
+offset_bottom = 582.0
+color = Color(0.750132, 2.80602e-05, 0.2213, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Orange" type="ColorRect" parent="Generator/PowerIndicator"]
+visible = false
+offset_left = 353.0
+offset_top = 570.0
+offset_right = 412.0
+offset_bottom = 582.0
+color = Color(0.904227, 0.357879, 0.189646, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Green" type="ColorRect" parent="Generator/PowerIndicator"]
+visible = false
+offset_left = 353.0
+offset_top = 570.0
+offset_right = 381.0
+offset_bottom = 582.0
+color = Color(0, 1, 0.5, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Answers" type="Node2D" parent="Generator"]
+
+[node name="FuelSlot" parent="Generator/Answers" instance=ExtResource("11_16up7")]
+position = Vector2(238, 607)
+scale = Vector2(0.4, 0.4)
+
+[node name="FuelSlot2" parent="Generator/Answers" instance=ExtResource("11_16up7")]
+position = Vector2(294, 607)
+scale = Vector2(0.4, 0.4)
+
+[node name="Tube" type="Area2D" parent="."]
+position = Vector2(577, 307)
+scale = Vector2(0.557917, 0.557917)
+script = ExtResource("10_16up7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tube"]
+polygon = PackedVector2Array(-575.355, 430.172, -523.376, 431.964, -492.905, 371.023, -387.155, 347.722, -301.12, 347.722, -224.048, 401.494, -173.861, 469.604, -112.92, 555.639, -41.2248, 595.071, 60.941, 598.656, 53.7715, 546.677, -34.0553, 543.092, -91.4115, 496.49, -150.56, 415.833, -191.785, 356.684, -234.802, 322.629, -315.459, 297.535, -399.701, 299.328, -487.528, 311.875, -534.13, 345.93)
+
+[node name="Untitled1220251202184007" type="Sprite2D" parent="Tube"]
+texture = ExtResource("11_4rsdj")
 
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
 [connection signal="pressed" from="Windows" to="." method="_on_windows_pressed"]
 [connection signal="pressed" from="ShowHint" to="." method="_on_show_hint_pressed"]
-[connection signal="pressed" from="PowerButton" to="." method="_on_power_button_pressed"]
 [connection signal="pressed" from="PullButton" to="." method="_on_pull_button_pressed"]
-[connection signal="pressed" from="StrawButton" to="." method="_on_straw_pressed"]
-[connection signal="pressed" from="StrawButton" to="." method="_on_straw_button_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Generator/PowerButton" to="." method="_on_power_button_pressed"]

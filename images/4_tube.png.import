@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bavpvpkfsrevu"
-path="res://.godot/imported/catridge.png-1a24672283fbde4c9445406048fb85d5.ctex"
+uid="uid://rstmm8m0te6e"
+path="res://.godot/imported/4_tube.png-c8615e6bb14bbbaac9eaa4d48d0ccfbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/catridge.png"
-dest_files=["res://.godot/imported/catridge.png-1a24672283fbde4c9445406048fb85d5.ctex"]
+source_file="res://images/4_tube.png"
+dest_files=["res://.godot/imported/4_tube.png-c8615e6bb14bbbaac9eaa4d48d0ccfbb.ctex"]
 
 [params]
 

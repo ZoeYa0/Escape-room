@@ -13,7 +13,7 @@ var current_dropable: Node2D = null
 var occupant = null #TEST
 
 func _ready() -> void:
-	label.text = name
+	label.text = name + " sample"
 	home_position = global_position
 	
 func _process(delta: float) -> void:
