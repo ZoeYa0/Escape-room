@@ -29,6 +29,7 @@ extends Node2D
 @onready var timer: Label = $Timer
 @onready var closed_curtain: ColorRect = $ClosedCurtain
 @onready var curtains_opened: Sprite2D = $CurtainsOpened
+@onready var crank: Button = $Crank
 
 @onready var point_light_2d: PointLight2D = $PointLight2D
 #---------------------------------------------------
@@ -44,54 +45,49 @@ func _ready() -> void:
 	start_time = Time.get_ticks_msec()
 	rays.room_lit.connect(on_room_lit)
 	DialogueManager.show_dialogue_balloon(intro, "start")
-	Events.curtains_opened.connect(on_curtains_opened)
+	#Events.curtains_opened.connect(on_curtains_opened)
 	Events.room_lit.connect(on_room_lit)
 	
 	line_2d.visible = false
 	curtains_opened.visible = false
 	closed_curtain.visible = true
+	crank.visible = false
 	
 	
 func _process(delta: float) -> void:
 	timer.text = str((Time.get_ticks_msec() - start_time) / 1000.0)
 	Events.rooms["room1"]["time"] = str((Time.get_ticks_msec() - start_time) / 1000.0)
-#func _on_sphere_pressed() -> void:
-	#sphere.pivot_offset = sphere.size * 0.5
-	#sphere.rotation += deg_to_rad(45.0)#control nodes use rad
-	##get_parent().rotation_degrees += 45.0
-#
-#func _on_sphere_2_pressed() -> void:
-	#sphere_2.pivot_offset = sphere_2.size * 0.5
-	#sphere_2.rotation += deg_to_rad(45.0)
-#
-#func _on_sphere_3_pressed() -> void:
-	#sphere_3.pivot_offset = sphere_3.size * 0.5
-	#sphere_3.rotation += deg_to_rad(45.0)
+func _on_sphere_pressed() -> void:
+	sphere.pivot_offset = sphere.size * 0.5
+	sphere.rotation += deg_to_rad(45.0)#control nodes use rad
+	#get_parent().rotation_degrees += 45.0
+
+func _on_sphere_2_pressed() -> void:
+	sphere_2.pivot_offset = sphere_2.size * 0.5
+	sphere_2.rotation += deg_to_rad(45.0)
+
+func _on_sphere_3_pressed() -> void:
+	sphere_3.pivot_offset = sphere_3.size * 0.5
+	sphere_3.rotation += deg_to_rad(45.0)
 #
 
-func _on_curtain_pressed() -> void:
-	print("curtainspressed")
-	if Events.can_curtains_open:
-		curtains_opened.visible = true
-		closed_curtain.visible = false
-		line_2d.visible = true	
-		curtain.disabled = true
-		DialogueManager.show_dialogue_balloon(curtains_stuck,'start')
-	else:
-		DialogueManager.show_dialogue_balloon(curtains_cant_open,'start')
-		
-	
+
+
+func _on_show_puzzle_button_pressed() -> void:
+	instructions.visible = true
+
+
+func _on_crank_pressed() -> void:
+
+	curtains_opened.visible = true
+	closed_curtain.visible = false
+	line_2d.visible = true	
+	curtain.disabled = true
+	DialogueManager.show_dialogue_balloon(curtains_stuck,'start')
+
+
 func on_room_lit():
 	temp_bg.modulate = Color(1,1,1,1)
 	$LightSystem/Mirror/Sprite2D.modulate = Color(1,1,1,1)
 	DialogueManager.show_dialogue_balloon(room_finished,'start')
 	Events.puzzle_solved = true
-
-func on_curtains_opened():
-	show_puzzle_button.disabled = true
-	
-	
-
-
-func _on_show_puzzle_button_pressed() -> void:
-	pass # Replace with function body.

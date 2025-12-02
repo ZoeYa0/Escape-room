@@ -13,8 +13,12 @@ var energy
 @onready var show_hint: Button = $ShowHint
 @onready var arrow: Button = $Arrow
 @onready var windows: Button = $Windows
+@onready var hints: Node2D = $Hints
+@onready var straw: Sprite2D = $Straw
 
 func _ready():
+	straw.visible = false
+	hints.visible = false
 	windows.visible = false
 	Events.current_room = 4
 	power_light.color = Color.DARK_RED
@@ -75,9 +79,20 @@ func lights_out():
 		windows.visible = true
 
 
-func _on_straw_pressed() -> void:
-	Events.straw_connected = true
-
 
 func _on_windows_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/room_5.tscn") 
+
+
+func _on_reset_pressed() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_show_hint_pressed() -> void:
+	hints.visible = true
+
+
+func _on_straw_button_pressed() -> void:
+	Events.straw_connected = true
+	straw.visible = true
+	

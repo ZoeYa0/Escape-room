@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmvnec3nuyjdq"]
+[gd_scene load_steps=11 format=3 uid="uid://cmvnec3nuyjdq"]
 
 [ext_resource type="Script" uid="uid://bskn7vvywygq5" path="res://scripts/room_4.gd" id="1_fkic7"]
 [ext_resource type="Resource" uid="uid://8gf5so7e87n5" path="res://dialogue/4_computer.dialogue" id="2_23hl6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bavpvpkfsrevu" path="res://images/catridge.png" id="4_16up7"]
 [ext_resource type="Texture2D" uid="uid://ba1nj42o0ytj7" path="res://images/windows.png" id="6_23hl6"]
 [ext_resource type="PackedScene" uid="uid://cyy0ug8bcqum4" path="res://scenes/object.tscn" id="10_3cbqk"]
+[ext_resource type="Texture2D" uid="uid://2pcmnmdwepom" path="res://images/straw.png" id="10_rb4hd"]
 [ext_resource type="PackedScene" uid="uid://c18jo8lkljcts" path="res://scenes/dropable.tscn" id="11_16up7"]
 
 [node name="Node2D" type="Node2D"]
@@ -43,7 +44,7 @@ offset_right = 971.0
 offset_bottom = 466.0
 mouse_default_cursor_shape = 2
 
-[node name="Windows" type="Button" parent="."]
+[node name="Windows" type="Button" parent="." groups=["Buttons"]]
 offset_left = 854.0
 offset_top = 326.0
 offset_right = 1662.0
@@ -51,14 +52,15 @@ offset_bottom = 934.0
 scale = Vector2(0.117917, 0.117917)
 icon = ExtResource("6_23hl6")
 
-[node name="ShowHint" type="Button" parent="."]
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 62.0
 offset_top = 28.0
 offset_right = 187.0
 offset_bottom = 146.0
 
-[node name="ShowInstructions" type="Button" parent="."]
+[node name="ShowInstructions" type="Button" parent="." groups=["Buttons"]]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 947.0
 offset_top = 304.0
@@ -146,19 +148,36 @@ offset_bottom = 171.0
 theme_override_font_sizes/font_size = 72
 text = "IN DEVELOPMENT"
 
-[node name="PullButton" type="Button" parent="."]
+[node name="PullButton" type="Button" parent="." groups=["Buttons"]]
 offset_left = 146.0
 offset_top = 585.0
 offset_right = 161.0
 offset_bottom = 601.0
 
-[node name="Straw" type="Button" parent="."]
+[node name="StrawButton" type="Button" parent="." groups=["Buttons"]]
 offset_left = 69.0
 offset_top = 368.0
 offset_right = 103.0
 offset_bottom = 429.0
 
+[node name="Reset" type="Button" parent="." groups=["Buttons"]]
+offset_left = 1012.0
+offset_top = 23.0
+offset_right = 1121.0
+offset_bottom = 54.0
+tooltip_text = "If the fuels aren't functioning as they should, click here to reset the room!"
+text = "RESET ROOM"
+
+[node name="Straw" type="Sprite2D" parent="."]
+position = Vector2(557, 333)
+scale = Vector2(0.527917, 0.527917)
+texture = ExtResource("10_rb4hd")
+
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
+[connection signal="pressed" from="Windows" to="." method="_on_windows_pressed"]
+[connection signal="pressed" from="ShowHint" to="." method="_on_show_hint_pressed"]
 [connection signal="pressed" from="PowerButton" to="." method="_on_power_button_pressed"]
 [connection signal="pressed" from="PullButton" to="." method="_on_pull_button_pressed"]
-[connection signal="pressed" from="Straw" to="." method="_on_straw_pressed"]
+[connection signal="pressed" from="StrawButton" to="." method="_on_straw_button_pressed"]
+[connection signal="pressed" from="StrawButton" to="." method="_on_straw_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

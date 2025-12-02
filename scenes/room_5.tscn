@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkidjdfh87eir"]
+
+[ext_resource type="Script" uid="uid://ce4tcp7kl1ond" path="res://scripts/room_5.gd" id="1_coxy2"]
+[ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="2_2whii"]
+[ext_resource type="Resource" uid="uid://c8ylp6y6u26aa" path="res://dialogue/5_intro.dialogue" id="2_xnd4n"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_coxy2")
+intro = ExtResource("2_xnd4n")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(-629, 84.0001)
+scale = Vector2(3.15478, 3.15478)
+texture = ExtResource("2_2whii")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 444.0
+offset_top = 235.0
+offset_right = 573.0
+offset_bottom = 258.0
+text = "Type password..."
+
+[node name="Stickynotes" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="Stickynotes"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 101.0
+offset_top = 348.0
+offset_right = 232.0
+offset_bottom = 479.0
+
+[node name="Answers" type="Node2D" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="Answers"]
+offset_left = 363.0
+offset_top = 302.0
+offset_right = 432.0
+offset_bottom = 333.0
