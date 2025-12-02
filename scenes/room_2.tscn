@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tvd1lxbox6ak"]
+[gd_scene load_steps=20 format=3 uid="uid://tvd1lxbox6ak"]
 
 [ext_resource type="Script" uid="uid://csqu4u4py4nd2" path="res://scripts/room_2.gd" id="1_ktm03"]
 [ext_resource type="Texture2D" uid="uid://cvbsgcngdoxhp" path="res://images/ClipboardImage_2025-11-25T123017.png" id="1_w0ydv"]
@@ -8,15 +8,21 @@
 [ext_resource type="Resource" uid="uid://ctdvupgimnh8q" path="res://dialogue/2_wrong_drink.dialogue" id="4_h8145"]
 [ext_resource type="Script" uid="uid://bgp56ipsth20x" path="res://scripts/ph_spawner.gd" id="5_lsxps"]
 [ext_resource type="Resource" uid="uid://bnuallc5n342w" path="res://dialogue/2_died.dialogue" id="5_yg87s"]
+[ext_resource type="Resource" uid="uid://dlbmr7y56e0fc" path="res://dialogue/2_dont_guess.dialogue" id="6_8hpol"]
 [ext_resource type="PackedScene" uid="uid://b5kl1vyv3gbr7" path="res://scenes/ph_paper.tscn" id="6_63qte"]
 [ext_resource type="Texture2D" uid="uid://ccqlgmimeq534" path="res://images/instructions.png" id="7_flmds"]
 [ext_resource type="PackedScene" uid="uid://b1w12aapnq4dr" path="res://scenes/arrow.tscn" id="7_h8dvq"]
+[ext_resource type="Texture2D" uid="uid://2jdp3ajsoxqd" path="res://images/2.png" id="8_00i1e"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="8_hbe2o"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="13_h8dvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u14ju"]
 atlas = ExtResource("1_w0ydv")
 region = Rect2(306, 94, 1306, 792)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqia6"]
+atlas = ExtResource("8_00i1e")
+region = Rect2(421, 348, 859, 420)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63qte"]
 size = Vector2(38, 51.75)
@@ -30,11 +36,17 @@ start_dialogue = ExtResource("2_guunk")
 room_2_finished = ExtResource("3_u14ju")
 wrong_drink = ExtResource("4_h8145")
 died = ExtResource("5_yg87s")
+dont_guess = ExtResource("6_8hpol")
 
 [node name="TempBg" type="Sprite2D" parent="."]
-position = Vector2(581.51, 339.796)
-scale = Vector2(0.893552, 0.785869)
+position = Vector2(581.51, 324)
+scale = Vector2(0.893552, 0.825758)
 texture = SubResource("AtlasTexture_u14ju")
+
+[node name="2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(733, 439)
+texture = SubResource("AtlasTexture_eqia6")
 
 [node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("7_h8dvq")]
 destination_scene = 3
@@ -46,42 +58,42 @@ texture = ExtResource("3_4et86")
 
 [node name="AnswerChoices" type="Node2D" parent="."]
 
-[node name="GreenButton" type="Button" parent="AnswerChoices"]
+[node name="GreenButton" type="Button" parent="AnswerChoices" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 117.0
 offset_top = 508.0
 offset_right = 141.0
 offset_bottom = 531.0
 
-[node name="GreenButton2" type="Button" parent="AnswerChoices"]
+[node name="GreenButton2" type="Button" parent="AnswerChoices" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 167.0
 offset_top = 508.0
 offset_right = 191.0
 offset_bottom = 531.0
 
-[node name="Good" type="Button" parent="AnswerChoices"]
+[node name="Good" type="Button" parent="AnswerChoices" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 218.0
 offset_top = 502.0
 offset_right = 242.0
 offset_bottom = 525.0
 
-[node name="GreenButton4" type="Button" parent="AnswerChoices"]
+[node name="GreenButton4" type="Button" parent="AnswerChoices" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 120.0
 offset_top = 610.0
 offset_right = 144.0
 offset_bottom = 633.0
 
-[node name="GreenButton5" type="Button" parent="AnswerChoices"]
+[node name="GreenButton5" type="Button" parent="AnswerChoices" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 175.0
 offset_top = 609.0
 offset_right = 199.0
 offset_bottom = 632.0
 
-[node name="GreenButton6" type="Button" parent="AnswerChoices"]
+[node name="GreenButton6" type="Button" parent="AnswerChoices" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 221.0
 offset_top = 608.0
@@ -117,7 +129,7 @@ shape = SubResource("RectangleShape2D_63qte")
 [node name="PHOrange" type="Area2D" parent="Cups"]
 
 [node name="PHYellow" type="CollisionShape2D" parent="Cups/PHOrange"]
-position = Vector2(831, 464.438)
+position = Vector2(803, 463)
 shape = SubResource("RectangleShape2D_flmds")
 
 [node name="Instructions" type="Node2D" parent="."]
@@ -183,7 +195,7 @@ offset_bottom = 441.0
 script = ExtResource("5_lsxps")
 ph_strip = ExtResource("6_63qte")
 
-[node name="Button" type="Button" parent="PH_spawner"]
+[node name="Button" type="Button" parent="PH_spawner" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 527.0
 offset_top = 432.0
@@ -200,6 +212,7 @@ theme_override_font_sizes/font_size = 32
 text = "Answer"
 
 [node name="Timer" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -207,10 +220,10 @@ offset_bottom = 23.0
 
 [node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 105.0
-offset_top = 71.0
-offset_right = 406.0
-offset_bottom = 227.0
+offset_left = 108.0
+offset_top = 46.0
+offset_right = 409.0
+offset_bottom = 202.0
 
 [connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_2_pressed"]

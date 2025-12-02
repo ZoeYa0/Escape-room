@@ -23,39 +23,9 @@ wrong_virus = ExtResource("5_7vc6b")
 virus_pressed = ExtResource("6_g3wdu")
 
 [node name="Room3" type="Sprite2D" parent="."]
-position = Vector2(575, 324)
-scale = Vector2(0.574, 0.541667)
+position = Vector2(580.5, 324)
+scale = Vector2(0.903906, 0.841146)
 texture = ExtResource("2_bg4i0")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_top = 36.0
-offset_right = 946.0
-offset_bottom = 631.0
-text = "Begin: Het is donker hier, jullie kunnen niets zien en dus kunnen het geheime raadsel van verdwijnen van de professor Kamilla Andrien niet oplossen. Misschien helpt dit jullie om iets in de ruimte te kunnen zien. 
-
- 
-
- 
-
-Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunne jullie bepalen over welke hemellichaam het gaat? 
-
-Formule  
-
- 
-
-Instructies: Fgrav = 3,52 * 10^22 N 
-
-G = constante(zelf opzoeken) 
-
-Maarde = (zelf opzoeken) 
-
-r = 1,496 * 10^11 
-
-m = niet bekende "
-autowrap_mode = 1
 
 [node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("8_0hvyo")]
 destination_scene = 4
@@ -71,28 +41,28 @@ mouse_default_cursor_shape = 2
 [node name="Answers" type="Node2D" parent="."]
 position = Vector2(-3, 13)
 
-[node name="Red" type="Button" parent="Answers"]
+[node name="Red" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 93.0
 offset_top = 418.0
 offset_right = 140.0
 offset_bottom = 451.0
 
-[node name="Blue" type="Button" parent="Answers"]
+[node name="Blue" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 189.0
 offset_top = 419.0
 offset_right = 236.0
 offset_bottom = 452.0
 
-[node name="Gray" type="Button" parent="Answers"]
+[node name="Gray" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 292.0
 offset_top = 419.0
 offset_right = 339.0
 offset_bottom = 452.0
 
-[node name="Brown" type="Button" parent="Answers"]
+[node name="Brown" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 376.0
 offset_top = 419.0
@@ -108,10 +78,10 @@ offset_bottom = 162.0
 
 [node name="ShowInstructions" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 947.0
-offset_top = 304.0
-offset_right = 993.0
-offset_bottom = 341.0
+offset_left = 913.0
+offset_top = 149.0
+offset_right = 1058.0
+offset_bottom = 263.0
 
 [node name="Hints" parent="." instance=ExtResource("6_yvqia")]
 
@@ -135,7 +105,7 @@ position = Vector2(586.5, 320)
 scale = Vector2(1.81833, 1.46837)
 texture = ExtResource("8_reu6s")
 
-[node name="CloseButton" type="Button" parent="Instructions"]
+[node name="CloseButton" type="Button" parent="Instructions" groups=["Buttons"]]
 offset_left = 1006.0
 offset_top = 34.0
 offset_right = 1116.0
@@ -163,13 +133,13 @@ offset_left = 640.0
 offset_top = 75.0
 offset_right = 1102.0
 offset_bottom = 351.0
-text = "RULES
+text = "REGELS
 
-1. The antivirus is the only agent that completely neutralizes exactly one virus.
+1. Het echte antivirus is het enige middel dat precies één virus volledig neutraliseert.
 
-2. Agents that do not neutralize viruses are also eliminated.
+2. antivirussen die geen virussen neutraliseren, worden ook geëlimineerd.
 
-3. Partial effects do not count as neutralization."
+3. Gedeeltelijke effecten tellen niet mee als neutralisatie."
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="Instructions"]
@@ -197,15 +167,16 @@ offset_bottom = 240.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_twgjl")
 theme_override_font_sizes/font_size = 22
-text = "Diary
+text = "Logboek
 15.11
 
-Today I tested my antivirus for four viruses,
-and it works! I've written a few lines below
-to help me remember which virus it is."
+Vandaag heb ik mijn antivirus getest op vier virussen,
+en het werkt! Ik heb hieronder een paar regels geschreven
+om me te helpen onthouden welk virus het is."
 autowrap_mode = 2
 
 [node name="Table" type="Sprite2D" parent="Instructions"]
+modulate = Color(0.896178, 0.78514, 0.518993, 1)
 position = Vector2(868.5, 433.75)
 scale = Vector2(0.504742, 0.642606)
 texture = ExtResource("10_0hvyo")

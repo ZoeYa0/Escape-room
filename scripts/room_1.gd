@@ -41,40 +41,42 @@ extends Node2D
 var start_time = 0
 
 func _ready() -> void:
+	#FORCING pointing hand
+	for node in get_tree().get_nodes_in_group("Buttons"):
+		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		
 	Events.current_room = 1
 	start_time = Time.get_ticks_msec()
 	rays.room_lit.connect(on_room_lit)
 	DialogueManager.show_dialogue_balloon(intro, "start")
-	#Events.curtains_opened.connect(on_curtains_opened)
 	Events.room_lit.connect(on_room_lit)
+	Events.show_crank.connect(on_show_crank)
 	
 	line_2d.visible = false
 	curtains_opened.visible = false
 	closed_curtain.visible = true
 	crank.visible = false
 	
-	
+func on_show_crank():
+	crank.visible = true
+	show_puzzle_button.visible = false
 func _process(delta: float) -> void:
 	timer.text = str((Time.get_ticks_msec() - start_time) / 1000.0)
 	Events.rooms["room1"]["time"] = str((Time.get_ticks_msec() - start_time) / 1000.0)
-func _on_sphere_pressed() -> void:
-	sphere.pivot_offset = sphere.size * 0.5
-	sphere.rotation += deg_to_rad(45.0)#control nodes use rad
+	
+#func _on_sphere_pressed() -> void:
+	##sphere_reflector.pivot_offset = sphere_reflector.size * 0.5
+	##sphere_reflector.rotation += deg_to_rad(45.0)#control nodes use rad
 	#get_parent().rotation_degrees += 45.0
-
-func _on_sphere_2_pressed() -> void:
-	sphere_2.pivot_offset = sphere_2.size * 0.5
-	sphere_2.rotation += deg_to_rad(45.0)
-
-func _on_sphere_3_pressed() -> void:
-	sphere_3.pivot_offset = sphere_3.size * 0.5
-	sphere_3.rotation += deg_to_rad(45.0)
+##
+#func _on_sphere_2_pressed() -> void:
+	#sphere_reflector_2.pivot_offset = sphere_reflector_2.size * 0.5
+	#sphere_reflector_2.rotation += deg_to_rad(45.0)
 #
-
-
-
-func _on_show_puzzle_button_pressed() -> void:
-	instructions.visible = true
+#func _on_sphere_3_pressed() -> void:
+	#sphere_3.pivot_offset = sphere_3.size * 0.5
+	#sphere_3.rotation += deg_to_rad(45.0)
+#
 
 
 func _on_crank_pressed() -> void:

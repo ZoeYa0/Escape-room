@@ -1,7 +1,7 @@
 extends Node
 
-signal curtains_opened
 signal room_lit
+signal show_crank
 signal generator_powered
 
 var current_room := 1

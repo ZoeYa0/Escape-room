@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkidjdfh87eir"]
+[gd_scene load_steps=7 format=3 uid="uid://dkidjdfh87eir"]
 
 [ext_resource type="Script" uid="uid://ce4tcp7kl1ond" path="res://scripts/room_5.gd" id="1_coxy2"]
 [ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="2_2whii"]
 [ext_resource type="Resource" uid="uid://c8ylp6y6u26aa" path="res://dialogue/5_intro.dialogue" id="2_xnd4n"]
+[ext_resource type="Script" uid="uid://gotfqc6elmwe" path="res://scripts/sticky_note.gd" id="4_sn1g8"]
+[ext_resource type="Texture2D" uid="uid://csadt0ewrp7nx" path="res://images/5_stickyh.png" id="5_sn1g8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p6mq"]
+atlas = ExtResource("5_sn1g8")
+region = Rect2(45.1318, 963.393, 693.907, 628.314)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_coxy2")
@@ -36,3 +42,23 @@ offset_left = 363.0
 offset_top = 302.0
 offset_right = 432.0
 offset_bottom = 333.0
+
+[node name="Instructions" type="Control" parent="."]
+light_mask = 0
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_sn1g8")
+
+[node name="5Stickyh" type="Sprite2D" parent="Instructions"]
+position = Vector2(537, 296)
+rotation = 0.117164
+texture = SubResource("AtlasTexture_4p6mq")
+
+[node name="Label" type="Label" parent="Instructions"]
+offset_left = 351.0
+offset_top = 253.0
+offset_right = 821.0
+offset_bottom = 514.0
+theme_override_font_sizes/font_size = 36
+text = "1. Een woord dat kan beschrijven hoeveelheid stof per volume "
+autowrap_mode = 2

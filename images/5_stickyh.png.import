@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b55fvtuj228x4"
-path="res://.godot/imported/diary2.png-94d76c8f501bb0590f59dbbd113581fd.ctex"
+uid="uid://csadt0ewrp7nx"
+path="res://.godot/imported/5_stickyh.png-94633c728f03ef8fcd594f6cb7c16786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/diary2.png"
-dest_files=["res://.godot/imported/diary2.png-94d76c8f501bb0590f59dbbd113581fd.ctex"]
+source_file="res://images/5_stickyh.png"
+dest_files=["res://.godot/imported/5_stickyh.png-94633c728f03ef8fcd594f6cb7c16786.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=23 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/1_intro.dialogue" id="2_y5mqv"]
@@ -22,10 +22,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
 size = Vector2(131, 28)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5mqv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0003"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_22a07"]
 atlas = ExtResource("8_lwgnx")
 region = Rect2(849, 219, 182, 204)
@@ -45,13 +41,13 @@ curtains_stuck = ExtResource("4_m0003")
 curtains_cant_open = ExtResource("5_1afn8")
 
 [node name="TempBg" type="Sprite2D" parent="."]
-modulate = Color(0.219501, 0.219501, 0.219501, 1)
+modulate = Color(0.10748, 0.10748, 0.10748, 1)
 position = Vector2(578, 324.5)
 scale = Vector2(0.9, 0.845052)
 texture = ExtResource("3_gu0is")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1028, 391)
+position = Vector2(1028, 418)
 scale = Vector2(1.35937, 1.22852)
 color = Color(0.554878, 0.452474, 0, 1)
 energy = 10.32
@@ -72,7 +68,7 @@ position = Vector2(655.5, 31)
 shape = SubResource("RectangleShape2D_3wwl0")
 
 [node name="Sprite2D" type="Sprite2D" parent="LightSystem/Mirror"]
-modulate = Color(0.219501, 0.219501, 0.219501, 1)
+modulate = Color(0.140447, 0.140447, 0.140447, 1)
 position = Vector2(699.5, 25)
 scale = Vector2(0.756667, 0.636364)
 texture = ExtResource("6_m0003")
@@ -93,8 +89,7 @@ grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_y5mqv")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_m0003")
+focus_mode = 0
 icon = SubResource("AtlasTexture_22a07")
 script = ExtResource("9_4oupy")
 
@@ -121,7 +116,6 @@ grow_vertical = 2
 scale = Vector2(0.225, 0.225)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "ball"
 icon = SubResource("AtlasTexture_22a07")
 script = ExtResource("9_4oupy")
 
@@ -148,7 +142,6 @@ grow_vertical = 2
 scale = Vector2(0.225, 0.225)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "ball"
 icon = SubResource("AtlasTexture_22a07")
 script = ExtResource("9_4oupy")
 
@@ -238,6 +231,15 @@ text = "Hint"
 offset_right = 93.0
 offset_bottom = 33.0
 
+[node name="Crank" type="Button" parent="."]
+offset_left = 1005.0
+offset_top = 330.0
+offset_right = 2013.0
+offset_bottom = 1338.0
+scale = Vector2(0.1185, 0.1185)
+focus_mode = 0
+icon = ExtResource("18_m0003")
+
 [node name="Rays" type="Node2D" parent="."]
 position = Vector2(350, 266)
 script = ExtResource("5_y5mqv")
@@ -249,14 +251,6 @@ collide_with_areas = true
 position = Vector2(-351, -272)
 points = PackedVector2Array(1, -2, 216, 104, 410, -1, 112, -168, 334, -222)
 default_color = Color(1, 1, 0.701961, 1)
-
-[node name="Crank" type="Button" parent="."]
-offset_left = 1005.0
-offset_top = 330.0
-offset_right = 2013.0
-offset_bottom = 1338.0
-scale = Vector2(0.1185, 0.1185)
-icon = ExtResource("18_m0003")
 
 [connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="." method="_on_sphere_pressed"]
 [connection signal="pressed" from="LightSystem/SphereReflector/Sphere" to="LightSystem/SphereReflector/Sphere" method="_on_pressed"]
