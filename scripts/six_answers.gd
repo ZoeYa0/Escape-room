@@ -1,7 +1,7 @@
 extends Node2D
 
 # The answer for each slot (6 letters)
-var correct_answer := ["c", "h", "a", "a", "a", "a"]
+var correct_answer := ["c", "h", "2", "2", "2", "0"]
 
 @onready var fields := [
 	$L1,

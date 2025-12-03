@@ -174,15 +174,18 @@ m = niet bekende "
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Instructions2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(361, 372)
-scale = Vector2(0.697917, 0.697917)
+[node name="face" type="Sprite2D" parent="."]
+position = Vector2(397, 249)
+scale = Vector2(0.434028, 0.434028)
 texture = ExtResource("7_flmds")
 
-[node name="Opdracht" type="Button" parent="Instructions2" groups=["Buttons"]]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="ShowInstructions" type="Button" parent="." groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 471.0
+offset_top = 36.0
+offset_right = 856.0
+offset_bottom = 456.0
+scale = Vector2(0.434028, 0.434028)
 
 [node name="SmallPH" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
@@ -233,7 +236,7 @@ offset_bottom = 202.0
 [connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_5_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_6_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
-[connection signal="pressed" from="Instructions2/Opdracht" to="." method="_on_opdracht_pressed"]
+[connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="SmallPH" to="." method="_on_small_ph_pressed"]
 [connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]

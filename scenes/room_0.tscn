@@ -59,7 +59,7 @@ offset_left = 239.0
 offset_top = 480.0
 offset_right = 945.0
 offset_bottom = 503.0
-text = "Disclaimer: For now a lot of stuff will be in a mix of English and Dutch, I'm working on it TOT"
+text = "Disclaimer: For now a lot of stuff will be in a mix of English and Dutch, I'm working on it"
 
 [connection signal="pressed" from="LanguageScreen/English" to="LanguageScreen" method="_on_english_pressed"]
 [connection signal="pressed" from="LanguageScreen/Dutch" to="LanguageScreen" method="_on_dutch_pressed"]

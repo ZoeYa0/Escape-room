@@ -1,17 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkidjdfh87eir"]
+[gd_scene load_steps=11 format=3 uid="uid://dkidjdfh87eir"]
 
 [ext_resource type="Script" uid="uid://ce4tcp7kl1ond" path="res://scripts/room_5.gd" id="1_coxy2"]
 [ext_resource type="Resource" uid="uid://c8ylp6y6u26aa" path="res://dialogue/5_intro.dialogue" id="2_xnd4n"]
 [ext_resource type="Texture2D" uid="uid://c11htgdm6e5yw" path="res://images/5.png" id="3_4p6mq"]
 [ext_resource type="Script" uid="uid://cioap3ti8b1pc" path="res://scripts/six_answers.gd" id="4_4p6mq"]
 [ext_resource type="Script" uid="uid://gotfqc6elmwe" path="res://scripts/sticky_note.gd" id="4_sn1g8"]
-[ext_resource type="Texture2D" uid="uid://csadt0ewrp7nx" path="res://images/5_stickyh.png" id="5_sn1g8"]
 [ext_resource type="Texture2D" uid="uid://qhp8oqccjc18" path="res://images/Picture1.png" id="7_bkyhs"]
+[ext_resource type="Script" uid="uid://b7bsdfx1btxv2" path="res://scripts/picture_graph.gd" id="8_bkyhs"]
 [ext_resource type="Texture2D" uid="uid://dc307dammkt6k" path="res://images/Picture2.png" id="8_hbosg"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mxgfl"]
+load_path = "res://.godot/imported/5_stickyh.png-94633c728f03ef8fcd594f6cb7c16786.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p6mq"]
-atlas = ExtResource("5_sn1g8")
-region = Rect2(764.344, 1046.21, 525.823, 584.771)
+atlas = SubResource("CompressedTexture2D_mxgfl")
+region = Rect2(-16.1405, 972.457, 753.223, 731.254)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_coxy2")
@@ -130,7 +133,7 @@ anchors_preset = 0
 script = ExtResource("4_sn1g8")
 
 [node name="5Stickyh" type="Sprite2D" parent="1"]
-position = Vector2(537, 296)
+position = Vector2(501, 394)
 rotation = 0.117164
 texture = SubResource("AtlasTexture_4p6mq")
 
@@ -153,7 +156,7 @@ script = ExtResource("4_sn1g8")
 
 [node name="5Stickyh" type="Sprite2D" parent="Instructions2"]
 modulate = Color(0.92, 0.1104, 0.299306, 1)
-position = Vector2(537, 296)
+position = Vector2(517, 370)
 rotation = 0.117164
 texture = SubResource("AtlasTexture_4p6mq")
 
@@ -183,25 +186,25 @@ texture = SubResource("AtlasTexture_4p6mq")
 
 [node name="Label" type="Label" parent="Instructions3"]
 layout_mode = 0
-offset_left = 334.0
-offset_top = 160.0
-offset_right = 804.0
-offset_bottom = 528.0
+offset_left = 370.0
+offset_top = 104.0
+offset_right = 840.0
+offset_bottom = 472.0
 theme_override_font_sizes/font_size = 20
 text = "Instructie: Een verticale asymptoot is een bijzonder en een beetje tragisch verschijnsel: een lijn die de functie steeds nadert, maar nooit kan raken. Bij het vinden van deze lijn gebruik de nummer gelijk zijn aan nul en de teller niet."
 autowrap_mode = 2
 
 [node name="Label2" type="RichTextLabel" parent="Instructions3"]
 layout_mode = 0
-offset_left = 394.0
-offset_top = 377.0
-offset_right = 827.0
-offset_bottom = 798.0
+offset_left = 426.0
+offset_top = 338.0
+offset_right = 859.0
+offset_bottom = 759.0
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Wat is de verticale asymptoot van f(x)= (4x²−1)/(x²−x−6)? 
 
-Ik heb een klein hondje thuis; een grote hond vind ik te gevaarlijk. "
+PS: Ik heb een klein hondje thuis; een grote hond vind ik te gevaarlijk. "
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
@@ -211,7 +214,6 @@ offset_right = 169.0
 offset_bottom = 68.0
 
 [node name="Instructions4" type="Control" parent="."]
-visible = false
 light_mask = 0
 layout_mode = 3
 anchors_preset = 0
@@ -227,42 +229,75 @@ flip_h = true
 
 [node name="5Stickyh" type="Sprite2D" parent="Instructions4"]
 modulate = Color(0.96, 0.8888, 0.1056, 1)
-position = Vector2(799.006, 363.501)
+position = Vector2(748, 337)
 rotation = 0.117164
 scale = Vector2(1.10234, 1.10234)
 texture = SubResource("AtlasTexture_4p6mq")
 
-[node name="Label2" type="Label" parent="Instructions4"]
+[node name="Label2" type="RichTextLabel" parent="Instructions4"]
 layout_mode = 0
-offset_left = 562.82
-offset_top = 121.683
-offset_right = 1022.82
-offset_bottom = 542.683
-theme_override_font_sizes/font_size = 26
-text = "Als je twee stoffen met elkaar mengt, duurt het even voordat ze met elkaar reageren. Hoeveel seconden duurt de reactie tussen magnesium en zoutzuur om 3.3 mg waterstof te vormen als de reactie onder zeer hoge temperatuur plaatsvindt?"
+offset_left = 569.0
+offset_top = 134.0
+offset_right = 1029.0
+offset_bottom = 555.0
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "Als je twee stoffen met elkaar mengt, duurt het even voordat ze met elkaar reageren. Hoeveel seconden duurt de reactie tussen magnesium en zoutzuur om 3.3 mg waterstof te vormen als de reactie onder [b]zeer hoge temperatuur[/b] plaatsvindt?"
 autowrap_mode = 2
 
 [node name="Picture1" type="Sprite2D" parent="Instructions4"]
-position = Vector2(914.82, 567.683)
+position = Vector2(872.737, 438.625)
+scale = Vector2(0.770197, 0.747449)
 texture = ExtResource("7_bkyhs")
 
 [node name="Label" type="Label" parent="Instructions4"]
 layout_mode = 0
-offset_left = 292.0
-offset_top = 125.0
-offset_right = 580.0
-offset_bottom = 278.0
+offset_left = 136.0
+offset_top = 138.0
+offset_right = 489.0
+offset_bottom = 343.0
 text = "Donkerpaarse lijn is een hond
 Paarse is een pinguin
 Groene is een cameel 
 Oranje is een beer
 Molaire gasvolume Vm =24,465 L/mol
-"
 
-[node name="Picture2" type="Sprite2D" parent="Instructions4"]
-position = Vector2(269, 452)
-scale = Vector2(0.242431, 0.242431)
-texture = ExtResource("8_hbosg")
+Gebruikt de grafiek als hulpmiddel. klik te  vergroten. voer cijfers van antwoord apart in "
+autowrap_mode = 2
+
+[node name="PictureGraph" type="Button" parent="Instructions4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 106.0
+offset_top = 370.0
+offset_right = 2346.0
+offset_bottom = 1501.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.157669, 0.157669)
+icon = ExtResource("8_hbosg")
+script = ExtResource("8_bkyhs")
+
+[node name="PictureGraph2" type="Button" parent="Instructions4"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 40.0
+offset_right = 2258.0
+offset_bottom = 1171.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.523096, 0.523096)
+icon = ExtResource("8_hbosg")
 
 [connection signal="pressed" from="Stickynotes/1" to="1" method="_on_button_pressed"]
 [connection signal="pressed" from="Stickynotes/2" to="Instructions2" method="_on__pressed"]
@@ -270,3 +305,5 @@ texture = ExtResource("8_hbosg")
 [connection signal="pressed" from="Stickynotes/Four" to="Instructions4" method="_on_four_pressed"]
 [connection signal="pressed" from="SixAnswers/SubmitButton" to="SixAnswers" method="_on_submit_button_pressed"]
 [connection signal="pressed" from="Button" to="1" method="_on_button_pressed"]
+[connection signal="pressed" from="Instructions4/PictureGraph" to="Instructions4/PictureGraph" method="_on_pressed"]
+[connection signal="pressed" from="Instructions4/PictureGraph2" to="Instructions4/PictureGraph" method="_on_picture_graph_2_pressed"]

@@ -29,21 +29,19 @@ offset_left = 156.0
 offset_top = 67.0
 offset_right = 920.0
 offset_bottom = 480.0
-text = "This riddle is about the force in space between different celestial bodies. Can you determine which celestial body it is?
+text = "Dit raadsel gaat over een kracht in de ruimte tussen verschillende hemellichamen. Kunnen jullie bepalen over welk hemellichaam het gaat? 
 
-Fgrav = 3.52 * 10^22 N
 
-G = constant (find it yourself)
+ Fgrav = 3,52 * 10^22 N 
+G = constante(zelf opzoeken) 
+Maarde = (zelf opzoeken) 
+r = 1,496 * 10^11 
+m = onbekende 
 
-M earth = (find it yourself)
 
-r = 1.496 * 10^11
-
-m = unknown
-
-Resources:
-Binas table 31 + 7A"
-autowrap_mode = 1
+Hulpmiddelen: 
+Binas tabel 31 + 32C + 7A"
+autowrap_mode = 2
 
 [node name="AnswerField" type="LineEdit" parent="."]
 offset_left = 167.0

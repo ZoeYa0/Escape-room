@@ -17,6 +17,8 @@ func _on_submit_button_pressed() -> void:
 		if answer.to_lower() == "zon": 
 			Events.show_crank.emit()
 			visible = false
+		else:
+			Events.rooms["room1"]["wrong"] +=1
 
 
 func _on_show_instructions_pressed() -> void:

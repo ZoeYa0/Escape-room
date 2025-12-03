@@ -47,6 +47,8 @@ func _ready() -> void:
 		
 	Events.current_room = 1
 	start_time = Time.get_ticks_msec()
+	
+	
 	rays.room_lit.connect(on_room_lit)
 	DialogueManager.show_dialogue_balloon(intro, "start")
 	Events.room_lit.connect(on_room_lit)
@@ -60,9 +62,10 @@ func _ready() -> void:
 func on_show_crank():
 	crank.visible = true
 	show_puzzle_button.visible = false
+	
 func _process(delta: float) -> void:
 	timer.text = str((Time.get_ticks_msec() - start_time) / 1000.0)
-	Events.rooms["room1"]["time"] = str((Time.get_ticks_msec() - start_time) / 1000.0)
+	Events.rooms["room1"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
 	
 #func _on_sphere_pressed() -> void:
 	##sphere_reflector.pivot_offset = sphere_reflector.size * 0.5

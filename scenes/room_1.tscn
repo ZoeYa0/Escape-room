@@ -227,10 +227,6 @@ offset_right = 586.0
 offset_bottom = 123.0
 text = "Hint"
 
-[node name="Timer" type="Label" parent="."]
-offset_right = 93.0
-offset_bottom = 33.0
-
 [node name="Crank" type="Button" parent="."]
 offset_left = 1005.0
 offset_top = 330.0
