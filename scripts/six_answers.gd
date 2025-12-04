@@ -47,6 +47,7 @@ func _set_feedback_correct(field: LineEdit):
 
 
 func _set_feedback_incorrect(field: LineEdit):
+	Events.rooms["room5"]["wrong"] += 1
 	field.modulate = Color.RED
 
 

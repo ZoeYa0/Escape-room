@@ -48,3 +48,5 @@ const REACTION_TABLE = {
 		"Endryl": "Low",
 	}
 }
+#-----------ROOM 5
+var current_stickynote = null

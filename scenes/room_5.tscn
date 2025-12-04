@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkidjdfh87eir"]
+[gd_scene load_steps=12 format=3 uid="uid://dkidjdfh87eir"]
 
 [ext_resource type="Script" uid="uid://ce4tcp7kl1ond" path="res://scripts/room_5.gd" id="1_coxy2"]
 [ext_resource type="Resource" uid="uid://c8ylp6y6u26aa" path="res://dialogue/5_intro.dialogue" id="2_xnd4n"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://qhp8oqccjc18" path="res://images/Picture1.png" id="7_bkyhs"]
 [ext_resource type="Script" uid="uid://b7bsdfx1btxv2" path="res://scripts/picture_graph.gd" id="8_bkyhs"]
 [ext_resource type="Texture2D" uid="uid://dc307dammkt6k" path="res://images/Picture2.png" id="8_hbosg"]
+[ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="9_hbosg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mxgfl"]
 load_path = "res://.godot/imported/5_stickyh.png-94633c728f03ef8fcd594f6cb7c16786.ctex"
@@ -27,32 +28,32 @@ texture = ExtResource("3_4p6mq")
 
 [node name="Stickynotes" type="Node2D" parent="."]
 
-[node name="1" type="Button" parent="Stickynotes"]
+[node name="S1" type="Button" parent="Stickynotes"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 131.0
 offset_top = 47.0
 offset_right = 262.0
 offset_bottom = 178.0
 
-[node name="2" type="Button" parent="Stickynotes"]
+[node name="S2" type="Button" parent="Stickynotes"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 979.0
 offset_top = 106.0
 offset_right = 1110.0
 offset_bottom = 237.0
 
-[node name="Three" type="Button" parent="Stickynotes"]
+[node name="S3" type="Button" parent="Stickynotes"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 25.0
 offset_top = 219.0
 offset_right = 156.0
 offset_bottom = 350.0
 
-[node name="Four" type="Button" parent="Stickynotes"]
+[node name="S4" type="Button" parent="Stickynotes"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 274.0
+offset_left = 275.0
 offset_top = 184.0
-offset_right = 362.0
+offset_right = 363.0
 offset_bottom = 288.0
 
 [node name="SixAnswers" type="Node2D" parent="."]
@@ -214,6 +215,7 @@ offset_right = 169.0
 offset_bottom = 68.0
 
 [node name="Instructions4" type="Control" parent="."]
+visible = false
 light_mask = 0
 layout_mode = 3
 anchors_preset = 0
@@ -299,11 +301,21 @@ grow_vertical = 2
 scale = Vector2(0.523096, 0.523096)
 icon = ExtResource("8_hbosg")
 
-[connection signal="pressed" from="Stickynotes/1" to="1" method="_on_button_pressed"]
-[connection signal="pressed" from="Stickynotes/2" to="Instructions2" method="_on__pressed"]
-[connection signal="pressed" from="Stickynotes/Three" to="Instructions3" method="_on_three_pressed"]
-[connection signal="pressed" from="Stickynotes/Four" to="Instructions4" method="_on_four_pressed"]
+[node name="Hints" parent="." instance=ExtResource("9_hbosg")]
+
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
+offset_left = 1026.0
+offset_top = 16.0
+offset_right = 1135.0
+offset_bottom = 75.0
+text = "Hints"
+
+[connection signal="pressed" from="Stickynotes/S1" to="1" method="_on_s_1_pressed"]
+[connection signal="pressed" from="Stickynotes/S2" to="Instructions2" method="_on_s_2_pressed"]
+[connection signal="pressed" from="Stickynotes/S3" to="Instructions3" method="_on_s_3_pressed"]
+[connection signal="pressed" from="Stickynotes/S4" to="Instructions4" method="_on_s_4_pressed"]
 [connection signal="pressed" from="SixAnswers/SubmitButton" to="SixAnswers" method="_on_submit_button_pressed"]
 [connection signal="pressed" from="Button" to="1" method="_on_button_pressed"]
 [connection signal="pressed" from="Instructions4/PictureGraph" to="Instructions4/PictureGraph" method="_on_pressed"]
 [connection signal="pressed" from="Instructions4/PictureGraph2" to="Instructions4/PictureGraph" method="_on_picture_graph_2_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]

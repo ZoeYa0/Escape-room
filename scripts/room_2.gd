@@ -18,9 +18,9 @@ func _ready() -> void:
 	#FORCING pointing hand
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-		
 	Events.current_room = 2
 	start_time = Time.get_ticks_msec()
+	
 	arrow.visible = false
 	ph_image.visible = false
 	DialogueManager.show_dialogue_balloon(start_dialogue,"start")
@@ -34,7 +34,7 @@ func _on_small_ph_pressed() -> void:
 
 func _on_good_pressed() -> void:
 	#puzzle solved!
-	if Events.can_puzzle_be_solved:
+	if Events.can_puzzle_be_solved and ph_image.visible == true:
 		arrow.visible = true
 		DialogueManager.show_dialogue_balloon(room_2_finished,"start")
 	else:
@@ -42,7 +42,7 @@ func _on_good_pressed() -> void:
 
 
 func _on_green_button_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(wrong_drink,"start")
+	on_wrong_drink_pressed()
 
 
 func _on_green_button_2_pressed() -> void:
@@ -62,8 +62,4 @@ func _on_green_button_6_pressed() -> void:
 	
 func on_wrong_drink_pressed():
 	DialogueManager.show_dialogue_balloon(wrong_drink,"start")
-	health -= 1
-	if health == 0:
-		DialogueManager.show_dialogue_balloon(died,"start")
-		#await DialogueManager.bridge_get_line_completed
-		#get_tree().reload_current_scene()
+	Events.rooms["room2"]["wrong"] +=1

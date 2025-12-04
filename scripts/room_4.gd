@@ -29,6 +29,7 @@ extends Node2D
 @onready var orange: ColorRect = $Generator/PowerIndicator/Orange
 @onready var green: ColorRect = $Generator/PowerIndicator/Green
 
+var start_time = 0
 
 func _ready():
 	straw.visible = false
@@ -40,8 +41,15 @@ func _ready():
 	#FORCING pointing hand
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-		
+	start_time = Time.get_ticks_msec()
 
+func _process(delta: float) -> void:
+	Events.rooms["room4"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
+	
+func on_tube_clicked():
+	Events.straw_connected = true
+	straw.visible = true
+	
 func _on_computer_pressed() -> void:
 	
 	DialogueManager.show_dialogue_balloon(computer,'start')
@@ -68,7 +76,7 @@ func _on_pull_button_pressed() -> void:
 				green.visible = true
 				orange.visible = false
 				red.visible = false
-				await get_tree().create_timer(3.0).timeout
+				await get_tree().create_timer(1.0).timeout
 				lights_out()
 			"None":
 				green.visible = false
@@ -109,8 +117,5 @@ func _on_reset_pressed() -> void:
 func _on_show_hint_pressed() -> void:
 	hints.visible = true
 
-func on_tube_clicked():
-	Events.straw_connected = true
-	straw.visible = true
-	
+
 	

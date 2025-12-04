@@ -39,35 +39,34 @@ offset_bottom = 447.0
 mouse_default_cursor_shape = 2
 
 [node name="Answers" type="Node2D" parent="."]
-position = Vector2(-3, 13)
 
 [node name="Red" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 93.0
-offset_top = 418.0
-offset_right = 140.0
-offset_bottom = 451.0
+offset_left = 95.0
+offset_top = 429.0
+offset_right = 142.0
+offset_bottom = 462.0
 
 [node name="Blue" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 189.0
-offset_top = 419.0
-offset_right = 236.0
-offset_bottom = 452.0
+offset_left = 191.0
+offset_top = 430.0
+offset_right = 238.0
+offset_bottom = 463.0
 
 [node name="Gray" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 292.0
-offset_top = 419.0
-offset_right = 339.0
-offset_bottom = 452.0
+offset_left = 293.0
+offset_top = 428.0
+offset_right = 340.0
+offset_bottom = 461.0
 
 [node name="Brown" type="Button" parent="Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 376.0
-offset_top = 419.0
-offset_right = 423.0
-offset_bottom = 452.0
+offset_left = 379.0
+offset_top = 430.0
+offset_right = 426.0
+offset_bottom = 463.0
 
 [node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)

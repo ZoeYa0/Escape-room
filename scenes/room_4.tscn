@@ -60,24 +60,6 @@ offset_bottom = 341.0
 
 [node name="Hints" parent="." instance=ExtResource("4_3cbqk")]
 
-[node name="Fuel" type="Node2D" parent="."]
-
-[node name="Pyreon" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(538, 400)
-scale = Vector2(0.25, 0.25)
-
-[node name="Calmisol" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(622, 402)
-scale = Vector2(0.25, 0.25)
-
-[node name="Endryl" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(535, 483)
-scale = Vector2(0.25, 0.25)
-
-[node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(622, 485)
-scale = Vector2(0.25, 0.25)
-
 [node name="PullButton" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 70.0
@@ -125,29 +107,26 @@ metadata/_edit_use_anchors_ = true
 [node name="PowerIndicator" type="Node2D" parent="Generator"]
 
 [node name="Red" type="ColorRect" parent="Generator/PowerIndicator"]
-visible = false
-offset_left = 353.0
-offset_top = 570.0
-offset_right = 438.0
-offset_bottom = 582.0
+offset_left = 350.0
+offset_top = 568.0
+offset_right = 435.0
+offset_bottom = 580.0
 color = Color(0.750132, 2.80602e-05, 0.2213, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Orange" type="ColorRect" parent="Generator/PowerIndicator"]
-visible = false
-offset_left = 353.0
-offset_top = 570.0
-offset_right = 412.0
-offset_bottom = 582.0
+offset_left = 350.0
+offset_top = 568.0
+offset_right = 409.0
+offset_bottom = 580.0
 color = Color(0.904227, 0.357879, 0.189646, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Green" type="ColorRect" parent="Generator/PowerIndicator"]
-visible = false
-offset_left = 353.0
-offset_top = 570.0
-offset_right = 381.0
-offset_bottom = 582.0
+offset_left = 350.0
+offset_top = 568.0
+offset_right = 378.0
+offset_bottom = 580.0
 color = Color(0, 1, 0.5, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -171,6 +150,24 @@ polygon = PackedVector2Array(-575.355, 430.172, -523.376, 431.964, -492.905, 371
 
 [node name="Untitled1220251202184007" type="Sprite2D" parent="Tube"]
 texture = ExtResource("11_4rsdj")
+
+[node name="Fuel" type="Node2D" parent="."]
+
+[node name="Pyreon" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(538, 400)
+scale = Vector2(0.25, 0.25)
+
+[node name="Calmisol" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(622, 402)
+scale = Vector2(0.25, 0.25)
+
+[node name="Endryl" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(535, 483)
+scale = Vector2(0.25, 0.25)
+
+[node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
+position = Vector2(622, 485)
+scale = Vector2(0.25, 0.25)
 
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
 [connection signal="pressed" from="Windows" to="." method="_on_windows_pressed"]

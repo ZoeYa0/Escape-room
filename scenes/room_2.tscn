@@ -105,74 +105,32 @@ offset_bottom = 631.0
 [node name="PHYellow_Green" type="Area2D" parent="Cups"]
 
 [node name="PHGreen" type="CollisionShape2D" parent="Cups/PHYellow_Green"]
-position = Vector2(831, 394.25)
+position = Vector2(829, 385)
 shape = SubResource("RectangleShape2D_63qte")
 
 [node name="PHGreen_Yellow" type="Area2D" parent="Cups"]
 
 [node name="PHOrange" type="CollisionShape2D" parent="Cups/PHGreen_Yellow"]
-position = Vector2(981, 418)
+position = Vector2(982, 407)
 shape = SubResource("RectangleShape2D_63qte")
 
 [node name="PHYellow" type="Area2D" parent="Cups"]
 
 [node name="PHRed" type="CollisionShape2D" parent="Cups/PHYellow"]
-position = Vector2(936, 391)
+position = Vector2(932, 379)
 shape = SubResource("RectangleShape2D_63qte")
 
-[node name="PHGreen" type="Area2D" parent="Cups"]
+[node name="PHSPRING_GREEN" type="Area2D" parent="Cups"]
 
-[node name="PHPurple" type="CollisionShape2D" parent="Cups/PHGreen"]
-position = Vector2(892, 414)
+[node name="PHSPRING_GREEN" type="CollisionShape2D" parent="Cups/PHSPRING_GREEN"]
+position = Vector2(887, 402)
 shape = SubResource("RectangleShape2D_63qte")
 
 [node name="PHOrange" type="Area2D" parent="Cups"]
 
 [node name="PHYellow" type="CollisionShape2D" parent="Cups/PHOrange"]
-position = Vector2(803, 463)
+position = Vector2(826, 460)
 shape = SubResource("RectangleShape2D_flmds")
-
-[node name="Instructions" type="Node2D" parent="."]
-visible = false
-script = ExtResource("8_hbe2o")
-
-[node name="ColorRect" type="ColorRect" parent="Instructions"]
-offset_left = 37.0
-offset_top = 34.0
-offset_right = 1121.0
-offset_bottom = 622.0
-color = Color(0.696595, 0.466588, 0.558643, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CloseButton" type="Button" parent="Instructions"]
-offset_left = 929.0
-offset_top = 15.0
-offset_right = 1039.0
-offset_bottom = 81.0
-text = "X"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Instructions"]
-offset_left = 156.0
-offset_top = 67.0
-offset_right = 646.0
-offset_bottom = 480.0
-text = "
-Deze raadsel is over kracht in de ruimte tussen verschillende hemellichamen, kunne jullie bepalen over welke hemellichaam het gaat? 
-
-Formule  
-
-Instructies: Fgrav = 3,52 * 10^22 N 
-
-G = constante(zelf opzoeken) 
-
-Maarde = (zelf opzoeken) 
-
-r = 1,496 * 10^11 
-
-m = niet bekende "
-autowrap_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="face" type="Sprite2D" parent="."]
 position = Vector2(397, 249)
@@ -189,10 +147,10 @@ scale = Vector2(0.434028, 0.434028)
 
 [node name="SmallPH" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 488.0
-offset_top = 409.0
-offset_right = 546.0
-offset_bottom = 441.0
+offset_left = 486.0
+offset_top = 399.0
+offset_right = 544.0
+offset_bottom = 431.0
 
 [node name="PH_spawner" type="Node2D" parent="."]
 script = ExtResource("5_lsxps")
@@ -200,10 +158,10 @@ ph_strip = ExtResource("6_63qte")
 
 [node name="Button" type="Button" parent="PH_spawner" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 527.0
-offset_top = 432.0
-offset_right = 644.0
-offset_bottom = 487.0
+offset_left = 525.0
+offset_top = 423.0
+offset_right = 642.0
+offset_bottom = 478.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 101.0
@@ -228,6 +186,35 @@ offset_top = 46.0
 offset_right = 409.0
 offset_bottom = 202.0
 
+[node name="Instructions" type="Node2D" parent="."]
+visible = false
+script = ExtResource("8_hbe2o")
+
+[node name="ColorRect" type="ColorRect" parent="Instructions"]
+offset_left = 37.0
+offset_top = 34.0
+offset_right = 1121.0
+offset_bottom = 622.0
+color = Color(0.696595, 0.466588, 0.558643, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" type="Button" parent="Instructions"]
+offset_left = 975.0
+offset_top = 63.0
+offset_right = 1085.0
+offset_bottom = 129.0
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Instructions"]
+offset_left = 176.0
+offset_top = 154.0
+offset_right = 1028.0
+offset_bottom = 567.0
+theme_override_font_sizes/font_size = 36
+text = "De professor werd waarschijnlijk door die criminele activisten verdoofd met een bepaalde stof. Kunnen jullie bepalen in welke drank het slaapmiddel zat?"
+autowrap_mode = 2
+
 [connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_2_pressed"]
 [connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
@@ -235,8 +222,8 @@ offset_bottom = 202.0
 [connection signal="pressed" from="AnswerChoices/GreenButton4" to="." method="_on_green_button_4_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_5_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_6_pressed"]
-[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="SmallPH" to="." method="_on_small_ph_pressed"]
 [connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
+[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]

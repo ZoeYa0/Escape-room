@@ -26,7 +26,6 @@ extends Node2D
 @onready var color_rect: ColorRect = $Hints/ColorRect
 @onready var hint_close_button: Button = $Hints/CloseButton
 @onready var hint_label: Label = $Hints/Label
-@onready var timer: Label = $Timer
 @onready var closed_curtain: ColorRect = $ClosedCurtain
 @onready var curtains_opened: Sprite2D = $CurtainsOpened
 @onready var crank: Button = $Crank
@@ -64,7 +63,6 @@ func on_show_crank():
 	show_puzzle_button.visible = false
 	
 func _process(delta: float) -> void:
-	timer.text = str((Time.get_ticks_msec() - start_time) / 1000.0)
 	Events.rooms["room1"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
 	
 #func _on_sphere_pressed() -> void:

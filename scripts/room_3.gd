@@ -8,17 +8,19 @@ extends  Node2D
 
 #---------------onreadys
 @onready var arrow: Button = $Arrow
+var start_time = 0
 
 func _ready() -> void:
 	Events.current_room = 3
-	DialogueManager.show_dialogue_balloon(start_dialogue,"start")
-	arrow.visible = false
-	
 	#FORCING pointing hand
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	start_time = Time.get_ticks_msec()
+	
 
 
+func _process(delta: float) -> void:
+	Events.rooms["room3"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
 
 func _on_microscope_pressed() -> void:
 	DialogueManager.show_dialogue_balloon(microscope,"start")
@@ -42,6 +44,7 @@ func _on_gray_pressed() -> void:
 	
 func wrong_virus_clicked():
 	DialogueManager.show_dialogue_balloon(wrong_virus,"start")
+	Events.rooms["room3"]["wrong"] +=1
 
 #---------------viruses
 func _on_nexa_pressed() -> void:
