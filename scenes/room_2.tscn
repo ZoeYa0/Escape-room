@@ -217,8 +217,8 @@ autowrap_mode = 2
 
 [connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_2_pressed"]
-[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
 [connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_green_button_3_pressed"]
+[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton4" to="." method="_on_green_button_4_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_5_pressed"]
 [connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_6_pressed"]

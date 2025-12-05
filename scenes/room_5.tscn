@@ -208,14 +208,7 @@ text = "Wat is de verticale asymptoot van f(x)= (4x²−1)/(x²−x−6)?
 PS: Ik heb een klein hondje thuis; een grote hond vind ik te gevaarlijk. "
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="."]
-offset_left = 161.0
-offset_top = 60.0
-offset_right = 169.0
-offset_bottom = 68.0
-
 [node name="Instructions4" type="Control" parent="."]
-visible = false
 light_mask = 0
 layout_mode = 3
 anchors_preset = 0
@@ -315,7 +308,6 @@ text = "Hints"
 [connection signal="pressed" from="Stickynotes/S3" to="Instructions3" method="_on_s_3_pressed"]
 [connection signal="pressed" from="Stickynotes/S4" to="Instructions4" method="_on_s_4_pressed"]
 [connection signal="pressed" from="SixAnswers/SubmitButton" to="SixAnswers" method="_on_submit_button_pressed"]
-[connection signal="pressed" from="Button" to="1" method="_on_button_pressed"]
 [connection signal="pressed" from="Instructions4/PictureGraph" to="Instructions4/PictureGraph" method="_on_pressed"]
 [connection signal="pressed" from="Instructions4/PictureGraph2" to="Instructions4/PictureGraph" method="_on_picture_graph_2_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]

@@ -94,3 +94,7 @@ func on_room_lit():
 	$LightSystem/Mirror/Sprite2D.modulate = Color(1,1,1,1)
 	DialogueManager.show_dialogue_balloon(room_finished,'start')
 	Events.puzzle_solved = true
+
+
+func _on_curtain_pressed() -> void:
+	DialogueManager.show_dialogue_balloon(curtains_cant_open,'start')

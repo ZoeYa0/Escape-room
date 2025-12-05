@@ -2,38 +2,37 @@ extends Node2D
 
 @onready var total: Label = $Total
 @onready var title: Label = $Title
+@onready var your_scores: Label = $YourScores
 
 
-#for room_id in Events.rooms.keys():
-	#var data = Events.rooms[room_id]
-	#
-	#RoomResult.set_data(
-	#Events.rooms[room_id],
-	#data["time"],
-	#data["wrong"],
-	#data["hints"]
-	#)
 var total_time := 0
 var total_wrong := 0
 var total_hints := 0
 func _ready() -> void:
+	title.text = tr("UI_THANKS")
+	your_scores.text = tr("UI_YOURSCORE")
+	total.text = tr("UI_TOT_SCORE")
 	for room_name in Events.rooms:
 		var stats = Events.rooms[room_name]
 
 		var label: Label = $Labels.get_node(room_name)
-		label.text = "Time: %d | Wrong: %d | Hints: %d" % [
+		label.text = tr('UI_SCORE') % [
 			stats.time, stats.wrong, stats.hints
 		]
 		total_time += stats.time
 		total_wrong += stats.wrong
 		total_hints += stats.hints
-	total.text = "Total stats:\n
-	Total Time: %d
-	Total Wrong attempts: %d
-	Total Hints: %d" % [
+	#total.text = "Total stats:\n
+	#Total Time: %d
+	#Total Wrong attempts: %d
+	#Total Hints: %d" % [
+	#total_time, total_wrong, total_hints
+	#
+	#]#huh \n gives double breaks
+	total.text = tr("UI_TOT_SCORE") % [
 	total_time, total_wrong, total_hints
-	]#huh \n gives double breaks
 	
+	]#huh \n gives double breaks
 
 
 @export var hue = 0.0

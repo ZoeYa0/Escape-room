@@ -17,21 +17,27 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_s_1_pressed() -> void:
+	$Label.text = tr("INSTRUCTION_5.1")
 	visible = true
 	Events.current_stickynote = 1
 
 
 func _on_s_2_pressed() -> void:
+	$Label.text = tr("INSTRUCTION_5.2")
 	visible = true
 	Events.current_stickynote = 2
 
 
 func _on_s_3_pressed() -> void:
+	$Label.text = tr("INSTRUCTION_5.3.1")
+	$Label2.text = tr("INSTRUCTION_5.3.2")
 	visible = true
 	Events.current_stickynote = 3
 
 
 
 func _on_s_4_pressed() -> void:
+	$Label.text = tr("INSTRUCTION_5.4.1")
+	$Label2.text = tr("INSTRUCTION_5.4.2")
 	visible = true
 	Events.current_stickynote = 4

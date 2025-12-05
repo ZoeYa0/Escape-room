@@ -32,7 +32,7 @@ offset_bottom = 480.0
 text = "Dit raadsel gaat over een kracht in de ruimte tussen verschillende hemellichamen. Kunnen jullie bepalen over welk hemellichaam het gaat? 
 
 
- Fgrav = 3,52 * 10^22 N 
+Fgrav = 3,52 * 10^22 N 
 G = constante(zelf opzoeken) 
 Maarde = (zelf opzoeken) 
 r = 1,496 * 10^11 

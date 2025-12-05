@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Escape Room"
-run/main_scene="uid://dkidjdfh87eir"
+run/main_scene="uid://c60fe6qmqf3us"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://images/icon.svg"
 
@@ -49,6 +49,7 @@ click={
 
 [internationalization]
 
+locale/translations=PackedStringArray("res://localization/ESCAPE ROOM TRANSLATIONS - Sheet1.en.translation", "res://localization/ESCAPE ROOM TRANSLATIONS - Sheet1.nl.translation")
 locale/translations_pot_files=PackedStringArray("res://dialogue/1_curtains_can\'t_open.dialogue", "res://dialogue/1_curtains_stuck.dialogue", "res://dialogue/2_died.dialogue", "res://dialogue/1_intro.dialogue", "res://dialogue/2_intro.dialogue", "res://dialogue/3_intro.dialogue", "res://dialogue/1_finished.dialogue", "res://dialogue/2_finished.dialogue", "res://dialogue/3_finished.dialogue", "res://dialogue/2_wrong_drink.dialogue", "res://dialogue/3_correct_virus.dialogue", "res://dialogue/3_microscope.dialogue", "res://dialogue/3_virus_pressed.dialogue", "res://dialogue/3_wrong_virus.dialogue", "res://dialogue/4_computer.dialogue", "res://scenes/room_3.tscn", "res://dialogue/5_intro.dialogue", "res://dialogue/2_dont_guess.dialogue", "res://dialogue/4_fuel_combined.dialogue")
 
 [layer_names]

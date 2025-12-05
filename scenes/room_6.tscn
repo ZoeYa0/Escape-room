@@ -23,12 +23,23 @@ offset_bottom = 87.0
 theme_override_font_sizes/font_size = 36
 text = "Thanks for playing!"
 
-[node name="Scores" type="Label" parent="."]
+[node name="YourScores" type="Label" parent="."]
 offset_left = 508.0
 offset_top = 105.0
 offset_right = 603.0
 offset_bottom = 128.0
 text = "Your scores:"
+
+[node name="Total" type="Label" parent="."]
+offset_left = 792.0
+offset_top = 384.0
+offset_right = 1042.0
+offset_bottom = 556.0
+text = "Total stats:
+
+Total Time:
+Total Wrong attempts:
+Total Hints:"
 
 [node name="Labels" type="Node" parent="."]
 
@@ -88,22 +99,3 @@ texture = ExtResource("5_sh8yd")
 position = Vector2(242, 225)
 scale = Vector2(0.195964, 0.195964)
 texture = ExtResource("7_mqkto")
-
-[node name="Total" type="Label" parent="."]
-offset_left = 792.0
-offset_top = 384.0
-offset_right = 1042.0
-offset_bottom = 556.0
-text = "Total stats:
-
-Total Time:
-Total Wrong attempts:
-Total Hints:"
-
-[node name="shareResults" type="Label" parent="."]
-offset_left = 787.0
-offset_top = 554.0
-offset_right = 1141.0
-offset_bottom = 603.0
-text = "You're welcome to share your results in the google form!"
-autowrap_mode = 2

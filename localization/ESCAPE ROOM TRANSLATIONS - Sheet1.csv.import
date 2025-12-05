@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://xtgag1ed8ktj"
+
+[deps]
+
+files=["res://localization/ESCAPE ROOM TRANSLATIONS - Sheet1.en.translation", "res://localization/ESCAPE ROOM TRANSLATIONS - Sheet1.nl.translation"]
+
+source_file="res://localization/ESCAPE ROOM TRANSLATIONS - Sheet1.csv"
+dest_files=["res://localization/ESCAPE ROOM TRANSLATIONS - Sheet1.en.translation", "res://localization/ESCAPE ROOM TRANSLATIONS - Sheet1.nl.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -182,7 +182,7 @@ texture = ExtResource("13_y5mqv")
 [node name="Curtain" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 143.0
-offset_top = 55.0
+offset_top = 33.0
 offset_right = 442.0
 offset_bottom = 430.0
 disabled = true

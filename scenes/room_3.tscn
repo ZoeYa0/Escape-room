@@ -32,10 +32,10 @@ destination_scene = 4
 
 [node name="Microscope" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 793.0
-offset_top = 345.0
-offset_right = 881.0
-offset_bottom = 447.0
+offset_left = 760.0
+offset_top = 350.0
+offset_right = 848.0
+offset_bottom = 452.0
 mouse_default_cursor_shape = 2
 
 [node name="Answers" type="Node2D" parent="."]
@@ -89,16 +89,6 @@ visible = false
 light_mask = 0
 script = ExtResource("7_1bltn")
 
-[node name="ColorRect" type="ColorRect" parent="Instructions"]
-visible = false
-light_mask = 0
-offset_left = 37.0
-offset_top = 34.0
-offset_right = 1121.0
-offset_bottom = 622.0
-color = Color(0.167168, 0.0861916, 0.119708, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="Diary" type="Sprite2D" parent="Instructions"]
 position = Vector2(586.5, 320)
 scale = Vector2(1.81833, 1.46837)
@@ -112,22 +102,7 @@ offset_bottom = 100.0
 text = "X"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Instructions"]
-visible = false
-offset_left = 640.0
-offset_top = 75.0
-offset_right = 1102.0
-offset_bottom = 351.0
-text = "REGELS
-
-1. Het antivirus is het enige middel dat precies één virus volledig neutraliseert
-
-2. Middelen die geen virussen neutraliseren vallen ook af.
-
-3. Gedeeltelijke effecten tellen niet als neutralisatie."
-autowrap_mode = 2
-
-[node name="Label4" type="Label" parent="Instructions"]
+[node name="TextR" type="Label" parent="Instructions"]
 offset_left = 640.0
 offset_top = 75.0
 offset_right = 1102.0
@@ -141,24 +116,7 @@ text = "REGELS
 3. Gedeeltelijke effecten tellen niet mee als neutralisatie."
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Instructions"]
-visible = false
-offset_left = 99.0
-offset_top = 61.0
-offset_right = 514.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_twgjl")
-theme_override_font_sizes/font_size = 22
-text = "Logboek 
-15.11
-
-Vandaag heb ik mijn antivirus getest op 4 virussen,
- en het werkt! Ik heb hieronder wat regels geschrven
-om mij te herinneren welke virus het gaat."
-autowrap_mode = 2
-
-[node name="Label3" type="Label" parent="Instructions"]
+[node name="TextL" type="Label" parent="Instructions"]
 offset_left = 99.0
 offset_top = 61.0
 offset_right = 514.0
@@ -179,6 +137,11 @@ modulate = Color(0.896178, 0.78514, 0.518993, 1)
 position = Vector2(868.5, 433.75)
 scale = Vector2(0.504742, 0.642606)
 texture = ExtResource("10_0hvyo")
+
+[node name="Label" type="Label" parent="Instructions"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Virus" type="Node2D" parent="."]
 
