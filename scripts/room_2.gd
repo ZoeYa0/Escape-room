@@ -1,14 +1,18 @@
 extends Node2D
 @onready var arrow: Button = $Arrow
 @onready var ph_image: Sprite2D = $PHImage
-@onready var timer: Label = $Timer
 @onready var hints: Node2D = $Hints
+@onready var colorblind: Button = $PHImage/Colorblind
+@onready var lever: AnimatedSprite2D = $Lever
+@onready var answer_ph: Node2D = $AnswerPh
+@onready var answer_button: Button = $AnswerPh/AnswerButton
+@onready var ph: Button = $AnswerPh/PH
+
 #-------------------------
 @export var start_dialogue: DialogueResource
 @export var room_2_finished: DialogueResource
 @export var wrong_drink: DialogueResource
 @export var died: DialogueResource
-@export var dont_guess: DialogueResource
 
 #-------------
 var start_time = 0
@@ -27,39 +31,22 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	timer.text = str((Time.get_ticks_msec() - start_time) / 1000.0)
+	Events.rooms["room2"]["time"] = str((Time.get_ticks_msec() - start_time) / 1000.0)
 
 func _on_small_ph_pressed() -> void:
 	ph_image.visible = true
 
-func _on_good_pressed() -> void:
-	#puzzle solved!
-	if Events.can_puzzle_be_solved and ph_image.visible == true:
+
+func _on_answer_button_pressed() -> void:
+	lever.play("Play")
+	if Events.drink == "Bio-synergy" and Events.ph == 7:
 		arrow.visible = true
 		DialogueManager.show_dialogue_balloon(room_2_finished,"start")
 	else:
-		DialogueManager.show_dialogue_balloon(dont_guess,"start")
+		DialogueManager.show_dialogue_balloon(wrong_drink,"start")
+		Events.rooms["room2"]["wrong"] +=1
 
 
-func _on_green_button_pressed() -> void:
-	on_wrong_drink_pressed()
-
-
-func _on_green_button_2_pressed() -> void:
-	on_wrong_drink_pressed()
-
-
-func _on_green_button_4_pressed() -> void:
-	on_wrong_drink_pressed()
-
-
-func _on_green_button_5_pressed() -> void:
-	on_wrong_drink_pressed()
-
-
-func _on_green_button_6_pressed() -> void:
-	on_wrong_drink_pressed()
-	
-func on_wrong_drink_pressed():
-	DialogueManager.show_dialogue_balloon(wrong_drink,"start")
-	Events.rooms["room2"]["wrong"] +=1
+func _on_ph_pressed() -> void:
+	Events.ph = (Events.ph + 1) % 15 #modulo wrap
+	ph.text = Events.ph

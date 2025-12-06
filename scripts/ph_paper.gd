@@ -30,7 +30,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var color = Color(area.name.trim_prefix("PH"))
 		color_rect.visible = true#because moduluate on yellow doesn't give right color
 		sprite.visible = false
-		
 		color_rect.modulate = color
-		Events.can_puzzle_be_solved = true
 		

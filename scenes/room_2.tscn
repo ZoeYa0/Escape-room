@@ -1,34 +1,100 @@
-[gd_scene load_steps=20 format=3 uid="uid://tvd1lxbox6ak"]
+[gd_scene load_steps=29 format=3 uid="uid://tvd1lxbox6ak"]
 
 [ext_resource type="Script" uid="uid://csqu4u4py4nd2" path="res://scripts/room_2.gd" id="1_ktm03"]
-[ext_resource type="Texture2D" uid="uid://cvbsgcngdoxhp" path="res://images/ClipboardImage_2025-11-25T123017.png" id="1_w0ydv"]
 [ext_resource type="Resource" uid="uid://ceq1b84kn5y8l" path="res://dialogue/2_intro.dialogue" id="2_guunk"]
 [ext_resource type="Texture2D" uid="uid://c2l72fe2gt6ps" path="res://images/ph_poster.png" id="3_4et86"]
 [ext_resource type="Resource" uid="uid://be384mky1jnp0" path="res://dialogue/2_finished.dialogue" id="3_u14ju"]
 [ext_resource type="Resource" uid="uid://ctdvupgimnh8q" path="res://dialogue/2_wrong_drink.dialogue" id="4_h8145"]
 [ext_resource type="Script" uid="uid://bgp56ipsth20x" path="res://scripts/ph_spawner.gd" id="5_lsxps"]
 [ext_resource type="Resource" uid="uid://bnuallc5n342w" path="res://dialogue/2_died.dialogue" id="5_yg87s"]
-[ext_resource type="Resource" uid="uid://dlbmr7y56e0fc" path="res://dialogue/2_dont_guess.dialogue" id="6_8hpol"]
 [ext_resource type="PackedScene" uid="uid://b5kl1vyv3gbr7" path="res://scenes/ph_paper.tscn" id="6_63qte"]
 [ext_resource type="Texture2D" uid="uid://ccqlgmimeq534" path="res://images/instructions.png" id="7_flmds"]
 [ext_resource type="PackedScene" uid="uid://b1w12aapnq4dr" path="res://scenes/arrow.tscn" id="7_h8dvq"]
 [ext_resource type="Texture2D" uid="uid://2jdp3ajsoxqd" path="res://images/2.png" id="8_00i1e"]
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="8_hbe2o"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="13_h8dvq"]
+[ext_resource type="Texture2D" uid="uid://dufuv68yu8un7" path="res://images/2_lever.png" id="14_00i1e"]
+[ext_resource type="Texture2D" uid="uid://cvo2suvmx5w1y" path="res://images/2_lever_down.png" id="15_eqia6"]
+[ext_resource type="Texture2D" uid="uid://jq5jxyimllev" path="res://images/2_drink.png" id="16_eqia6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u14ju"]
-atlas = ExtResource("1_w0ydv")
-region = Rect2(306, 94, 1306, 792)
+[sub_resource type="SpriteFrames" id="SpriteFrames_awieq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_00i1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eqia6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_00i1e")
+}],
+"loop": false,
+"name": &"Play",
+"speed": 5.0
+}]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqia6"]
-atlas = ExtResource("8_00i1e")
-region = Rect2(421, 348, 859, 420)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hpol"]
+size = Vector2(60, 79.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63qte"]
-size = Vector2(38, 51.75)
+size = Vector2(60, 79.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00i1e"]
+size = Vector2(51, 72.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flmds"]
-size = Vector2(38, 40.875)
+size = Vector2(62, 63.4375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awieq"]
+atlas = ExtResource("16_eqia6")
+region = Rect2(203, 855, 67, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3teu2"]
+atlas = ExtResource("16_eqia6")
+region = Rect2(287, 855, 67, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdp5a"]
+atlas = ExtResource("16_eqia6")
+region = Rect2(371, 855, 67, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7br5"]
+atlas = ExtResource("16_eqia6")
+region = Rect2(203, 1026, 67, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivrne"]
+atlas = ExtResource("16_eqia6")
+region = Rect2(287, 1026, 67, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1bnv"]
+atlas = ExtResource("16_eqia6")
+region = Rect2(371, 1026, 67, 171)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fmmbi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awieq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3teu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdp5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7br5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivrne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1bnv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ktm03")
@@ -36,100 +102,68 @@ start_dialogue = ExtResource("2_guunk")
 room_2_finished = ExtResource("3_u14ju")
 wrong_drink = ExtResource("4_h8145")
 died = ExtResource("5_yg87s")
-dont_guess = ExtResource("6_8hpol")
-
-[node name="TempBg" type="Sprite2D" parent="."]
-position = Vector2(581.51, 324)
-scale = Vector2(0.893552, 0.825758)
-texture = SubResource("AtlasTexture_u14ju")
 
 [node name="2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(733, 439)
-texture = SubResource("AtlasTexture_eqia6")
+position = Vector2(579.583, 321.75)
+scale = Vector2(0.580417, 0.53875)
+texture = ExtResource("8_00i1e")
+
+[node name="Lever" type="AnimatedSprite2D" parent="."]
+position = Vector2(614, 293)
+scale = Vector2(0.641, 0.64)
+sprite_frames = SubResource("SpriteFrames_awieq")
+animation = &"Play"
+frame = 2
+frame_progress = 1.0
 
 [node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("7_h8dvq")]
 destination_scene = 3
 
 [node name="PHImage" type="Sprite2D" parent="."]
-position = Vector2(874, 171)
-scale = Vector2(0.389027, 0.393148)
+visible = false
+position = Vector2(888, 154)
+scale = Vector2(0.338177, 0.341759)
 texture = ExtResource("3_4et86")
 
-[node name="AnswerChoices" type="Node2D" parent="."]
-
-[node name="GreenButton" type="Button" parent="AnswerChoices" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 117.0
-offset_top = 508.0
-offset_right = 141.0
-offset_bottom = 531.0
-
-[node name="GreenButton2" type="Button" parent="AnswerChoices" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 167.0
-offset_top = 508.0
-offset_right = 191.0
-offset_bottom = 531.0
-
-[node name="Good" type="Button" parent="AnswerChoices" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 218.0
-offset_top = 502.0
-offset_right = 242.0
-offset_bottom = 525.0
-
-[node name="GreenButton4" type="Button" parent="AnswerChoices" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 120.0
-offset_top = 610.0
-offset_right = 144.0
-offset_bottom = 633.0
-
-[node name="GreenButton5" type="Button" parent="AnswerChoices" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 175.0
-offset_top = 609.0
-offset_right = 199.0
-offset_bottom = 632.0
-
-[node name="GreenButton6" type="Button" parent="AnswerChoices" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 221.0
-offset_top = 608.0
-offset_right = 245.0
-offset_bottom = 631.0
+[node name="Colorblind" type="Button" parent="PHImage"]
+offset_left = 296.0
+offset_top = -272.0
+offset_right = 509.0
+offset_bottom = -180.0
+theme_override_font_sizes/font_size = 36
+toggle_mode = true
+text = "Colorbind?"
 
 [node name="Cups" type="Node2D" parent="."]
 
 [node name="PHYellow_Green" type="Area2D" parent="Cups"]
 
 [node name="PHGreen" type="CollisionShape2D" parent="Cups/PHYellow_Green"]
-position = Vector2(829, 385)
-shape = SubResource("RectangleShape2D_63qte")
+position = Vector2(769, 362.063)
+shape = SubResource("RectangleShape2D_8hpol")
 
 [node name="PHGreen_Yellow" type="Area2D" parent="Cups"]
 
 [node name="PHOrange" type="CollisionShape2D" parent="Cups/PHGreen_Yellow"]
-position = Vector2(982, 407)
+position = Vector2(990, 392)
 shape = SubResource("RectangleShape2D_63qte")
 
 [node name="PHYellow" type="Area2D" parent="Cups"]
 
 [node name="PHRed" type="CollisionShape2D" parent="Cups/PHYellow"]
-position = Vector2(932, 379)
+position = Vector2(1099, 421)
 shape = SubResource("RectangleShape2D_63qte")
 
 [node name="PHSPRING_GREEN" type="Area2D" parent="Cups"]
 
 [node name="PHSPRING_GREEN" type="CollisionShape2D" parent="Cups/PHSPRING_GREEN"]
-position = Vector2(887, 402)
-shape = SubResource("RectangleShape2D_63qte")
+position = Vector2(907.5, 364.531)
+shape = SubResource("RectangleShape2D_00i1e")
 
 [node name="PHOrange" type="Area2D" parent="Cups"]
 
 [node name="PHYellow" type="CollisionShape2D" parent="Cups/PHOrange"]
-position = Vector2(826, 460)
+position = Vector2(848, 449.281)
 shape = SubResource("RectangleShape2D_flmds")
 
 [node name="face" type="Sprite2D" parent="."]
@@ -147,10 +181,10 @@ scale = Vector2(0.434028, 0.434028)
 
 [node name="SmallPH" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 486.0
-offset_top = 399.0
-offset_right = 544.0
-offset_bottom = 431.0
+offset_left = 461.0
+offset_top = 398.0
+offset_right = 519.0
+offset_bottom = 430.0
 
 [node name="PH_spawner" type="Node2D" parent="."]
 script = ExtResource("5_lsxps")
@@ -158,33 +192,19 @@ ph_strip = ExtResource("6_63qte")
 
 [node name="Button" type="Button" parent="PH_spawner" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 525.0
-offset_top = 423.0
-offset_right = 642.0
-offset_bottom = 478.0
-
-[node name="Label" type="Label" parent="."]
-offset_left = 101.0
-offset_top = 391.0
-offset_right = 216.0
-offset_bottom = 436.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Answer"
-
-[node name="Timer" type="Label" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 534.0
+offset_top = 418.0
+offset_right = 651.0
+offset_bottom = 473.0
 
 [node name="Hints" parent="." instance=ExtResource("13_h8dvq")]
 
 [node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 108.0
-offset_top = 46.0
-offset_right = 409.0
-offset_bottom = 202.0
+offset_left = 62.0
+offset_top = 41.0
+offset_right = 268.0
+offset_bottom = 152.0
 
 [node name="Instructions" type="Node2D" parent="."]
 visible = false
@@ -215,15 +235,35 @@ theme_override_font_sizes/font_size = 36
 text = "De professor werd waarschijnlijk door die criminele activisten verdoofd met een bepaalde stof. Kunnen jullie bepalen in welke drank het slaapmiddel zat?"
 autowrap_mode = 2
 
-[connection signal="pressed" from="AnswerChoices/GreenButton" to="." method="_on_green_button_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton2" to="." method="_on_green_button_2_pressed"]
-[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_green_button_3_pressed"]
-[connection signal="pressed" from="AnswerChoices/Good" to="." method="_on_good_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton4" to="." method="_on_green_button_4_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton5" to="." method="_on_green_button_5_pressed"]
-[connection signal="pressed" from="AnswerChoices/GreenButton6" to="." method="_on_green_button_6_pressed"]
+[node name="AnswerPh" type="Node2D" parent="."]
+
+[node name="AnswerButton" type="Button" parent="AnswerPh" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 217.0
+offset_top = 447.0
+offset_right = 263.0
+offset_bottom = 517.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PH" type="Button" parent="AnswerPh"]
+offset_left = 172.0
+offset_top = 453.0
+offset_right = 203.0
+offset_bottom = 505.0
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnswerPh"]
+position = Vector2(138, 497)
+scale = Vector2(0.535448, 0.535448)
+sprite_frames = SubResource("SpriteFrames_fmmbi")
+frame_progress = 0.729178
+
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="SmallPH" to="." method="_on_small_ph_pressed"]
 [connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
+[connection signal="pressed" from="AnswerPh/AnswerButton" to="." method="_on_answer_button_pressed"]
+[connection signal="pressed" from="AnswerPh/AnswerButton" to="AnswerPh" method="_on_answer_button_pressed"]
+[connection signal="pressed" from="AnswerPh/PH" to="." method="_on_ph_pressed"]

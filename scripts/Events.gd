@@ -18,7 +18,8 @@ var rooms = {
 #-----------ROOM 1 sun
 var puzzle_solved = false
 #-----------ROOM 2 ph
-var can_puzzle_be_solved = false
+var drink
+var ph
 #-----------ROOM 3 virus
 var virus = ""
 #-----------ROOM 4 computer
