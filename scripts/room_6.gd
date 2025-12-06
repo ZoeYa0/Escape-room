@@ -16,12 +16,18 @@ func _ready() -> void:
 		var stats = Events.rooms[room_name]
 
 		var label: Label = $Labels.get_node(room_name)
-		label.text = tr('UI_SCORE') % [
-			stats.time, stats.wrong, stats.hints
-		]
-		total_time += stats.time
-		total_wrong += stats.wrong
-		total_hints += stats.hints
+		#label.text = tr('UI_SCORE') % [
+			#stats.time, stats.wrong, stats.hints
+		#]
+		#total_time += stats.time
+		#total_wrong += stats.wrong
+		#total_hints += stats.hints
+		label.text = tr("UI_SCORE").format({
+	"time": stats.time,
+	"wrong": stats.wrong,
+	"hints": stats.hints
+})
+
 	#total.text = "Total stats:\n
 	#Total Time: %d
 	#Total Wrong attempts: %d

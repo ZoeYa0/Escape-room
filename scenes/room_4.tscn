@@ -105,6 +105,7 @@ offset_bottom = 554.0
 metadata/_edit_use_anchors_ = true
 
 [node name="PowerIndicator" type="Node2D" parent="Generator"]
+visible = false
 
 [node name="Red" type="ColorRect" parent="Generator/PowerIndicator"]
 offset_left = 350.0

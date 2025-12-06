@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://va8auh0esjem"]
 
 [ext_resource type="Script" uid="uid://brtet4u6mv0y1" path="res://scripts/room_6.gd" id="1_gofo1"]
-[ext_resource type="Texture2D" uid="uid://cvbsgcngdoxhp" path="res://images/ClipboardImage_2025-11-25T123017.png" id="4_vbud4"]
+[ext_resource type="Texture2D" uid="uid://2jdp3ajsoxqd" path="res://images/2.png" id="4_pd1t7"]
 [ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="5_sh8yd"]
 [ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="6_vbud4"]
 [ext_resource type="Texture2D" uid="uid://b6q68i6sahlng" path="res://images/1_room.png" id="7_mqkto"]
@@ -86,9 +86,9 @@ scale = Vector2(0.209635, 0.209635)
 texture = ExtResource("7_sh8yd")
 
 [node name="Room2" type="Sprite2D" parent="Photos"]
-position = Vector2(576, 224)
-scale = Vector2(0.143934, 0.143934)
-texture = ExtResource("4_vbud4")
+position = Vector2(571, 228)
+scale = Vector2(0.1328, 0.1328)
+texture = ExtResource("4_pd1t7")
 
 [node name="Room3" type="Sprite2D" parent="Photos"]
 position = Vector2(949.373, 227.224)

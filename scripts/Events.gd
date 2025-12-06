@@ -18,8 +18,8 @@ var rooms = {
 #-----------ROOM 1 sun
 var puzzle_solved = false
 #-----------ROOM 2 ph
-var drink
-var ph
+var drink = 5 #since animation player is on 5 when scene starts
+var ph = 1
 #-----------ROOM 3 virus
 var virus = ""
 #-----------ROOM 4 computer

@@ -7,6 +7,7 @@ extends Node2D
 @onready var answer_ph: Node2D = $AnswerPh
 @onready var answer_button: Button = $AnswerPh/AnswerButton
 @onready var ph: Button = $AnswerPh/PH
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnswerPh/AnimatedSprite2D
 
 #-------------------------
 @export var start_dialogue: DialogueResource
@@ -38,15 +39,21 @@ func _on_small_ph_pressed() -> void:
 
 
 func _on_answer_button_pressed() -> void:
+	print(Events.drink, Events.ph)
 	lever.play("Play")
-	if Events.drink == "Bio-synergy" and Events.ph == 7:
+	if Events.drink % 7  == 2 and (Events.ph % 15) ==7:
 		arrow.visible = true
 		DialogueManager.show_dialogue_balloon(room_2_finished,"start")
 	else:
-		DialogueManager.show_dialogue_balloon(wrong_drink,"start")
 		Events.rooms["room2"]["wrong"] +=1
 
 
 func _on_ph_pressed() -> void:
 	Events.ph = (Events.ph + 1) % 15 #modulo wrap
-	ph.text = Events.ph
+	ph.text = str(Events.ph)
+
+
+func _on_drink_button_pressed() -> void:
+	var frame_count = animated_sprite_2d.sprite_frames.get_frame_count(animated_sprite_2d.animation)
+	animated_sprite_2d.frame = (animated_sprite_2d.frame + 1) % frame_count
+	Events.drink = (Events.drink + 1) % 6

@@ -1,34 +1,34 @@
-key,en,nl,,,,,
-HINTS_1.1,"G=6,674e-11 \n M = 1,9884e30 kg","G=6,674e-11 \n M = 1,9884e30 kg",,,,,
-HINTS_1.2,"M = 1,9884e30 kg","M = 1,9884e30 kg",,,,,"m aarde = 5,972e34 kg"
-HINTS_1.3,Answer is sun,Antwoord is zon,,,,,
-HINTS_2.1,look carefully at the color of the pH stripes!,goed naar de kleur van streepjes kijken!,,,,,
-HINTS_2.2,"You need to place a strip with an indicator in a drink and then observe the color that appears. Compare that color to the chart. If the color is close to a pH of 6, it's a suitable drink.","Jullie moeten een strookje met indicator in een drank plaatsen en vervolgens kijken welke kleur verschijnt. Vergelijk die kleur met het schema. Als de kleur dicht bij de pH-waarde van 6 ligt, dan is het een geschikte drank.",,,,,
-HINTS_2.3,Answer is bio-synergy (purple),Antwoord is bio-synergy(paars),,,,,
-HINTS_3.1,means neuralize. - means not and +- means partially,=betekent neuraliseren. - betekent niet en +- betekent gedeeltelijk,,,,,
-HINTS_3.2,which antivirus only neutralizes 1 virus?,welke antivirus neutraliseert maar 1 virus?,,,,,
-HINTS_3.3,Answer is Helix A (brown),Antwoord is Helix A (bruin),,,,,
-HINTS_4.1,Combinations with Pyreon are unreliable.,Combinaties met Pyreon zijn onbetrouwbaar.,,,,,
-HINTS_4.2,The correct combination is calmisol and Inertase.,De juiste combinatie is calmisol en Inertase.,,,,,
-HINTS_4.3,Is the generator on? Pull the rope. You also need to connect the tube to the cabinet.,Is de generator aan? Trek de touw. Je moet ook de tube verbinden met de kast.,,,,,
-HINTS_5.0,"Remember, the first letter/number is valid. If you have 4, you'll need to split it up.",remember de eerste letter/cijfer is geldig. bij 4 moet je dat opsplitsen.,,,,,
-HINTS_5.1,concentration = c,concentratie = c,,,,,
-HINTS_5.2,hypotenuse = h,hypotenuse = h,,,,,
-HINTS_5.3,"answer is 3 or -2""","antwoord is 3 of -2""",,,,,
-HINTS_5.4,"Difficult? The animals represent temperature. If you read the assignment carefully, it will become clear why we're talking about temperature here. First, remember that you need to convert the data for hydrogen to another unit.","Moeilijk? e dieren staan namelijk voor temperatuur. Als jullie de opdracht goed lezen, wordt het duidelijk waarom we het hier over temperatuur hebben. Denk er eerst aan dat je de gegevens voor waterstof naar een andere eenheid moet omzetten.",,,,,
+key,en,nl
+HINTS_1.1,"G=6,674e-11 \n m earth = 5,972e34 kg","G=6,674e-11 \n m aarde = 5,972e34 kg"
+HINTS_1.2,"M = 1,9884e30 kg","M = 1,9884e30 kg"
+HINTS_1.3,Answer is sun,Antwoord is zon
+HINTS_2.1,look carefully at the color of the pH stripes!,goed naar de kleur van streepjes kijken!
+HINTS_2.2,"You need to place a strip with an indicator in a drink and then observe the color that appears. Compare that color to the chart. If the color is close to a pH of 6, it's a suitable drink.","Jullie moeten een strookje met indicator in een drank plaatsen en vervolgens kijken welke kleur verschijnt. Vergelijk die kleur met het schema. Als de kleur dicht bij de pH-waarde van 6 ligt, dan is het een geschikte drank."
+HINTS_2.3,Answer is bio-synergy (purple),Antwoord is bio-synergy(paars)
+HINTS_3.1,means neuralize. - means not and +- means partially,=betekent neuraliseren. - betekent niet en +- betekent gedeeltelijk
+HINTS_3.2,which antivirus only neutralizes 1 virus?,welke antivirus neutraliseert maar 1 virus?
+HINTS_3.3,Answer is Helix A (brown),Antwoord is Helix A (bruin)
+HINTS_4.1,Combinations with Pyreon are unreliable.,Combinaties met Pyreon zijn onbetrouwbaar.
+HINTS_4.2,The correct combination is calmisol and Inertase.,De juiste combinatie is calmisol en Inertase.
+HINTS_4.3,Is the generator on? Pull the rope. You also need to connect the tube to the cabinet.,Is de generator aan? Trek de touw. Je moet ook de tube verbinden met de kast.
+HINTS_5.0,"Remember, the first letter/number is valid. If you have 4, you'll need to split it up.",remember de eerste letter/cijfer is geldig. bij 4 moet je dat opsplitsen.
+HINTS_5.1,concentration = c,concentratie = c
+HINTS_5.2,hypotenuse = h,hypotenuse = h
+HINTS_5.3,"answer is 3 or -2""","antwoord is 3 of -2"""
+HINTS_5.4,"Difficult? The animals represent temperature. If you read the assignment carefully, it will become clear why we're talking about temperature here. First, remember that you need to convert the data for hydrogen to another unit.","Moeilijk? e dieren staan namelijk voor temperatuur. Als jullie de opdracht goed lezen, wordt het duidelijk waarom we het hier over temperatuur hebben. Denk er eerst aan dat je de gegevens voor waterstof naar een andere eenheid moet omzetten."
 INSTRUCTION_1,This riddle is about a force in space between different celestial bodies. Can you determine which celestial body it is?\n\nFgrav = 3.52 * 10^22 N\nG = constant(look it up yourself)\nMaarde = (look it up yourself)\nr = 1.496 * 10^11\nm = unknown,"Dit raadsel gaat over een kracht in de ruimte tussen verschillende hemellichamen. Kunnen jullie bepalen over welk hemellichaam het gaat?\n\nFgrav = 3,52 * 10^22 N\nG = constante(zelf opzoeken)\nMaarde = (zelf opzoeken)\nr = 1,496 * 10^11\nm = onbekende\n\nHulpmiddelen:\nBinas tabel 31 + 32C + 7A
-",,,,,
-INSTRUCTION_2,The professor was likely sedated by those criminal activists with some kind of substance. Can you determine which drink contained the sedative?,De professor werd waarschijnlijk door die criminele activisten verdoofd met een bepaalde stof. Kunnen jullie bepalen in welke drank het slaapmiddel zat?,,,,,
-INSTRUCTION_3.1,"Logbook\n 15.11 \n\nToday I tested my antivirus for four viruses, and it works! I've written a few lines below to help me remember which virus it is.",,,,,,
-INSTRUCTION_3.2,RULES\n\n1. A true antivirus is the only agent that completely neutralizes exactly one virus.\n\n2. Antiviruses that do not neutralize any viruses are also eliminated.\n\n3. Partial effects do not count as neutralization.," REGELS\n\n1. Het echte antivirus is het enige middel dat precies één virus volledig neutraliseert.\n\n2. Antivirussen die geen virussen neutraliseren, worden ook geëlimineerd.\n\n3. Gedeeltelijke effecten tellen niet mee als neutralisatie.",,,,,
-INSTRUCTION_5.1,First letter of a word that can describe amount of substance per volume,Eerste letter van een woord dat kan beschrijven hoeveelheid stof per volume ,,,,,
-INSTRUCTION_5.2,"If I am the tallest of my friends and together we form a right triangle, what is my name?","Als ik de langste ben van mijn vrienden en wij samen een rechthoekige driehoek vormen, wat is mijn naam?",,,,,
-INSTRUCTION_5.3.1,"Note: A vertical asymptote is a peculiar and somewhat tragic phenomenon: a line that always approaches the function, but can never touch it. When finding this line, use denominator equal to zero and the numerator is not 0.","Instructie: Een verticale asymptoot is een bijzonder en een beetje tragisch verschijnsel: een lijn die de functie steeds nadert, maar nooit kan raken. Bij het vinden van deze lijn gebruik de nummer gelijk zijn aan nul en de teller niet.",,,,,
-INSTRUCTION_5.3.2,What is the vertical asymptote of f(x)= (4x²−1)/(x²−x−6)? \n \n PS: I have a small dog at home; a big dog is too dangerous for me.,Wat is de verticale asymptoot van f(x)= (4x²−1)/(x²−x−6)? \n \n PS: Ik heb een klein hondje thuis; een grote hond vind ik te gevaarlijk. ,,,,,
-INSTRUCTION_5.4.1,The dark purple line is a dog. The purple line is a penguin. The green line is a camel. The orange line is a bear. The molar volume of gas Vm = 24.465 L/mol. Use the graph as a guide. Click to enlarge. Enter the digits of your answer separately.,"Donkerpaarse lijn is een hond\nPaarse is een pinguin\nGroene is een cameel\nOranje is een beer\nMolaire gasvolume Vm = 24,465 L/mol\n\nGebruik de grafiek als hulpmiddel. Klik te vergroten. Voer cijfers van antwoord apart in.",,,,,
-INSTRUCTION_5.4.2,"When you mix two substances, it takes time for them to react. How many seconds does the reaction between magnesium and hydrochloric acid take to form 3.3 mg of hydrogen if the reaction takes place at a [b]very high temperature[/b]?","Als je twee stoffen met elkaar mengt, duurt het even voordat ze met elkaar reageren. Hoeveel seconden duurt de reactie tussen magnesium en zoutzuur om 3.3 mg waterstof te vormen als de reactie onder [b]zeer hoge temperatuur[/b] plaatsvindt?",,,,,
-ANSWER_1,sun,zon,,,,,
-UI_THANKS,Thanks for playing!,Bedankt voor het spelen!,,,,,
-UI_YOURSCORE,Your scores:,Jouw scores:,,,,,
-UI_SCORE,Time: %d | Wrong: %d | Hints: %d,Tijd: %d | fouten: %d | Hints: %d,,,,,
-UI_TOT_SCORE,Total stats:\n Total Time: %d Total Wrong attempts: %d Total Hints: %d,Totale statistieken:\n Totale tijd: %d Totaal aantal verkeerde pogingen: %d Totaal aantal hints: %d,,,,,
+"
+INSTRUCTION_2,The professor was likely sedated by those criminal activists with some kind of substance. Can you determine which drink contained the sedative?,De professor werd waarschijnlijk door die criminele activisten verdoofd met een bepaalde stof. Kunnen jullie bepalen in welke drank het slaapmiddel zat?
+INSTRUCTION_3.1,"Logbook\n 15.11 \n\nToday I tested my antivirus for four viruses, and it works! I've written a few lines below to help me remember which virus it is.",
+INSTRUCTION_3.2,RULES\n\n1. A true antivirus is the only agent that completely neutralizes exactly one virus.\n\n2. Antiviruses that do not neutralize any viruses are also eliminated.\n\n3. Partial effects do not count as neutralization.," REGELS\n\n1. Het echte antivirus is het enige middel dat precies één virus volledig neutraliseert.\n\n2. Antivirussen die geen virussen neutraliseren, worden ook geëlimineerd.\n\n3. Gedeeltelijke effecten tellen niet mee als neutralisatie."
+INSTRUCTION_5.1,First letter of a word that can describe amount of substance per volume,Eerste letter van een woord dat kan beschrijven hoeveelheid stof per volume 
+INSTRUCTION_5.2,"If I am the tallest of my friends and together we form a right triangle, what is my name?","Als ik de langste ben van mijn vrienden en wij samen een rechthoekige driehoek vormen, wat is mijn naam?"
+INSTRUCTION_5.3.1,"Note: A vertical asymptote is a peculiar and somewhat tragic phenomenon: a line that always approaches the function, but can never touch it. When finding this line, use denominator equal to zero and the numerator is not 0.","Instructie: Een verticale asymptoot is een bijzonder en een beetje tragisch verschijnsel: een lijn die de functie steeds nadert, maar nooit kan raken. Bij het vinden van deze lijn gebruik de nummer gelijk zijn aan nul en de teller niet."
+INSTRUCTION_5.3.2,What is the vertical asymptote of f(x)= (4x²−1)/(x²−x−6)? \n \n PS: I have a small dog at home; a big dog is too dangerous for me.,Wat is de verticale asymptoot van f(x)= (4x²−1)/(x²−x−6)? \n \n PS: Ik heb een klein hondje thuis; een grote hond vind ik te gevaarlijk. 
+INSTRUCTION_5.4.1,The dark purple line is a dog. The purple line is a penguin. The green line is a camel. The orange line is a bear. The molar volume of gas Vm = 24.465 L/mol. Use the graph as a guide. Click to enlarge. Enter the digits of your answer separately.,"Donkerpaarse lijn is een hond\nPaarse is een pinguin\nGroene is een cameel\nOranje is een beer\nMolaire gasvolume Vm = 24,465 L/mol\n\nGebruik de grafiek als hulpmiddel. Klik te vergroten. Voer cijfers van antwoord apart in."
+INSTRUCTION_5.4.2,"When you mix two substances, it takes time for them to react. How many seconds does the reaction between magnesium and hydrochloric acid take to form 3.3 mg of hydrogen if the reaction takes place at a [b]very high temperature[/b]?","Als je twee stoffen met elkaar mengt, duurt het even voordat ze met elkaar reageren. Hoeveel seconden duurt de reactie tussen magnesium en zoutzuur om 3.3 mg waterstof te vormen als de reactie onder [b]zeer hoge temperatuur[/b] plaatsvindt?"
+ANSWER_1,sun,zon
+UI_THANKS,Thanks for playing!,Bedankt voor het spelen!
+UI_YOURSCORE,Your scores:,Jouw scores:
+UI_SCORE,Time: {time} | Wrong: {wrong} | Hints: {hints},Tijd: {time} | Fouten: {wrong} | Hints: {hints}
+UI_TOT_SCORE,Total stats:\n\n Total Time:%d \nTotal Wrong attempts %d \nTotal Hints: %d,Totale statistieken:\n\n Totale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d

@@ -54,12 +54,5 @@ offset_right = 854.0
 offset_bottom = 393.0
 text = "Neem je BINAS mee!"
 
-[node name="Label2" type="Label" parent="LanguageScreen"]
-offset_left = 239.0
-offset_top = 480.0
-offset_right = 945.0
-offset_bottom = 503.0
-text = "Disclaimer: Translation isn't 100% perfect, but should work correctly."
-
 [connection signal="pressed" from="LanguageScreen/English" to="LanguageScreen" method="_on_english_pressed"]
 [connection signal="pressed" from="LanguageScreen/Dutch" to="LanguageScreen" method="_on_dutch_pressed"]

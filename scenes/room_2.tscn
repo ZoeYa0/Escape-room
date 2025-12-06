@@ -46,33 +46,36 @@ size = Vector2(51, 72.9375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flmds"]
 size = Vector2(62, 63.4375)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqia6"]
+atlas = ExtResource("16_eqia6")
+region = Rect2(219, 855, 70, 171)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_awieq"]
 atlas = ExtResource("16_eqia6")
-region = Rect2(203, 855, 67, 171)
+region = Rect2(289, 855, 70, 171)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3teu2"]
 atlas = ExtResource("16_eqia6")
-region = Rect2(287, 855, 67, 171)
+region = Rect2(359, 855, 70, 171)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xdp5a"]
 atlas = ExtResource("16_eqia6")
-region = Rect2(371, 855, 67, 171)
+region = Rect2(429, 855, 70, 171)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7br5"]
 atlas = ExtResource("16_eqia6")
-region = Rect2(203, 1026, 67, 171)
+region = Rect2(499, 855, 70, 171)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivrne"]
 atlas = ExtResource("16_eqia6")
-region = Rect2(287, 1026, 67, 171)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1bnv"]
-atlas = ExtResource("16_eqia6")
-region = Rect2(371, 1026, 67, 171)
+region = Rect2(569, 855, 70, 171)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fmmbi"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqia6")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_awieq")
 }, {
@@ -87,12 +90,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ivrne")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j1bnv")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"new_animation",
 "speed": 1.0
 }]
 
@@ -253,11 +253,20 @@ offset_bottom = 505.0
 text = "1"
 metadata/_edit_use_anchors_ = true
 
+[node name="DrinkButton" type="Button" parent="AnswerPh"]
+offset_left = 119.0
+offset_top = 454.0
+offset_right = 150.0
+offset_bottom = 506.0
+metadata/_edit_use_anchors_ = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnswerPh"]
-position = Vector2(138, 497)
+position = Vector2(135, 497)
 scale = Vector2(0.535448, 0.535448)
 sprite_frames = SubResource("SpriteFrames_fmmbi")
-frame_progress = 0.729178
+animation = &"new_animation"
+frame = 5
+frame_progress = 1.0
 
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="SmallPH" to="." method="_on_small_ph_pressed"]
@@ -267,3 +276,4 @@ frame_progress = 0.729178
 [connection signal="pressed" from="AnswerPh/AnswerButton" to="." method="_on_answer_button_pressed"]
 [connection signal="pressed" from="AnswerPh/AnswerButton" to="AnswerPh" method="_on_answer_button_pressed"]
 [connection signal="pressed" from="AnswerPh/PH" to="." method="_on_ph_pressed"]
+[connection signal="pressed" from="AnswerPh/DrinkButton" to="." method="_on_drink_button_pressed"]
