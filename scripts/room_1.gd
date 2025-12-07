@@ -29,6 +29,7 @@ extends Node2D
 @onready var closed_curtain: ColorRect = $ClosedCurtain
 @onready var curtains_opened: Sprite2D = $CurtainsOpened
 @onready var crank: Button = $Crank
+@onready var curtain_sfx: AudioStreamPlayer = $CurtainSFX
 
 @onready var point_light_2d: PointLight2D = $PointLight2D
 #---------------------------------------------------
@@ -65,23 +66,11 @@ func on_show_crank():
 func _process(delta: float) -> void:
 	Events.rooms["room1"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
 	
-#func _on_sphere_pressed() -> void:
-	##sphere_reflector.pivot_offset = sphere_reflector.size * 0.5
-	##sphere_reflector.rotation += deg_to_rad(45.0)#control nodes use rad
-	#get_parent().rotation_degrees += 45.0
-##
-#func _on_sphere_2_pressed() -> void:
-	#sphere_reflector_2.pivot_offset = sphere_reflector_2.size * 0.5
-	#sphere_reflector_2.rotation += deg_to_rad(45.0)
-#
-#func _on_sphere_3_pressed() -> void:
-	#sphere_3.pivot_offset = sphere_3.size * 0.5
-	#sphere_3.rotation += deg_to_rad(45.0)
-#
+
 
 
 func _on_crank_pressed() -> void:
-
+	curtain_sfx.play(1.5)
 	curtains_opened.visible = true
 	closed_curtain.visible = false
 	line_2d.visible = true	

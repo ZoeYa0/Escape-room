@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://tvd1lxbox6ak"]
+[gd_scene load_steps=33 format=3 uid="uid://tvd1lxbox6ak"]
 
 [ext_resource type="Script" uid="uid://csqu4u4py4nd2" path="res://scripts/room_2.gd" id="1_ktm03"]
 [ext_resource type="Resource" uid="uid://ceq1b84kn5y8l" path="res://dialogue/2_intro.dialogue" id="2_guunk"]
@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://dufuv68yu8un7" path="res://images/2_lever.png" id="14_00i1e"]
 [ext_resource type="Texture2D" uid="uid://cvo2suvmx5w1y" path="res://images/2_lever_down.png" id="15_eqia6"]
 [ext_resource type="Texture2D" uid="uid://jq5jxyimllev" path="res://images/2_drink.png" id="16_eqia6"]
+[ext_resource type="AudioStream" uid="uid://b33h7tfkagt7w" path="res://Audio/jelly_button.mp3" id="17_k7br5"]
+[ext_resource type="AudioStream" uid="uid://bi0y43q3dtdje" path="res://Audio/rightanswer-95219 2.mp3" id="18_ivrne"]
+[ext_resource type="AudioStream" uid="uid://ca6tka71k3whg" path="res://Audio/wronganswer-37702.mp3" id="19_j1bnv"]
+[ext_resource type="AudioStream" uid="uid://c6ms3l1brwcte" path="res://Audio/click.mp3" id="20_fmmbi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awieq"]
 animations = [{
@@ -206,8 +210,40 @@ offset_top = 41.0
 offset_right = 268.0
 offset_bottom = 152.0
 
+[node name="AnswerPh" type="Node2D" parent="."]
+
+[node name="AnswerButton" type="Button" parent="AnswerPh" groups=["Buttons"]]
+modulate = Color(1, 1, 1, 0)
+offset_left = 217.0
+offset_top = 447.0
+offset_right = 263.0
+offset_bottom = 517.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PH" type="Button" parent="AnswerPh" groups=["Buttons"]]
+offset_left = 172.0
+offset_top = 453.0
+offset_right = 203.0
+offset_bottom = 505.0
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="DrinkButton" type="Button" parent="AnswerPh" groups=["Buttons"]]
+offset_left = 119.0
+offset_top = 454.0
+offset_right = 150.0
+offset_bottom = 506.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnswerPh"]
+position = Vector2(135, 497)
+scale = Vector2(0.535448, 0.535448)
+sprite_frames = SubResource("SpriteFrames_fmmbi")
+animation = &"new_animation"
+frame = 5
+frame_progress = 1.0
+
 [node name="Instructions" type="Node2D" parent="."]
-visible = false
 script = ExtResource("8_hbe2o")
 
 [node name="ColorRect" type="ColorRect" parent="Instructions"]
@@ -235,45 +271,26 @@ theme_override_font_sizes/font_size = 36
 text = "De professor werd waarschijnlijk door die criminele activisten verdoofd met een bepaalde stof. Kunnen jullie bepalen in welke drank het slaapmiddel zat?"
 autowrap_mode = 2
 
-[node name="AnswerPh" type="Node2D" parent="."]
+[node name="Audio" type="Node2D" parent="."]
 
-[node name="AnswerButton" type="Button" parent="AnswerPh" groups=["Buttons"]]
-modulate = Color(1, 1, 1, 0)
-offset_left = 217.0
-offset_top = 447.0
-offset_right = 263.0
-offset_bottom = 517.0
-metadata/_edit_use_anchors_ = true
+[node name="JellyButton" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("17_k7br5")
 
-[node name="PH" type="Button" parent="AnswerPh"]
-offset_left = 172.0
-offset_top = 453.0
-offset_right = 203.0
-offset_bottom = 505.0
-text = "1"
-metadata/_edit_use_anchors_ = true
+[node name="Rightanswer-952192" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("18_ivrne")
 
-[node name="DrinkButton" type="Button" parent="AnswerPh"]
-offset_left = 119.0
-offset_top = 454.0
-offset_right = 150.0
-offset_bottom = 506.0
-metadata/_edit_use_anchors_ = true
+[node name="Wronganswer-37702" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_j1bnv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnswerPh"]
-position = Vector2(135, 497)
-scale = Vector2(0.535448, 0.535448)
-sprite_frames = SubResource("SpriteFrames_fmmbi")
-animation = &"new_animation"
-frame = 5
-frame_progress = 1.0
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_fmmbi")
 
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="SmallPH" to="." method="_on_small_ph_pressed"]
 [connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
-[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
 [connection signal="pressed" from="AnswerPh/AnswerButton" to="." method="_on_answer_button_pressed"]
 [connection signal="pressed" from="AnswerPh/AnswerButton" to="AnswerPh" method="_on_answer_button_pressed"]
 [connection signal="pressed" from="AnswerPh/PH" to="." method="_on_ph_pressed"]
 [connection signal="pressed" from="AnswerPh/DrinkButton" to="." method="_on_drink_button_pressed"]
+[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]

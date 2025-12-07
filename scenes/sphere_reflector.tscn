@@ -45,4 +45,4 @@ position = Vector2(127, 50)
 position = Vector2(442, 355)
 shape = SubResource("CircleShape2D_qs3r0")
 
-[connection signal="pressed" from="Sphere" to="Sphere" method="_on_pressed"]
+[connection signal="pressed" from="Sphere" to="." method="_on_sphere_pressed"]

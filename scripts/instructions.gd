@@ -24,12 +24,13 @@ func _on_show_puzzle_button_pressed() -> void:
 
 
 func _on_submit_button_pressed() -> void:
-	
+	$Click.play()
 	var answer = answer_field.text.strip_edges()
 	if Events.current_room == 1:
 		if answer.to_lower() == tr('ANSWER_1'): 
 			Events.show_crank.emit()
 			visible = false
+			
 		else:
 			Events.rooms["room1"]["wrong"] +=1
 

@@ -8,6 +8,10 @@ extends Node2D
 @onready var answer_button: Button = $AnswerPh/AnswerButton
 @onready var ph: Button = $AnswerPh/PH
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnswerPh/AnimatedSprite2D
+@onready var jelly_button: AudioStreamPlayer = $Audio/JellyButton
+@onready var rightanswer_952192: AudioStreamPlayer = $"Audio/Rightanswer-952192"
+@onready var wronganswer_37702: AudioStreamPlayer = $"Audio/Wronganswer-37702"
+@onready var click: AudioStreamPlayer = $Audio/Click
 
 #-------------------------
 @export var start_dialogue: DialogueResource
@@ -39,21 +43,25 @@ func _on_small_ph_pressed() -> void:
 
 
 func _on_answer_button_pressed() -> void:
-	print(Events.drink, Events.ph)
+	#print(Events.drink, Events.ph)
+	click.play()
 	lever.play("Play")
 	if Events.drink % 7  == 2 and (Events.ph % 15) ==7:
+		rightanswer_952192.play()
 		arrow.visible = true
 		DialogueManager.show_dialogue_balloon(room_2_finished,"start")
 	else:
 		Events.rooms["room2"]["wrong"] +=1
+		wronganswer_37702.play()
 
 
 func _on_ph_pressed() -> void:
 	Events.ph = (Events.ph + 1) % 15 #modulo wrap
 	ph.text = str(Events.ph)
-
+	jelly_button.play()
 
 func _on_drink_button_pressed() -> void:
 	var frame_count = animated_sprite_2d.sprite_frames.get_frame_count(animated_sprite_2d.animation)
 	animated_sprite_2d.frame = (animated_sprite_2d.frame + 1) % frame_count
 	Events.drink = (Events.drink + 1) % 6
+	jelly_button.play()

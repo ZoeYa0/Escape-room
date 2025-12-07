@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=24 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/1_intro.dialogue" id="2_y5mqv"]
@@ -9,34 +9,17 @@
 [ext_resource type="Resource" uid="uid://c0gaop61k20lw" path="res://dialogue/1_curtains_can't_open.dialogue" id="5_1afn8"]
 [ext_resource type="Script" uid="uid://bervqc0fos33f" path="res://scripts/rays.gd" id="5_y5mqv"]
 [ext_resource type="Texture2D" uid="uid://cikvo4txpx6hx" path="res://images/lamp.png" id="6_m0003"]
-[ext_resource type="Script" uid="uid://7u6ep3cr23cg" path="res://scripts/sphere_reflector.gd" id="7_ncuik"]
-[ext_resource type="Texture2D" uid="uid://dcf0blgrmojm6" path="res://other assets/wheel_texture.tres" id="8_lwgnx"]
-[ext_resource type="Script" uid="uid://c6xxn60r3kclu" path="res://scripts/sphere.gd" id="9_4oupy"]
 [ext_resource type="PackedScene" uid="uid://bcgne0ss80woo" path="res://scenes/sphere_reflector.tscn" id="9_ncuik"]
 [ext_resource type="Texture2D" uid="uid://cnw20008h01ee" path="res://images/ClipboardImage_2025-11-24T172159.png" id="10_fa2c2"]
 [ext_resource type="Script" uid="uid://b6n6b8i3mblge" path="res://scripts/hints.gd" id="13_sl6s1"]
 [ext_resource type="Texture2D" uid="uid://csggdvfsq03i2" path="res://images/curtains_opened.png" id="13_y5mqv"]
 [ext_resource type="PackedScene" uid="uid://b1w12aapnq4dr" path="res://scenes/arrow.tscn" id="14_y5mqv"]
 [ext_resource type="PackedScene" uid="uid://ccpdb5jctequm" path="res://scenes/instructions.tscn" id="15_y5mqv"]
+[ext_resource type="AudioStream" uid="uid://b07b4yip0ht3n" path="res://Audio/curtain-version-1-337564.mp3" id="17_y5mqv"]
 [ext_resource type="Texture2D" uid="uid://cdcs7yqatk42m" path="res://images/crank.png" id="18_m0003"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
 size = Vector2(131, 28)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwgnx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4oupy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_22a07"]
-atlas = ExtResource("8_lwgnx")
-region = Rect2(849, 219, 182, 204)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qs3r0"]
-radius = 20.025
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fa2c2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvue4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ubtq"]
 
@@ -92,61 +75,11 @@ texture = ExtResource("6_m0003")
 
 [node name="SphereReflector" parent="LightSystem" instance=ExtResource("9_ncuik")]
 
-[node name="SphereReflector2" type="Node2D" parent="LightSystem"]
-script = ExtResource("7_ncuik")
+[node name="SphereReflector4" parent="LightSystem" instance=ExtResource("9_ncuik")]
+position = Vector2(62, -134)
 
-[node name="Sphere2" type="Button" parent="LightSystem/SphereReflector2" groups=["Buttons"]]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 606.0
-offset_top = 248.0
-offset_right = 829.0
-offset_bottom = 460.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.225, 0.225)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/hover = SubResource("StyleBoxEmpty_lwgnx")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_4oupy")
-icon = SubResource("AtlasTexture_22a07")
-script = ExtResource("9_4oupy")
-
-[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector2"]
-position = Vector2(-17, 23)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector2/Area2D"]
-position = Vector2(647, 249)
-shape = SubResource("CircleShape2D_qs3r0")
-
-[node name="SphereReflector3" type="Node2D" parent="LightSystem"]
-script = ExtResource("7_ncuik")
-
-[node name="Sphere3" type="Button" parent="LightSystem/SphereReflector3" groups=["Buttons"]]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 515.0
-offset_top = 120.0
-offset_right = 738.0
-offset_bottom = 332.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.225, 0.225)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/hover = SubResource("StyleBoxEmpty_fa2c2")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_hvue4")
-icon = SubResource("AtlasTexture_22a07")
-script = ExtResource("9_4oupy")
-
-[node name="Area2D" type="Area2D" parent="LightSystem/SphereReflector3"]
-position = Vector2(204, 66)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LightSystem/SphereReflector3/Area2D"]
-position = Vector2(335, 81)
-shape = SubResource("CircleShape2D_qs3r0")
+[node name="SphereReflector5" parent="LightSystem" instance=ExtResource("9_ncuik")]
+position = Vector2(-29, -259)
 
 [node name="ShowPuzzleButton" type="Button" parent="." groups=["Buttons"]]
 offset_left = 991.0
@@ -248,10 +181,9 @@ position = Vector2(-351, -272)
 points = PackedVector2Array(1, -2, 216, 104, 410, -1, 112, -168, 334, -222)
 default_color = Color(1, 1, 0.701961, 1)
 
-[connection signal="pressed" from="LightSystem/SphereReflector2/Sphere2" to="." method="_on_sphere_2_pressed"]
-[connection signal="pressed" from="LightSystem/SphereReflector2/Sphere2" to="LightSystem/SphereReflector2/Sphere2" method="_on_pressed"]
-[connection signal="pressed" from="LightSystem/SphereReflector3/Sphere3" to="." method="_on_sphere_3_pressed"]
-[connection signal="pressed" from="LightSystem/SphereReflector3/Sphere3" to="LightSystem/SphereReflector3/Sphere3" method="_on_pressed"]
+[node name="CurtainSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_y5mqv")
+
 [connection signal="pressed" from="ShowPuzzleButton" to="Instructions" method="_on_show_puzzle_button_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
