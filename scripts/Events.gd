@@ -21,7 +21,31 @@ var puzzle_solved = false
 var drink = 5 #since animation player is on 5 when scene starts
 var ph = 1
 #-----------ROOM 3 virus
-var virus = ""
+var correct_sequence: Array = ['1','3','4','2']
+var player_sequence: Array = []
+
+signal reset_lights
+signal lights_solved
+
+func register_press(button_id: String) -> void:
+	player_sequence.append(button_id)
+
+
+	var index := player_sequence.size() - 1
+	if player_sequence[index] != correct_sequence[index]:
+		reset_sequence()
+		return
+
+	if player_sequence.size() == correct_sequence.size():
+		lights_solved.emit()
+		player_sequence.clear()
+
+func reset_sequence() -> void:
+	player_sequence.clear()
+	reset_lights.emit()
+	rooms["room3"]["wrong"] +=1
+	
+
 #-----------ROOM 4 computer
 var energy
 var straw_connected = false

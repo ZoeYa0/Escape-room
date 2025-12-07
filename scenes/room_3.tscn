@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/3_intro.dialogue" id="2_0hvyo"]
 [ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="2_bg4i0"]
 [ext_resource type="Resource" uid="uid://72d1i30g4idv" path="res://dialogue/3_microscope.dialogue" id="3_gkoet"]
-[ext_resource type="Resource" uid="uid://b30wd4yet2jhu" path="res://dialogue/3_correct_virus.dialogue" id="4_7y5po"]
+[ext_resource type="Resource" uid="uid://bwqdrcokk7cas" path="res://dialogue/3_finished.dialogue" id="4_7vc6b"]
 [ext_resource type="Resource" uid="uid://bnx3od1fs4ovi" path="res://dialogue/3_wrong_virus.dialogue" id="5_7vc6b"]
 [ext_resource type="Resource" uid="uid://d3jbg4jjhq1ux" path="res://dialogue/3_virus_pressed.dialogue" id="6_g3wdu"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="6_yvqia"]
@@ -21,7 +21,7 @@
 script = ExtResource("1_rjoje")
 start_dialogue = ExtResource("2_0hvyo")
 microscope = ExtResource("3_gkoet")
-correct_virus = ExtResource("4_7y5po")
+room3_solved = ExtResource("4_7vc6b")
 wrong_virus = ExtResource("5_7vc6b")
 virus_pressed = ExtResource("6_g3wdu")
 
@@ -153,51 +153,138 @@ offset_right = 1031.0
 offset_bottom = 463.0
 
 [node name="ShowAnswerpad" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 451.0
+offset_top = 359.0
+offset_right = 542.0
+offset_bottom = 418.0
 
-[node name="3Answer" type="Sprite2D" parent="."]
-position = Vector2(557, 342)
-scale = Vector2(0.497708, 0.497708)
-texture = ExtResource("14_7vc6b")
+[node name="WindowErased" type="Sprite2D" parent="."]
+position = Vector2(579.917, 328)
+scale = Vector2(0.571083, 0.564167)
+texture = ExtResource("16_rrdhv")
+
+[node name="Answerpad" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 557.0
+offset_top = 342.0
+offset_right = 597.0
+offset_bottom = 382.0
 script = ExtResource("15_g3wdu")
 
-[node name="Answers" type="Node2D" parent="3Answer"]
-position = Vector2(-1119.13, -687.15)
-scale = Vector2(2.00921, 2.00921)
+[node name="Sprite2D" type="Sprite2D" parent="Answerpad"]
+scale = Vector2(0.497708, 0.497708)
+texture = ExtResource("14_7vc6b")
 
-[node name="Red" type="Button" parent="3Answer/Answers" groups=["Buttons"]]
+[node name="Answers" type="Node2D" parent="Answerpad"]
+position = Vector2(-557, -342)
+scale = Vector2(1, 1)
+
+[node name="Red" type="Button" parent="Answerpad/Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 281.0
 offset_top = 476.0
 offset_right = 360.0
 offset_bottom = 525.0
 
-[node name="Blue" type="Button" parent="3Answer/Answers" groups=["Buttons"]]
+[node name="Blue" type="Button" parent="Answerpad/Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
+top_level = true
 offset_left = 438.0
 offset_top = 473.0
 offset_right = 523.0
 offset_bottom = 533.0
 
-[node name="Gray" type="Button" parent="3Answer/Answers" groups=["Buttons"]]
+[node name="Yellow" type="Button" parent="Answerpad/Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 628.0
 offset_top = 470.0
 offset_right = 720.0
 offset_bottom = 530.0
 
-[node name="Brown" type="Button" parent="3Answer/Answers" groups=["Buttons"]]
+[node name="Brown" type="Button" parent="Answerpad/Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 783.0
 offset_top = 471.0
 offset_right = 867.0
 offset_bottom = 532.0
 
-[node name="3Window" type="Sprite2D" parent="."]
+[node name="LineEdit" type="LineEdit" parent="Answerpad"]
+layout_mode = 0
+offset_left = -294.0
+offset_top = -59.0
+offset_right = 147.0
+offset_bottom = -11.0
+
+[node name="Submit" type="Button" parent="Answerpad" groups=["Buttons"]]
+layout_mode = 0
+offset_left = 169.0
+offset_top = -62.0
+offset_right = 313.0
+offset_bottom = -9.00003
+theme_override_font_sizes/font_size = 20
+text = "Submit"
+
+[node name="Label" type="Label" parent="Answerpad"]
+layout_mode = 0
+offset_left = -289.0
+offset_top = -166.0
+offset_right = 178.0
+offset_bottom = -89.0
+theme_override_font_sizes/font_size = 30
+text = "Enter password..."
+
+[node name="Red2" type="ColorRect" parent="Answerpad"]
 visible = false
-position = Vector2(467, 415)
-texture = ExtResource("16_rrdhv")
+layout_mode = 0
+offset_left = -276.0
+offset_top = 134.0
+offset_right = -197.0
+offset_bottom = 183.0
+color = Color(0.383333, 1, 0, 0.52549)
+
+[node name="Blue2" type="ColorRect" parent="Answerpad"]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 438.0
+offset_top = 473.0
+offset_right = 523.0
+offset_bottom = 533.0
+color = Color(0.383333, 1, 0, 0.52549)
+
+[node name="Yellow2" type="ColorRect" parent="Answerpad"]
+visible = false
+layout_mode = 0
+offset_left = 70.9999
+offset_top = 128.0
+offset_right = 163.0
+offset_bottom = 188.0
+color = Color(0.383333, 1, 0, 0.52549)
+
+[node name="Brown2" type="ColorRect" parent="Answerpad"]
+visible = false
+layout_mode = 0
+offset_left = 226.0
+offset_top = 129.0
+offset_right = 310.0
+offset_bottom = 190.0
+color = Color(0.383333, 1, 0, 0.52549)
+
+[node name="Correct" type="Label" parent="Answerpad"]
+visible = false
+layout_mode = 0
+offset_left = -292.0
+offset_top = 4.99997
+offset_right = -232.0
+offset_bottom = 28.0
+text = "correct!"
+
+[node name="CleanWindow" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="pressed" from="Microscope" to="." method="_on_microscope_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
@@ -207,7 +294,10 @@ texture = ExtResource("16_rrdhv")
 [connection signal="pressed" from="Virus/Zytphera" to="." method="_on_zytphera_pressed"]
 [connection signal="pressed" from="Virus/PandoraX" to="." method="_on_pandora_x_pressed"]
 [connection signal="pressed" from="Virus/Helixona" to="." method="_on_helixona_pressed"]
-[connection signal="pressed" from="3Answer/Answers/Red" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="3Answer/Answers/Blue" to="." method="_on_blue_pressed"]
-[connection signal="pressed" from="3Answer/Answers/Gray" to="." method="_on_gray_pressed"]
-[connection signal="pressed" from="3Answer/Answers/Brown" to="." method="_on_brown_pressed"]
+[connection signal="pressed" from="ShowAnswerpad" to="Answerpad" method="_on_show_answerpad_pressed"]
+[connection signal="pressed" from="Answerpad/Answers/Red" to="Answerpad" method="_on_red_pressed"]
+[connection signal="pressed" from="Answerpad/Answers/Blue" to="Answerpad" method="_on_blue_pressed"]
+[connection signal="pressed" from="Answerpad/Answers/Yellow" to="Answerpad" method="_on_yellow_pressed"]
+[connection signal="pressed" from="Answerpad/Answers/Brown" to="Answerpad" method="_on_brown_pressed"]
+[connection signal="pressed" from="Answerpad/Submit" to="Answerpad" method="_on_submit_pressed"]
+[connection signal="pressed" from="CleanWindow" to="." method="_on_clean_window_pressed"]

@@ -2,9 +2,12 @@ extends  Node2D
 
 @export var start_dialogue: DialogueResource
 @export var microscope: DialogueResource
-@export var correct_virus: DialogueResource
+@export var room3_solved: DialogueResource
 @export var wrong_virus: DialogueResource
 @export var virus_pressed: DialogueResource
+@onready var window_erased: Sprite2D = $WindowErased
+@onready var answerpad: Control = $Answerpad
+
 
 #---------------onreadys
 @onready var arrow: Button = $Arrow
@@ -12,12 +15,15 @@ var start_time = 0
 
 func _ready() -> void:
 	Events.current_room = 3
+	answerpad.room3_solved.connect(on_room3_solved)
 	#FORCING pointing hand
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	start_time = Time.get_ticks_msec()
 	
-
+func on_room3_solved():
+	arrow.visible = true
+	DialogueManager.show_dialogue_balloon(room3_solved,'start')
 
 func _process(delta: float) -> void:
 	Events.rooms["room3"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
@@ -26,25 +32,6 @@ func _on_microscope_pressed() -> void:
 	DialogueManager.show_dialogue_balloon(microscope,"start")
 
 
-#----------------viruss
-func _on_brown_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(correct_virus,"start")
-	arrow.visible = true
-
-
-func _on_red_pressed() -> void:
-	wrong_virus_clicked()
-
-func _on_blue_pressed() -> void:
-	wrong_virus_clicked()
-
-func _on_gray_pressed() -> void:
-	wrong_virus_clicked()
-
-	
-func wrong_virus_clicked():
-	DialogueManager.show_dialogue_balloon(wrong_virus,"start")
-	Events.rooms["room3"]["wrong"] +=1
 
 #---------------viruses
 func _on_nexa_pressed() -> void:
@@ -65,3 +52,7 @@ func _on_helixona_pressed() -> void:
 func adding_virus(virus):
 	Events.virus = str(virus)
 	DialogueManager.show_dialogue_balloon(virus_pressed,"start")
+
+
+func _on_clean_window_pressed() -> void:
+	window_erased.visible = true

@@ -58,8 +58,6 @@ offset_top = 304.0
 offset_right = 993.0
 offset_bottom = 341.0
 
-[node name="Hints" parent="." instance=ExtResource("4_3cbqk")]
-
 [node name="PullButton" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 70.0
@@ -140,6 +138,8 @@ scale = Vector2(0.4, 0.4)
 [node name="FuelSlot2" parent="Generator/Answers" instance=ExtResource("11_16up7")]
 position = Vector2(294, 607)
 scale = Vector2(0.4, 0.4)
+
+[node name="Hints" parent="." instance=ExtResource("4_3cbqk")]
 
 [node name="Tube" type="Area2D" parent="."]
 position = Vector2(577, 307)
