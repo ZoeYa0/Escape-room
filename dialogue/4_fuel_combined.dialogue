@@ -1,10 +1,10 @@
 ~ start
-You: *pulls cord*
+You: dialogue/4_fuel_combined.dialogue_1
 match Events.energy
 	when "Low":
-		You: These 2 fuels aren't providing enough energy
+		You: dialogue/4_fuel_combined.dialogue_2
 	when "None":
-		You: These 2 fuels aren't triggering any reactions...
+		You: dialogue/4_fuel_combined.dialogue_3
 	when "High":
-		You: this is the one!
+		You: dialogue/4_fuel_combined.dialogue_4
 => END

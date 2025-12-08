@@ -1,5 +1,5 @@
 ~ start
-You: A ha! So she was drinking Bio-Synergy before she disappeared.
-You: Let me see... There's some white powder left on the walls after the liquid has dried out. It seems to be some remainent of a kind of [wave]sleeping powder[/wave]...
-You: But kamilla never used sleep medication... This must mean that Kamilla was kidnapped! Now we need to figure out why she was kidnapped. What special thing did she develop? Let's look at the instrument Kamilla uses so often in the lab.
+You: dialogue/2_finished.dialogue_1
+You: dialogue/2_finished.dialogue_2
+You: dialogue/2_finished.dialogue_3
 => END

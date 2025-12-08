@@ -5,9 +5,9 @@ extends Node2D
 @onready var text_l: Label = $TextL
 
 func _ready() -> void:
+	
 	match Events.current_room:
 		1:
-			
 			label.text = tr("INSTRUCTION_1")
 		2:
 			label.text = tr("INSTRUCTION_2")
@@ -17,10 +17,6 @@ func _ready() -> void:
 
 func _on_close_button_pressed() -> void:
 	visible = false
-
-
-func _on_show_puzzle_button_pressed() -> void:
-	visible = true
 
 
 func _on_submit_button_pressed() -> void:

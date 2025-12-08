@@ -32,7 +32,6 @@ func _on_microscope_pressed() -> void:
 	DialogueManager.show_dialogue_balloon(microscope,"start")
 
 
-
 #---------------viruses
 func _on_nexa_pressed() -> void:
 	adding_virus("nexa_3")

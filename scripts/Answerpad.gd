@@ -14,6 +14,7 @@ extends Control
 @onready var brown_2: ColorRect = $Brown2
 @onready var correct: Label = $Correct
 
+@export var correct_virus: DialogueResource
 signal room3_solved
 var lights_solved
 var virus_solved
@@ -75,6 +76,7 @@ func set_gray(node):
 func _on_submit_pressed() -> void:
 	var answer = $LineEdit.text.to_lower()
 	if answer == "helixa":
+		DialogueManager.show_dialogue_balloon(correct_virus, "start")
 		virus_solved = true
 		correct.visible = true
 		if virus_solved and lights_solved:

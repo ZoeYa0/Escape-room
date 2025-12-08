@@ -24,10 +24,12 @@ var start_time = 0
 var health = 1
 
 func _ready() -> void:
+	Events.current_room = 2
+	print("Instruction scene sees room:", Events.current_room)
 	#FORCING pointing hand
 	for node in get_tree().get_nodes_in_group("Buttons"):
 		node.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	Events.current_room = 2
+	
 	start_time = Time.get_ticks_msec()
 	
 	arrow.visible = false

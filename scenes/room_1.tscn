@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=25 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/1_intro.dialogue" id="2_y5mqv"]
@@ -29,7 +29,9 @@ size = Vector2(131, 28)
 atlas = ExtResource("10_fa2c2")
 region = Rect2(1657.52, 587.981, 238.372, 194.659)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22j8i"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5mqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0003"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vr6h"]
 
@@ -81,7 +83,7 @@ position = Vector2(62, -134)
 [node name="SphereReflector5" parent="LightSystem" instance=ExtResource("9_ncuik")]
 position = Vector2(-29, -259)
 
-[node name="ShowPuzzleButton" type="Button" parent="." groups=["Buttons"]]
+[node name="ShowInstructions" type="Button" parent="." groups=["Buttons"]]
 offset_left = 991.0
 offset_top = 330.0
 offset_right = 1237.0
@@ -113,10 +115,9 @@ texture = ExtResource("13_y5mqv")
 [node name="Curtain" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 143.0
-offset_top = 33.0
+offset_top = 53.0
 offset_right = 442.0
 offset_bottom = 430.0
-disabled = true
 action_mode = 0
 
 [node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("14_y5mqv")]
@@ -158,14 +159,15 @@ offset_right = 586.0
 offset_bottom = 123.0
 text = "Hint"
 
-[node name="Crank" type="Button" parent="."]
+[node name="Crank" type="Button" parent="." groups=["Buttons"]]
 offset_left = 1005.0
 offset_top = 330.0
 offset_right = 2013.0
 offset_bottom = 1338.0
 scale = Vector2(0.1185, 0.1185)
 focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxEmpty_22j8i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5mqv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m0003")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8vr6h")
 icon = ExtResource("18_m0003")
 
@@ -184,7 +186,7 @@ default_color = Color(1, 1, 0.701961, 1)
 [node name="CurtainSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_y5mqv")
 
-[connection signal="pressed" from="ShowPuzzleButton" to="Instructions" method="_on_show_puzzle_button_pressed"]
+[connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
 [connection signal="pressed" from="Hints/CloseButton" to="Hints" method="_on_close_button_pressed"]

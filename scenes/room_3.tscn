@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfw5mxix0bb2e"]
+[gd_scene load_steps=20 format=3 uid="uid://dfw5mxix0bb2e"]
 
 [ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_rjoje"]
 [ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/3_intro.dialogue" id="2_0hvyo"]
 [ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="2_bg4i0"]
 [ext_resource type="Resource" uid="uid://72d1i30g4idv" path="res://dialogue/3_microscope.dialogue" id="3_gkoet"]
-[ext_resource type="Resource" uid="uid://bwqdrcokk7cas" path="res://dialogue/3_finished.dialogue" id="4_7vc6b"]
+[ext_resource type="Resource" uid="uid://bwqdrcokk7cas" path="res://dialogue/3_correct_virus.dialogue" id="4_7vc6b"]
 [ext_resource type="Resource" uid="uid://bnx3od1fs4ovi" path="res://dialogue/3_wrong_virus.dialogue" id="5_7vc6b"]
 [ext_resource type="Resource" uid="uid://d3jbg4jjhq1ux" path="res://dialogue/3_virus_pressed.dialogue" id="6_g3wdu"]
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="6_yvqia"]
@@ -16,6 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://b8m1ofgsoh767" path="res://images/3_answer.png" id="14_7vc6b"]
 [ext_resource type="Script" uid="uid://cr21i2u06efaf" path="res://scripts/Answerpad.gd" id="15_g3wdu"]
 [ext_resource type="Texture2D" uid="uid://b1s68vwe0q58u" path="res://images/3_window.png" id="16_rrdhv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vc6b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3wdu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrdhv"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rjoje")
@@ -35,6 +41,9 @@ offset_left = 127.0
 offset_top = 165.0
 offset_right = 414.0
 offset_bottom = 647.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vc6b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g3wdu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rrdhv")
 text = "
 "
 destination_scene = 4
@@ -152,7 +161,7 @@ offset_top = 427.0
 offset_right = 1031.0
 offset_bottom = 463.0
 
-[node name="ShowAnswerpad" type="Button" parent="."]
+[node name="ShowAnswerpad" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = 451.0
 offset_top = 359.0
@@ -173,6 +182,7 @@ offset_top = 342.0
 offset_right = 597.0
 offset_bottom = 382.0
 script = ExtResource("15_g3wdu")
+correct_virus = ExtResource("4_7vc6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="Answerpad"]
 scale = Vector2(0.497708, 0.497708)
@@ -180,7 +190,6 @@ texture = ExtResource("14_7vc6b")
 
 [node name="Answers" type="Node2D" parent="Answerpad"]
 position = Vector2(-557, -342)
-scale = Vector2(1, 1)
 
 [node name="Red" type="Button" parent="Answerpad/Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
@@ -282,7 +291,7 @@ offset_right = -232.0
 offset_bottom = 28.0
 text = "correct!"
 
-[node name="CleanWindow" type="Button" parent="."]
+[node name="CleanWindow" type="Button" parent="." groups=["Buttons"]]
 offset_right = 8.0
 offset_bottom = 8.0
 

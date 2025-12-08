@@ -1,5 +1,5 @@
 ~ start
-You: I see pandora AV in the microscope.
+You: dialogue/3_microscope.dialogue_1
 
 #Perhaps we can try adding the virus to decipher which antivirus Kamilla was making?
 => END

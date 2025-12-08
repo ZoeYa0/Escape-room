@@ -1,14 +1,27 @@
 ~ start
 
-You: [i]*You added {{Events.virus}} to the antivirus.*[i]
+#You: [i]*You added {{Events.virus}} to the antivirus.*[i]
+#match Events.virus
+##testing by pandora!!!
+#	when "nexa_3":
+#		You: You observed that nexa_3 was not neutralized.
+#	when "zytphera":
+#		You: You observed zytphera was partially neutralized.
+#	when "pandora_x":
+#		You: You observed that pandora_x was neutralized.
+#	when "helixona":
+#		You: You observed that Helixona was not neutralized.		
+#		
+You: dialogue/3_virus_pressed.dialogue_1
 match Events.virus
 #testing by pandora!!!
 	when "nexa_3":
-		You: You observed that nexa_3 was not neutralized.
+		You: dialogue/3_virus_pressed.dialogue_2
 	when "zytphera":
-		You: You observed zytphera was partially neutralized.
+		You: dialogue/3_virus_pressed.dialogue_3
 	when "pandora_x":
-		You: You observed that pandora_x was neutralized.
+		You: dialogue/3_virus_pressed.dialogue_4
 	when "helixona":
-		You: You observed that Helixona was not neutralized.		
+		You: dialogue/3_virus_pressed.dialogue_5
+		
 => END

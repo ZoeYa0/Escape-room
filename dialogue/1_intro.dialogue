@@ -1,6 +1,6 @@
 ~ start
-You: This is where professor Kamilla was last seen.
-You: let's see what we can find here.
-You: It's quite dark though, we should light up the room first.
+You: dialogue/1_intro.dialogue_1
+You: dialogue/1_intro.dialogue_2
+You: dialogue/1_intro.dialogue_3
 
 => END

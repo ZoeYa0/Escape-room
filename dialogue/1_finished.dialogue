@@ -1,4 +1,4 @@
 ~ start
-You: The room is lit up!
-You: Now we can go to the next room.
+You: dialogue/1_finished.dialogue_1
+You: dialogue/1_finished.dialogue_2
 => END

@@ -79,6 +79,7 @@ func _on_crank_pressed() -> void:
 
 
 func on_room_lit():
+	crank.disabled = true
 	temp_bg.modulate = Color(1,1,1,1)
 	$LightSystem/Mirror/Sprite2D.modulate = Color(1,1,1,1)
 	DialogueManager.show_dialogue_balloon(room_finished,'start')
@@ -86,4 +87,5 @@ func on_room_lit():
 
 
 func _on_curtain_pressed() -> void:
+	print("ok")
 	DialogueManager.show_dialogue_balloon(curtains_cant_open,'start')

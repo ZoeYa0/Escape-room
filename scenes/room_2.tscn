@@ -244,6 +244,7 @@ frame = 5
 frame_progress = 1.0
 
 [node name="Instructions" type="Node2D" parent="."]
+visible = false
 script = ExtResource("8_hbe2o")
 
 [node name="ColorRect" type="ColorRect" parent="Instructions"]

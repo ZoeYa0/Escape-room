@@ -19,9 +19,9 @@ func _ready() -> void:
 		#label.text = tr('UI_SCORE') % [
 			#stats.time, stats.wrong, stats.hints
 		#]
-		#total_time += stats.time
-		#total_wrong += stats.wrong
-		#total_hints += stats.hints
+		total_time += stats.time
+		total_wrong += stats.wrong
+		total_hints += stats.hints
 		label.text = tr("UI_SCORE").format({
 	"time": stats.time,
 	"wrong": stats.wrong,
