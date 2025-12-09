@@ -102,33 +102,6 @@ offset_right = 448.0
 offset_bottom = 554.0
 metadata/_edit_use_anchors_ = true
 
-[node name="PowerIndicator" type="Node2D" parent="Generator"]
-visible = false
-
-[node name="Red" type="ColorRect" parent="Generator/PowerIndicator"]
-offset_left = 350.0
-offset_top = 568.0
-offset_right = 435.0
-offset_bottom = 580.0
-color = Color(0.750132, 2.80602e-05, 0.2213, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Orange" type="ColorRect" parent="Generator/PowerIndicator"]
-offset_left = 350.0
-offset_top = 568.0
-offset_right = 409.0
-offset_bottom = 580.0
-color = Color(0.904227, 0.357879, 0.189646, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Green" type="ColorRect" parent="Generator/PowerIndicator"]
-offset_left = 350.0
-offset_top = 568.0
-offset_right = 378.0
-offset_bottom = 580.0
-color = Color(0, 1, 0.5, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="Answers" type="Node2D" parent="Generator"]
 
 [node name="FuelSlot" parent="Generator/Answers" instance=ExtResource("11_16up7")]
@@ -138,6 +111,35 @@ scale = Vector2(0.4, 0.4)
 [node name="FuelSlot2" parent="Generator/Answers" instance=ExtResource("11_16up7")]
 position = Vector2(294, 607)
 scale = Vector2(0.4, 0.4)
+
+[node name="PowerIndicator" type="Node2D" parent="Generator"]
+
+[node name="Red" type="ColorRect" parent="Generator/PowerIndicator"]
+visible = false
+offset_left = 350.0
+offset_top = 568.0
+offset_right = 435.0
+offset_bottom = 580.0
+color = Color(0.750132, 2.80602e-05, 0.2213, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Orange" type="ColorRect" parent="Generator/PowerIndicator"]
+visible = false
+offset_left = 350.0
+offset_top = 568.0
+offset_right = 409.0
+offset_bottom = 580.0
+color = Color(0.904227, 0.357879, 0.189646, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Green" type="ColorRect" parent="Generator/PowerIndicator"]
+visible = false
+offset_left = 350.0
+offset_top = 568.0
+offset_right = 378.0
+offset_bottom = 580.0
+color = Color(0, 1, 0.5, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Hints" parent="." instance=ExtResource("4_3cbqk")]
 
@@ -155,24 +157,24 @@ texture = ExtResource("11_4rsdj")
 [node name="Fuel" type="Node2D" parent="."]
 
 [node name="Pyreon" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(538, 400)
+position = Vector2(55, 310)
 scale = Vector2(0.25, 0.25)
 
 [node name="Calmisol" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(622, 402)
+position = Vector2(102, 310)
 scale = Vector2(0.25, 0.25)
 
 [node name="Endryl" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(535, 483)
+position = Vector2(56, 407)
 scale = Vector2(0.25, 0.25)
 
 [node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
-position = Vector2(622, 485)
+position = Vector2(107, 407)
 scale = Vector2(0.25, 0.25)
 
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
 [connection signal="pressed" from="Windows" to="." method="_on_windows_pressed"]
-[connection signal="pressed" from="ShowHint" to="." method="_on_show_hint_pressed"]
+[connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="PullButton" to="." method="_on_pull_button_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="Generator/PowerButton" to="." method="_on_power_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfw5mxix0bb2e"]
+[gd_scene load_steps=22 format=3 uid="uid://dfw5mxix0bb2e"]
 
 [ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_rjoje"]
 [ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/3_intro.dialogue" id="2_0hvyo"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cx45inlgfxh2" path="res://images/diary.png" id="8_reu6s"]
 [ext_resource type="FontFile" uid="uid://bwaxmsxhkpxo0" path="res://other assets/HomemadeApple-Regular.ttf" id="9_twgjl"]
 [ext_resource type="Texture2D" uid="uid://c44c25ky44n0a" path="res://images/table.png" id="10_0hvyo"]
+[ext_resource type="AudioStream" uid="uid://bi0y43q3dtdje" path="res://Audio/rightanswer.mp3" id="13_rrdhv"]
+[ext_resource type="AudioStream" uid="uid://ca6tka71k3whg" path="res://Audio/wronganswer.mp3" id="14_4m1bc"]
 [ext_resource type="Texture2D" uid="uid://b8m1ofgsoh767" path="res://images/3_answer.png" id="14_7vc6b"]
 [ext_resource type="Script" uid="uid://cr21i2u06efaf" path="res://scripts/Answerpad.gd" id="15_g3wdu"]
 [ext_resource type="Texture2D" uid="uid://b1s68vwe0q58u" path="res://images/3_window.png" id="16_rrdhv"]
@@ -70,96 +72,35 @@ offset_top = 241.0
 offset_right = 1094.0
 offset_bottom = 301.0
 
-[node name="Hints" parent="." instance=ExtResource("6_yvqia")]
-
-[node name="Instructions" type="Node2D" parent="."]
-visible = false
-light_mask = 0
-script = ExtResource("7_1bltn")
-
-[node name="Diary" type="Sprite2D" parent="Instructions"]
-position = Vector2(586.5, 320)
-scale = Vector2(1.81833, 1.46837)
-texture = ExtResource("8_reu6s")
-
-[node name="CloseButton" type="Button" parent="Instructions" groups=["Buttons"]]
-offset_left = 1006.0
-offset_top = 34.0
-offset_right = 1116.0
-offset_bottom = 100.0
-text = "X"
-metadata/_edit_use_anchors_ = true
-
-[node name="TextR" type="Label" parent="Instructions"]
-offset_left = 640.0
-offset_top = 75.0
-offset_right = 1102.0
-offset_bottom = 351.0
-text = "REGELS
-
-1. Het echte antivirus is het enige middel dat precies één virus volledig neutraliseert.
-
-2. antivirussen die geen virussen neutraliseren, worden ook geëlimineerd.
-
-3. Gedeeltelijke effecten tellen niet mee als neutralisatie."
-autowrap_mode = 2
-
-[node name="TextL" type="Label" parent="Instructions"]
-offset_left = 99.0
-offset_top = 61.0
-offset_right = 514.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_twgjl")
-theme_override_font_sizes/font_size = 22
-text = "Logboek
-15.11
-
-Vandaag heb ik mijn antivirus getest op vier virussen,
-en het werkt! Ik heb hieronder een paar regels geschreven
-om me te helpen onthouden welk virus het is."
-autowrap_mode = 2
-
-[node name="Table" type="Sprite2D" parent="Instructions"]
-modulate = Color(0.896178, 0.78514, 0.518993, 1)
-position = Vector2(868.5, 433.75)
-scale = Vector2(0.504742, 0.642606)
-texture = ExtResource("10_0hvyo")
-
-[node name="Label" type="Label" parent="Instructions"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="Virus" type="Node2D" parent="."]
 
 [node name="Nexa" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 980.0
-offset_top = 362.0
-offset_right = 1035.0
-offset_bottom = 393.0
+offset_left = 1010.0
+offset_top = 368.0
+offset_right = 1065.0
+offset_bottom = 399.0
 
 [node name="Zytphera" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 890.0
-offset_top = 360.0
-offset_right = 937.0
-offset_bottom = 391.0
+offset_left = 932.0
+offset_top = 370.0
+offset_right = 979.0
+offset_bottom = 401.0
 
 [node name="PandoraX" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 893.0
-offset_top = 428.0
-offset_right = 933.0
-offset_bottom = 464.0
+offset_left = 943.0
+offset_top = 424.0
+offset_right = 983.0
+offset_bottom = 460.0
 
 [node name="Helixona" type="Button" parent="Virus" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 981.0
-offset_top = 427.0
-offset_right = 1031.0
-offset_bottom = 463.0
+offset_left = 1014.0
+offset_top = 424.0
+offset_right = 1064.0
+offset_bottom = 460.0
 
 [node name="ShowAnswerpad" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
@@ -169,6 +110,7 @@ offset_right = 542.0
 offset_bottom = 418.0
 
 [node name="WindowErased" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(579.917, 328)
 scale = Vector2(0.571083, 0.564167)
 texture = ExtResource("16_rrdhv")
@@ -291,14 +233,83 @@ offset_right = -232.0
 offset_bottom = 28.0
 text = "correct!"
 
+[node name="Rightanswer" type="AudioStreamPlayer" parent="Answerpad"]
+stream = ExtResource("13_rrdhv")
+
+[node name="Wronganswer" type="AudioStreamPlayer" parent="Answerpad"]
+stream = ExtResource("14_4m1bc")
+
 [node name="CleanWindow" type="Button" parent="." groups=["Buttons"]]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 541.0
+offset_top = 98.0
+offset_right = 735.0
+offset_bottom = 322.0
+
+[node name="Instructions" type="Node2D" parent="."]
+visible = false
+light_mask = 0
+script = ExtResource("7_1bltn")
+
+[node name="Diary" type="Sprite2D" parent="Instructions"]
+position = Vector2(586.5, 320)
+scale = Vector2(1.81833, 1.46837)
+texture = ExtResource("8_reu6s")
+
+[node name="CloseButton" type="Button" parent="Instructions" groups=["Buttons"]]
+offset_left = 1006.0
+offset_top = 34.0
+offset_right = 1116.0
+offset_bottom = 100.0
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextR" type="Label" parent="Instructions"]
+offset_left = 640.0
+offset_top = 75.0
+offset_right = 1102.0
+offset_bottom = 351.0
+text = "REGELS
+
+1. Het echte antivirus is het enige middel dat precies één virus volledig neutraliseert.
+
+2. antivirussen die geen virussen neutraliseren, worden ook geëlimineerd.
+
+3. Gedeeltelijke effecten tellen niet mee als neutralisatie."
+autowrap_mode = 2
+
+[node name="TextL" type="Label" parent="Instructions"]
+offset_left = 99.0
+offset_top = 61.0
+offset_right = 514.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_twgjl")
+theme_override_font_sizes/font_size = 22
+text = "Logboek
+15.11
+
+Vandaag heb ik mijn antivirus getest op vier virussen,
+en het werkt! Ik heb hieronder een paar regels geschreven
+om me te helpen onthouden welk virus het is."
+autowrap_mode = 2
+
+[node name="Table" type="Sprite2D" parent="Instructions"]
+modulate = Color(0.896178, 0.78514, 0.518993, 1)
+position = Vector2(868.5, 433.75)
+scale = Vector2(0.504742, 0.642606)
+texture = ExtResource("10_0hvyo")
+
+[node name="Label" type="Label" parent="Instructions"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Hints" parent="." instance=ExtResource("6_yvqia")]
 
 [connection signal="pressed" from="Microscope" to="." method="_on_microscope_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
-[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Virus/Nexa" to="." method="_on_nexa_pressed"]
 [connection signal="pressed" from="Virus/Zytphera" to="." method="_on_zytphera_pressed"]
 [connection signal="pressed" from="Virus/PandoraX" to="." method="_on_pandora_x_pressed"]
@@ -310,3 +321,4 @@ offset_bottom = 8.0
 [connection signal="pressed" from="Answerpad/Answers/Brown" to="Answerpad" method="_on_brown_pressed"]
 [connection signal="pressed" from="Answerpad/Submit" to="Answerpad" method="_on_submit_pressed"]
 [connection signal="pressed" from="CleanWindow" to="." method="_on_clean_window_pressed"]
+[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]

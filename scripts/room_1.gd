@@ -18,7 +18,6 @@ extends Node2D
 @onready var sphere_reflector_3: SphereReflector = $LightSystem/SphereReflector3
 @onready var sphere_3: Button = $LightSystem/SphereReflector3/Sphere3
 @onready var arrow: Button = $Arrow
-@onready var show_puzzle_button: Button = $ShowPuzzleButton
 @onready var instructions: Node2D = $Instructions
 @onready var close_button: Button = $Instructions/CloseButton
 @onready var label: Label = $Instructions/Label
@@ -30,6 +29,7 @@ extends Node2D
 @onready var curtains_opened: Sprite2D = $CurtainsOpened
 @onready var crank: Button = $Crank
 @onready var curtain_sfx: AudioStreamPlayer = $CurtainSFX
+@onready var show_instructions: Button = $ShowInstructions
 
 @onready var point_light_2d: PointLight2D = $PointLight2D
 #---------------------------------------------------
@@ -61,13 +61,11 @@ func _ready() -> void:
 	
 func on_show_crank():
 	crank.visible = true
-	show_puzzle_button.visible = false
+	show_instructions.visible = false
 	
 func _process(delta: float) -> void:
 	Events.rooms["room1"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
 	
-
-
 
 func _on_crank_pressed() -> void:
 	curtain_sfx.play(1.5)
@@ -87,5 +85,4 @@ func on_room_lit():
 
 
 func _on_curtain_pressed() -> void:
-	print("ok")
 	DialogueManager.show_dialogue_balloon(curtains_cant_open,'start')

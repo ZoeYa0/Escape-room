@@ -13,6 +13,8 @@ extends Control
 @onready var yellow_2: ColorRect = $Yellow2
 @onready var brown_2: ColorRect = $Brown2
 @onready var correct: Label = $Correct
+@onready var rightanswer: AudioStreamPlayer = $Rightanswer
+@onready var wronganswer: AudioStreamPlayer = $Wronganswer
 
 @export var correct_virus: DialogueResource
 signal room3_solved
@@ -25,6 +27,8 @@ func _ready():
 	set_process_unhandled_input(true)
 	visible = false
 func on_reset_lights():
+	wronganswer.play()
+	Events.rooms["room3"]["wrong"]+=1
 	red.modulate = Color.TRANSPARENT
 	blue.modulate = Color.TRANSPARENT
 	yellow.modulate = Color.TRANSPARENT
@@ -38,11 +42,11 @@ func on_lights_solved():
 	lights_solved = true
 	if virus_solved and lights_solved:
 		room3_solved.emit()
+		rightanswer.play()
 		visible = false
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
-
 		if !get_global_rect().has_point(get_global_mouse_position()):
 			hide() 
 
@@ -81,3 +85,8 @@ func _on_submit_pressed() -> void:
 		correct.visible = true
 		if virus_solved and lights_solved:
 			room3_solved.emit()
+			rightanswer.play()
+	else:
+		wronganswer.play()
+		Events.rooms["room3"]["wrong"]+=1
+			

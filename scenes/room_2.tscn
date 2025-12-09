@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://cvo2suvmx5w1y" path="res://images/2_lever_down.png" id="15_eqia6"]
 [ext_resource type="Texture2D" uid="uid://jq5jxyimllev" path="res://images/2_drink.png" id="16_eqia6"]
 [ext_resource type="AudioStream" uid="uid://b33h7tfkagt7w" path="res://Audio/jelly_button.mp3" id="17_k7br5"]
-[ext_resource type="AudioStream" uid="uid://bi0y43q3dtdje" path="res://Audio/rightanswer-95219 2.mp3" id="18_ivrne"]
-[ext_resource type="AudioStream" uid="uid://ca6tka71k3whg" path="res://Audio/wronganswer-37702.mp3" id="19_j1bnv"]
+[ext_resource type="AudioStream" uid="uid://bi0y43q3dtdje" path="res://Audio/rightanswer.mp3" id="18_ivrne"]
+[ext_resource type="AudioStream" uid="uid://ca6tka71k3whg" path="res://Audio/wronganswer.mp3" id="19_j1bnv"]
 [ext_resource type="AudioStream" uid="uid://c6ms3l1brwcte" path="res://Audio/click.mp3" id="20_fmmbi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awieq"]
@@ -291,7 +291,6 @@ stream = ExtResource("20_fmmbi")
 [connection signal="pressed" from="PH_spawner/Button" to="PH_spawner" method="_on_button_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="AnswerPh/AnswerButton" to="." method="_on_answer_button_pressed"]
-[connection signal="pressed" from="AnswerPh/AnswerButton" to="AnswerPh" method="_on_answer_button_pressed"]
 [connection signal="pressed" from="AnswerPh/PH" to="." method="_on_ph_pressed"]
 [connection signal="pressed" from="AnswerPh/DrinkButton" to="." method="_on_drink_button_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]

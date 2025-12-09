@@ -21,6 +21,7 @@ var puzzle_solved = false
 var drink = 5 #since animation player is on 5 when scene starts
 var ph = 1
 #-----------ROOM 3 virus
+var virus
 var correct_sequence: Array = ['1','3','4','2']
 var player_sequence: Array = []
 

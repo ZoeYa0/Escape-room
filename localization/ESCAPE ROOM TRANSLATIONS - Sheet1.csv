@@ -3,10 +3,10 @@ HINTS_1.1,"G=6,674e-11 \n m earth = 5,972e34 kg","G=6,674e-11 \n m aarde = 5,972
 HINTS_1.2,"M = 1,9884e30 kg","M = 1,9884e30 kg"
 HINTS_1.3,Answer is sun,Antwoord is zon
 HINTS_2.1,look carefully at the color of the pH stripes!,goed naar de kleur van streepjes kijken!
-HINTS_2.2,"You need to place a strip with an indicator in a drink and then observe the color that appears. Compare that color to the chart. If the color is close to a pH of 6, it's a suitable drink.","Jullie moeten een strookje met indicator in een drank plaatsen en vervolgens kijken welke kleur verschijnt. Vergelijk die kleur met het schema. Als de kleur dicht bij de pH-waarde van 6 ligt, dan is het een geschikte drank."
-HINTS_2.3,Answer is bio-synergy (purple),Antwoord is bio-synergy(paars)
-HINTS_3.1,means neuralize. - means not and +- means partially,=betekent neuraliseren. - betekent niet en +- betekent gedeeltelijk
-HINTS_3.2,which antivirus only neutralizes 1 virus?,welke antivirus neutraliseert maar 1 virus?
+HINTS_2.2,"You need to place a strip with an indicator in a drink and then observe the color that appears. Compare that color to the chart. If the color is close to a pH of 7, it's a suitable drink.","Jullie moeten een strookje met indicator in een drank plaatsen en vervolgens kijken welke kleur verschijnt. Vergelijk die kleur met het schema. Als de kleur dicht bij de pH-waarde van 7 ligt, dan is het een geschikte drank."
+HINTS_2.3,Answer is bio-synergy (purple). pH is 7.,Antwoord is bio-synergy(paars). De pH is 7.
+HINTS_3.1,means neuralize. - means not and +- means partially. Also check the window.,=betekent neuraliseren. - betekent niet en +- betekent gedeeltelijk. Controleer ook het raam.
+HINTS_3.2,which antivirus only neutralizes 1 virus? ZPHN stands for the order of the viruses.,welke antivirus neutraliseert maar 1 virus? ZPHN staat voor de orde van de virussen.
 HINTS_3.3,Answer is Helix A (brown),Antwoord is Helix A (bruin)
 HINTS_4.1,Combinations with Pyreon are unreliable.,Combinaties met Pyreon zijn onbetrouwbaar.
 HINTS_4.2,The correct combination is calmisol and Inertase.,De juiste combinatie is calmisol en Inertase.
@@ -30,7 +30,7 @@ ANSWER_1,sun,zon
 UI_THANKS,Thanks for playing!,Bedankt voor het spelen!
 UI_YOURSCORE,Your scores:,Jouw scores:
 UI_SCORE,Time: {time} | Wrong: {wrong} | Hints: {hints},Tijd: {time} | Fouten: {wrong} | Hints: {hints}
-UI_TOT_SCORE,Total stats:\n\n Total Time:%d \nTotal Wrong attempts %d \nTotal Hints: %d,Totale statistieken:\n\n Totale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d
+UI_TOT_SCORE,Total stats:\n\n Total Time: %d \nTotal Wrong attempts %d \nTotal Hints: %d,Totale statistieken:\n\nTotale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d
 ,,
 1_curtains_can't_open,You: [i]pulls curtains[/i] It won't budge.,Jij: [i]trekt gordijnen[/i] Het beweegt niet.
 1_curtains_stuck,The crank is stuck. These curtains won't open further.,De hendel zit vast. Deze gordijnen gaan niet verder open.

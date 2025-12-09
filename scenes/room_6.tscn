@@ -56,9 +56,9 @@ offset_right = 695.0
 offset_bottom = 421.0
 
 [node name="room3" type="Label" parent="Labels"]
-offset_left = 820.0
+offset_left = 780.0
 offset_top = 315.0
-offset_right = 1063.0
+offset_right = 1023.0
 offset_bottom = 421.0
 
 [node name="room4" type="Label" parent="Labels"]
@@ -91,8 +91,8 @@ scale = Vector2(0.1328, 0.1328)
 texture = ExtResource("4_pd1t7")
 
 [node name="Room3" type="Sprite2D" parent="Photos"]
-position = Vector2(912, 230)
-scale = Vector2(0.13536, 0.13536)
+position = Vector2(909.82, 229.392)
+scale = Vector2(0.13318, 0.134347)
 texture = ExtResource("5_sh8yd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Photos"]

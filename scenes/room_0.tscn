@@ -45,7 +45,7 @@ offset_top = 283.0
 offset_right = 850.0
 offset_bottom = 341.0
 theme_override_font_sizes/font_size = 36
-text = "DUTCH"
+text = "NEDERLANDS"
 
 [node name="Label" type="Label" parent="LanguageScreen"]
 offset_left = 690.0

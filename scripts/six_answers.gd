@@ -1,6 +1,7 @@
 extends Node2D
+@onready var rightanswer: AudioStreamPlayer = $"../Rightanswer"
+@onready var wronganswer: AudioStreamPlayer = $"../Wronganswer"
 
-# The answer for each slot (6 letters)
 var correct_answer := ["c", "h", "2", "2", "2", "0"]
 
 @onready var fields := [
@@ -23,25 +24,21 @@ func _ready():
 func _on_submit_button_pressed() -> void:
 	var all_correct := true
 
-	# --- Loop through all fields ---
+
 	for i in range(fields.size()):
 		var user_letter = fields[i].text #.strip_edges().to_upper()
 
-		# Compare with correct letter
 		if user_letter == correct_answer[i]:
 			_set_feedback_correct(fields[i])
 		else:
 			_set_feedback_incorrect(fields[i])
 			all_correct = false
-
-	# --- Full password correct? ---
+			wronganswer.play()
 	if all_correct:
 		_unlock_puzzle()
+		rightanswer.play()
 
 
-# -------------------------------------------------------------
-# FEEDBACK FUNCTIONS – customize these however you like
-# -------------------------------------------------------------
 func _set_feedback_correct(field: LineEdit):
 	field.modulate = Color.GREEN
 
@@ -52,5 +49,4 @@ func _set_feedback_incorrect(field: LineEdit):
 
 
 func _unlock_puzzle():
-	print("✔ Puzzle Solved!")
 	get_tree().change_scene_to_file("res://scenes/room_6.tscn")
