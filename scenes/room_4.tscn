@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmvnec3nuyjdq"]
+[gd_scene load_steps=16 format=3 uid="uid://cmvnec3nuyjdq"]
 
 [ext_resource type="Script" uid="uid://bskn7vvywygq5" path="res://scripts/room_4.gd" id="1_fkic7"]
 [ext_resource type="Resource" uid="uid://8gf5so7e87n5" path="res://dialogue/4_computer.dialogue" id="2_23hl6"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://2pcmnmdwepom" path="res://images/straw.png" id="10_rb4hd"]
 [ext_resource type="Texture2D" uid="uid://c7jr4r7g05x5d" path="res://images/Untitled12_20251202184007.PNG" id="11_4rsdj"]
 [ext_resource type="PackedScene" uid="uid://c18jo8lkljcts" path="res://scenes/dropable.tscn" id="11_16up7"]
+[ext_resource type="AudioStream" uid="uid://bicke5k0lsh8m" path="res://Audio/running-generator-163754.mp3" id="13_3rrnb"]
+[ext_resource type="AudioStream" uid="uid://c5ttw1mb65car" path="res://Audio/computer-boot-up-86535.mp3" id="14_l2fmq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3rrnb"]
 atlas = ExtResource("7_3cbqk")
@@ -45,10 +47,10 @@ icon = ExtResource("6_23hl6")
 
 [node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
-offset_left = 62.0
-offset_top = 28.0
-offset_right = 187.0
-offset_bottom = 146.0
+offset_left = 59.0
+offset_top = 23.0
+offset_right = 184.0
+offset_bottom = 141.0
 
 [node name="ShowInstructions" type="Button" parent="." groups=["Buttons"]]
 visible = false
@@ -171,6 +173,18 @@ scale = Vector2(0.25, 0.25)
 [node name="Inertase" parent="Fuel" instance=ExtResource("10_3cbqk")]
 position = Vector2(107, 407)
 scale = Vector2(0.25, 0.25)
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Running-generator-163754" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_3rrnb")
+volume_db = -13.118
+bus = &"SFX"
+
+[node name="Computer-boot-up-86535" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_l2fmq")
+volume_db = 10.306
+bus = &"SFX"
 
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
 [connection signal="pressed" from="Windows" to="." method="_on_windows_pressed"]

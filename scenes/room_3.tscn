@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dfw5mxix0bb2e"]
+[gd_scene load_steps=26 format=3 uid="uid://dfw5mxix0bb2e"]
 
 [ext_resource type="Script" uid="uid://ds6asrt751701" path="res://scripts/room_3.gd" id="1_rjoje"]
 [ext_resource type="Resource" uid="uid://caon4orph7g88" path="res://dialogue/3_intro.dialogue" id="2_0hvyo"]
@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://b8m1ofgsoh767" path="res://images/3_answer.png" id="14_7vc6b"]
 [ext_resource type="Script" uid="uid://cr21i2u06efaf" path="res://scripts/Answerpad.gd" id="15_g3wdu"]
 [ext_resource type="Texture2D" uid="uid://b1s68vwe0q58u" path="res://images/3_window.png" id="16_rrdhv"]
+[ext_resource type="AudioStream" uid="uid://s8u0hbo1mfck" path="res://Audio/book-opening-345808 2.mp3" id="19_kabvg"]
+[ext_resource type="AudioStream" uid="uid://bq40d5w701xqu" path="res://Audio/window-wipe-106600.mp3" id="20_ielfm"]
+[ext_resource type="AudioStream" uid="uid://bsn2ybib36pm" path="res://Audio/opening-door-411632.mp3" id="21_b0xnh"]
+[ext_resource type="AudioStream" uid="uid://c6ms3l1brwcte" path="res://Audio/switch.mp3" id="22_o3yb1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vc6b"]
 
@@ -246,6 +250,48 @@ offset_top = 98.0
 offset_right = 735.0
 offset_bottom = 322.0
 
+[node name="Hints" parent="." instance=ExtResource("6_yvqia")]
+
+[node name="ShowInstructions2" type="Button" parent="." groups=["Buttons"]]
+offset_left = 209.0
+offset_top = 59.0
+offset_right = 419.0
+offset_bottom = 172.0
+scale = Vector2(0.434028, 0.434028)
+text = "Instructies"
+
+[node name="Instructions2" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Instructions2"]
+offset_left = 51.0
+offset_top = 44.0
+offset_right = 1077.0
+offset_bottom = 563.0
+
+[node name="ColorRect2" type="ColorRect" parent="Instructions2"]
+offset_left = 81.0
+offset_top = 65.0
+offset_right = 1091.0
+offset_bottom = 597.0
+color = Color(0.510242, 0.587098, 0.196698, 1)
+
+[node name="CloseButton" type="Button" parent="Instructions2" groups=["Buttons"]]
+offset_left = 959.0
+offset_top = 86.0
+offset_right = 1069.0
+offset_bottom = 152.0
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Instructions2"]
+offset_left = 188.0
+offset_top = 146.0
+offset_right = 1040.0
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 36
+autowrap_mode = 2
+
 [node name="Instructions" type="Node2D" parent="."]
 visible = false
 light_mask = 0
@@ -305,7 +351,27 @@ visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Hints" parent="." instance=ExtResource("6_yvqia")]
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Book-opening-3458082" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_kabvg")
+volume_db = 7.496
+
+[node name="Window-wipe-106600" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_ielfm")
+volume_db = 9.369
+
+[node name="Wronganswer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_4m1bc")
+
+[node name="Rightanswer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_rrdhv")
+
+[node name="Opening-door-411632" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("21_b0xnh")
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("22_o3yb1")
 
 [connection signal="pressed" from="Microscope" to="." method="_on_microscope_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
@@ -321,4 +387,7 @@ offset_bottom = 23.0
 [connection signal="pressed" from="Answerpad/Answers/Brown" to="Answerpad" method="_on_brown_pressed"]
 [connection signal="pressed" from="Answerpad/Submit" to="Answerpad" method="_on_submit_pressed"]
 [connection signal="pressed" from="CleanWindow" to="." method="_on_clean_window_pressed"]
+[connection signal="pressed" from="ShowInstructions2" to="." method="_on_show_instructions_2_pressed"]
+[connection signal="pressed" from="Instructions2/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Instructions2/CloseButton" to="Instructions2" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]

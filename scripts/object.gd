@@ -8,6 +8,7 @@ var offset: Vector2
 var initialPos: Vector2
 var home_position: Vector2
 var current_dropable: Node2D = null
+@onready var jelly_button: AudioStreamPlayer2D = $JellyButton
 
 @export var slot_name: String = ""
 var occupant = null #TEST
@@ -26,6 +27,7 @@ func _process(delta: float) -> void:
 			initialPos = global_position
 			offset = get_global_mouse_position() - global_position
 			Events.is_dragging = true
+			jelly_button.play()
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
 			

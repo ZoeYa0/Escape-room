@@ -48,6 +48,8 @@ func reset_sequence() -> void:
 	
 
 #-----------ROOM 4 computer
+var room4_start_time := 0
+var room4_started := false
 var energy
 var straw_connected = false
 var power_on = false

@@ -5,7 +5,7 @@ extends Node2D
 @onready var text_r: Label = $TextR
 @onready var text_l: Label = $TextL
 
-
+@onready var book_opening_3458082: AudioStreamPlayer = $"../Audio/Book-opening-3458082"
 
 func _on_close_button_pressed() -> void:
 	visible = false
@@ -34,3 +34,5 @@ func _on_show_instructions_pressed() -> void:
 		3:
 			text_l.text = tr("INSTRUCTION_3.1")
 			text_r.text = tr("INSTRUCTION_3.2")
+			book_opening_3458082.play()
+			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkidjdfh87eir"]
+[gd_scene load_steps=15 format=3 uid="uid://dkidjdfh87eir"]
 
 [ext_resource type="Script" uid="uid://ce4tcp7kl1ond" path="res://scripts/room_5.gd" id="1_coxy2"]
 [ext_resource type="Resource" uid="uid://c8ylp6y6u26aa" path="res://dialogue/5_intro.dialogue" id="2_xnd4n"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c1kk6wsakirc4" path="res://scenes/hints.tscn" id="9_hbosg"]
 [ext_resource type="AudioStream" uid="uid://bi0y43q3dtdje" path="res://Audio/rightanswer.mp3" id="10_sl3n2"]
 [ext_resource type="AudioStream" uid="uid://ca6tka71k3whg" path="res://Audio/wronganswer.mp3" id="11_wnbuo"]
+[ext_resource type="AudioStream" uid="uid://4i4egk8um7vs" path="res://Audio/book-opening-345808.mp3" id="12_wnbuo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mxgfl"]
 load_path = "res://.godot/imported/5_stickyh.png-94633c728f03ef8fcd594f6cb7c16786.ctex"
@@ -319,9 +320,16 @@ text = "Hints"
 
 [node name="Rightanswer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_sl3n2")
+bus = &"SFX"
 
 [node name="Wronganswer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_wnbuo")
+bus = &"SFX"
+
+[node name="Book-opening-345808" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wnbuo")
+volume_db = 16.864
+bus = &"SFX"
 
 [connection signal="pressed" from="Stickynotes/S1" to="1" method="_on_s_1_pressed"]
 [connection signal="pressed" from="Stickynotes/S2" to="Instructions2" method="_on_s_2_pressed"]

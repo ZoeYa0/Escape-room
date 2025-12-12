@@ -28,10 +28,16 @@ extends Node2D
 @onready var red: ColorRect = $Generator/PowerIndicator/Red
 @onready var orange: ColorRect = $Generator/PowerIndicator/Orange
 @onready var green: ColorRect = $Generator/PowerIndicator/Green
+@onready var running_generator_163754: AudioStreamPlayer = $"Audio/Running-generator-163754"
+@onready var computer_boot_up_86535: AudioStreamPlayer = $"Audio/Computer-boot-up-86535"
 
 var start_time = 0
 
 func _ready():
+	Events.dropable_states.clear()
+	if not Events.room4_started:
+		Events.room4_start_time = Time.get_ticks_msec()
+		Events.room4_started = true
 	straw.visible = false
 	hints.visible = false
 	windows.visible = false
@@ -44,14 +50,14 @@ func _ready():
 	start_time = Time.get_ticks_msec()
 
 func _process(delta: float) -> void:
-	Events.rooms["room4"]["time"] = (Time.get_ticks_msec() - start_time) / 1000.0
+	Events.rooms["room4"]["time"] = (Time.get_ticks_msec() - Events.room4_start_time) / 1000.0
 	
 func on_tube_clicked():
+	running_generator_163754.play()
 	Events.straw_connected = true
 	straw.visible = true
 	
 func _on_computer_pressed() -> void:
-	
 	DialogueManager.show_dialogue_balloon(computer,'start')
 
 func _on_power_button_pressed() -> void:
@@ -86,7 +92,7 @@ func _on_pull_button_pressed() -> void:
 				green.visible = true
 				orange.visible = true
 				red.visible = true
-				await get_tree().create_timer(3.0).timeout
+				await get_tree().create_timer(1.0).timeout
 				lights_out()
 				
 				
@@ -101,8 +107,9 @@ func lights_out():
 		green.visible = false
 		orange.visible = false
 		red.visible = false
-	elif Events.energy == "High":
+	elif Events.energy == "High" and Events.straw_connected == true and Events.power_on:
 		windows.visible = true
+		computer_boot_up_86535.play()
 
 
 

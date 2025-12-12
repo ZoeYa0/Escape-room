@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="1_nisbi"]
 [ext_resource type="Texture2D" uid="uid://b4gu1vistwmu6" path="res://images/instruction_sun.png" id="2_njqp3"]
-[ext_resource type="AudioStream" uid="uid://c6ms3l1brwcte" path="res://Audio/click.mp3" id="3_njqp3"]
+[ext_resource type="AudioStream" uid="uid://c6ms3l1brwcte" path="res://Audio/switch.mp3" id="3_njqp3"]
 
 [node name="Instructions" type="Node2D"]
 light_mask = 0

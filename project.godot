@@ -19,6 +19,7 @@ config/icon="res://images/icon.svg"
 
 Events="*res://scripts/Events.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Bg="*res://scenes/bg.tscn"
 
 [display]
 
