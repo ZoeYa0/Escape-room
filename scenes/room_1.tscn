@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bcfxab7fqnlwg"]
+[gd_scene load_steps=29 format=3 uid="uid://bcfxab7fqnlwg"]
 
 [ext_resource type="Script" uid="uid://5kvm0ojlugqx" path="res://scripts/room_1.gd" id="1_4xhvh"]
 [ext_resource type="Resource" uid="uid://701mqj74fxhm" path="res://dialogue/1_intro.dialogue" id="2_y5mqv"]
@@ -14,9 +14,13 @@
 [ext_resource type="Script" uid="uid://b6n6b8i3mblge" path="res://scripts/hints.gd" id="13_sl6s1"]
 [ext_resource type="Texture2D" uid="uid://csggdvfsq03i2" path="res://images/curtains_opened.png" id="13_y5mqv"]
 [ext_resource type="PackedScene" uid="uid://b1w12aapnq4dr" path="res://scenes/arrow.tscn" id="14_y5mqv"]
-[ext_resource type="PackedScene" uid="uid://ccpdb5jctequm" path="res://scenes/instructions.tscn" id="15_y5mqv"]
+[ext_resource type="Script" uid="uid://dy7l7xohs6gpf" path="res://scripts/instructions.gd" id="17_4oupy"]
 [ext_resource type="AudioStream" uid="uid://b07b4yip0ht3n" path="res://Audio/curtain-version-1-337564.mp3" id="17_y5mqv"]
+[ext_resource type="Texture2D" uid="uid://b4gu1vistwmu6" path="res://images/instruction_sun.png" id="18_fa2c2"]
 [ext_resource type="Texture2D" uid="uid://cdcs7yqatk42m" path="res://images/crank.png" id="18_m0003"]
+[ext_resource type="AudioStream" uid="uid://c6ms3l1brwcte" path="res://Audio/switch.mp3" id="19_hvue4"]
+[ext_resource type="AudioStream" uid="uid://bi0y43q3dtdje" path="res://Audio/rightanswer.mp3" id="20_2ubtq"]
+[ext_resource type="AudioStream" uid="uid://ca6tka71k3whg" path="res://Audio/wronganswer.mp3" id="21_sl6s1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwl0"]
 size = Vector2(131, 28)
@@ -122,9 +126,6 @@ action_mode = 0
 
 [node name="Arrow" parent="." groups=["Buttons"] instance=ExtResource("14_y5mqv")]
 
-[node name="Instructions" parent="." instance=ExtResource("15_y5mqv")]
-visible = false
-
 [node name="Hints" type="Node2D" parent="."]
 visible = false
 script = ExtResource("13_sl6s1")
@@ -186,8 +187,86 @@ default_color = Color(1, 1, 0.701961, 1)
 [node name="CurtainSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_y5mqv")
 
+[node name="Instructions" type="Node2D" parent="."]
+visible = false
+light_mask = 0
+script = ExtResource("17_4oupy")
+
+[node name="ColorRect2" type="ColorRect" parent="Instructions"]
+offset_left = 51.0
+offset_top = 44.0
+offset_right = 1077.0
+offset_bottom = 563.0
+
+[node name="ColorRect" type="ColorRect" parent="Instructions"]
+light_mask = 0
+offset_left = 79.0
+offset_top = 63.0
+offset_right = 1092.0
+offset_bottom = 582.0
+color = Color(0.696595, 0.466588, 0.558643, 1)
+
+[node name="CloseButton" type="Button" parent="Instructions"]
+offset_left = 971.0
+offset_top = 88.0
+offset_right = 1081.0
+offset_bottom = 154.0
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Instructions"]
+offset_left = 163.0
+offset_top = 124.0
+offset_right = 927.0
+offset_bottom = 478.0
+text = "Dit raadsel gaat over een kracht in de ruimte tussen verschillende hemellichamen. Kunnen jullie bepalen over welk hemellichaam het gaat? 
+
+
+Fgrav = 3,52 * 10^22 N 
+G = constante(zelf opzoeken) 
+Maarde = (zelf opzoeken) 
+r = 1,496 * 10^11 
+m = onbekende 
+
+
+Hulpmiddelen: 
+Binas tabel 31 + 32C + 7A"
+autowrap_mode = 2
+
+[node name="AnswerField" type="LineEdit" parent="Instructions"]
+offset_left = 168.0
+offset_top = 494.0
+offset_right = 934.0
+offset_bottom = 551.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubmitButton" type="Button" parent="Instructions"]
+offset_left = 953.0
+offset_top = 492.0
+offset_right = 1058.0
+offset_bottom = 550.0
+text = "Submit"
+metadata/_edit_use_anchors_ = true
+
+[node name="InstructionSun" type="Sprite2D" parent="Instructions"]
+position = Vector2(552, 340)
+texture = ExtResource("18_fa2c2")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_hvue4")
+
+[node name="Rightanswer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_2ubtq")
+
+[node name="Wronganswer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("21_sl6s1")
+
 [connection signal="pressed" from="ShowInstructions" to="Instructions" method="_on_show_instructions_pressed"]
 [connection signal="pressed" from="ShowHint" to="Hints" method="_on_show_hint_pressed"]
 [connection signal="pressed" from="Curtain" to="." method="_on_curtain_pressed"]
 [connection signal="pressed" from="Hints/CloseButton" to="Hints" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Crank" to="." method="_on_crank_pressed"]
+[connection signal="pressed" from="Instructions/CloseButton" to="Instructions" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Instructions/SubmitButton" to="Instructions" method="_on_submit_button_pressed"]

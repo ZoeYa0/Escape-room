@@ -81,8 +81,8 @@ scale = Vector2(0.126238, 0.125)
 texture = ExtResource("6_vbud4")
 
 [node name="5" type="Sprite2D" parent="Photos"]
-position = Vector2(573, 460)
-scale = Vector2(0.209635, 0.209635)
+position = Vector2(573, 467.25)
+scale = Vector2(0.209635, 0.198568)
 texture = ExtResource("7_sh8yd")
 
 [node name="Room2" type="Sprite2D" parent="Photos"]
@@ -91,7 +91,7 @@ scale = Vector2(0.1328, 0.1328)
 texture = ExtResource("4_pd1t7")
 
 [node name="Room3" type="Sprite2D" parent="Photos"]
-position = Vector2(909.82, 229.392)
+position = Vector2(909.82, 227.392)
 scale = Vector2(0.13318, 0.134347)
 texture = ExtResource("5_sh8yd")
 

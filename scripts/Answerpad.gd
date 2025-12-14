@@ -41,16 +41,19 @@ func on_lights_solved():
 	yellow_2.visible = true
 	brown_2.visible = true
 	lights_solved = true
+	
 	if virus_solved and lights_solved:
 		room3_solved.emit()
 		rightanswer.play()
 		visible = false
-	
-func _unhandled_input(event: InputEvent) -> void:
+		
+func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		if !get_global_rect().has_point(get_global_mouse_position()):
-			hide() 
+		if visible and !is_mouse_over():
+			hide()
 
+func is_mouse_over() -> bool:
+	return get_global_rect().has_point(get_viewport().get_mouse_position())
 
 
 func _on_show_answerpad_pressed() -> void:

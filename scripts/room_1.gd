@@ -58,7 +58,7 @@ func _ready() -> void:
 	curtains_opened.visible = false
 	closed_curtain.visible = true
 	crank.visible = false
-	
+	instructions.visible = false
 func on_show_crank():
 	crank.visible = true
 	show_instructions.visible = false

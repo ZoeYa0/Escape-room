@@ -12,6 +12,7 @@ extends Node2D
 @onready var rightanswer_952192: AudioStreamPlayer = $"Audio/Rightanswer-952192"
 @onready var wronganswer_37702: AudioStreamPlayer = $"Audio/Wronganswer-37702"
 @onready var click: AudioStreamPlayer = $Audio/Click
+@onready var instructions: Node2D = $Instructions
 
 #-------------------------
 @export var start_dialogue: DialogueResource
@@ -33,6 +34,7 @@ func _ready() -> void:
 	
 	arrow.visible = false
 	ph_image.visible = false
+	instructions.visible = false
 	DialogueManager.show_dialogue_balloon(start_dialogue,"start")
 
 

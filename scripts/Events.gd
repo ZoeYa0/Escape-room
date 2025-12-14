@@ -31,15 +31,16 @@ signal lights_solved
 func register_press(button_id: String) -> void:
 	player_sequence.append(button_id)
 
-
-	var index := player_sequence.size() - 1
-	if player_sequence[index] != correct_sequence[index]:
-		reset_sequence()
+	# Only check once the sequence is complete
+	if player_sequence.size() < correct_sequence.size():
 		return
 
-	if player_sequence.size() == correct_sequence.size():
+	if player_sequence == correct_sequence:
 		lights_solved.emit()
-		player_sequence.clear()
+	else:
+		reset_sequence()
+
+	player_sequence.clear()
 
 func reset_sequence() -> void:
 	player_sequence.clear()

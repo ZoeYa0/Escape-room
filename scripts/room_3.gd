@@ -6,11 +6,17 @@ extends  Node2D
 @export var wrong_virus: DialogueResource
 @export var virus_pressed: DialogueResource
 
+@onready var logbook: Node2D = $Logbook
+@onready var diary: Sprite2D = $Logbook/Diary
+@onready var close_button: Button = $Logbook/CloseButton
+@onready var text_r: Label = $Logbook/TextR
+@onready var text_l: Label = $Logbook/TextL
+@onready var table: Sprite2D = $Logbook/Table
+@onready var label: Label = $Instructions2/Label
 
 @onready var window_erased: Sprite2D = $WindowErased
 @onready var answerpad: Control = $Answerpad
 @onready var instructions_2: Node2D = $Instructions2
-@onready var label: Label = $Instructions2/Label
 @onready var book_opening_3458082: AudioStreamPlayer = $"Audio/Book-opening-3458082"
 @onready var window_wipe_106600: AudioStreamPlayer = $"Audio/Window-wipe-106600"
 @onready var wronganswer: AudioStreamPlayer = $Audio/Wronganswer
@@ -18,6 +24,7 @@ extends  Node2D
 @onready var opening_door_411632: AudioStreamPlayer = $"Audio/Opening-door-411632"
 @onready var click: AudioStreamPlayer = $Audio/Click
 
+@onready var jelly_button: AudioStreamPlayer = $Audio/JellyButton
 
 #---------------onreadys
 @onready var arrow: Button = $Arrow
@@ -61,6 +68,7 @@ func _on_helixona_pressed() -> void:
 	adding_virus("helixona")
 
 func adding_virus(virus):
+	jelly_button.play()
 	Events.virus = str(virus)
 	DialogueManager.show_dialogue_balloon(virus_pressed,"start")
 
@@ -72,6 +80,7 @@ func _on_clean_window_pressed() -> void:
 func _on_show_instructions_2_pressed() -> void:
 	instructions_2.visible = true
 	label.text = tr('INSTRUCTION_3.0')
+	
 
 
 func _on_close_button_pressed() -> void:

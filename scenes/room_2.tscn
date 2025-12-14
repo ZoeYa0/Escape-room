@@ -258,7 +258,7 @@ offset_left = 81.0
 offset_top = 65.0
 offset_right = 1091.0
 offset_bottom = 597.0
-color = Color(0.696595, 0.466588, 0.558643, 1)
+color = Color(0.335874, 0.62579, 0.302042, 1)
 
 [node name="CloseButton" type="Button" parent="Instructions"]
 offset_left = 959.0
