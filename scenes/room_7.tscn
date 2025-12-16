@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi8ba33s780ql"]
+
+[ext_resource type="Script" uid="uid://c1bpslcjlrv6b" path="res://scripts/room_7.gd" id="1_cbgos"]
+[ext_resource type="Texture2D" uid="uid://c8yo8y3xis6c3" path="res://images/4.png" id="2_ws8xg"]
+[ext_resource type="Texture2D" uid="uid://c11htgdm6e5yw" path="res://images/5.png" id="3_b0642"]
+[ext_resource type="Texture2D" uid="uid://2jdp3ajsoxqd" path="res://images/2.png" id="4_16rmy"]
+[ext_resource type="Texture2D" uid="uid://cj7vvew24ko2r" path="res://images/room3.png" id="5_mmvqu"]
+[ext_resource type="Texture2D" uid="uid://b6q68i6sahlng" path="res://images/1_room.png" id="6_su25s"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cbgos")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1177.0
+offset_bottom = 660.0
+color = Color(0.796557, 0.468665, 0.300691, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 37.0
+offset_right = 729.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 36
+text = "Thanks for playing!"
+
+[node name="YourScores" type="Label" parent="."]
+offset_left = 508.0
+offset_top = 105.0
+offset_right = 603.0
+offset_bottom = 128.0
+text = "Your scores:"
+
+[node name="Total" type="Label" parent="."]
+offset_left = 792.0
+offset_top = 384.0
+offset_right = 1042.0
+offset_bottom = 556.0
+text = "Total stats:
+
+Total Time:
+Total Wrong attempts:
+Total Hints:"
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="room1" type="Label" parent="Labels"]
+offset_left = 115.0
+offset_top = 317.0
+offset_right = 358.0
+offset_bottom = 423.0
+
+[node name="room2" type="Label" parent="Labels"]
+offset_left = 452.0
+offset_top = 315.0
+offset_right = 695.0
+offset_bottom = 421.0
+
+[node name="room3" type="Label" parent="Labels"]
+offset_left = 780.0
+offset_top = 315.0
+offset_right = 1023.0
+offset_bottom = 421.0
+
+[node name="room4" type="Label" parent="Labels"]
+offset_left = 117.0
+offset_top = 547.0
+offset_right = 360.0
+offset_bottom = 653.0
+
+[node name="room5" type="Label" parent="Labels"]
+offset_left = 452.0
+offset_top = 550.0
+offset_right = 695.0
+offset_bottom = 656.0
+
+[node name="Photos" type="Node2D" parent="."]
+
+[node name="4" type="Sprite2D" parent="Photos"]
+position = Vector2(240, 466)
+scale = Vector2(0.126238, 0.125)
+texture = ExtResource("2_ws8xg")
+
+[node name="5" type="Sprite2D" parent="Photos"]
+position = Vector2(573, 467.25)
+scale = Vector2(0.209635, 0.198568)
+texture = ExtResource("3_b0642")
+
+[node name="Room2" type="Sprite2D" parent="Photos"]
+position = Vector2(571, 228)
+scale = Vector2(0.1328, 0.1328)
+texture = ExtResource("4_16rmy")
+
+[node name="Room3" type="Sprite2D" parent="Photos"]
+position = Vector2(909.82, 227.392)
+scale = Vector2(0.13318, 0.134347)
+texture = ExtResource("5_mmvqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photos"]
+position = Vector2(242, 225)
+scale = Vector2(0.195964, 0.195964)
+texture = ExtResource("6_su25s")
