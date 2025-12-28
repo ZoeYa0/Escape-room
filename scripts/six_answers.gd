@@ -49,4 +49,4 @@ func _set_feedback_incorrect(field: LineEdit):
 
 
 func _unlock_puzzle():
-	get_tree().change_scene_to_file("res://scenes/room_6.tscn")
+	get_tree().change_scene_to_file("res://scenes/room_7.tscn")

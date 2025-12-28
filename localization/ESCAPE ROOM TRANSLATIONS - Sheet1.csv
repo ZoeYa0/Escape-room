@@ -15,9 +15,9 @@ HINTS_5.0,"Remember, the first letter/number is valid. If you have 4, you'll nee
 HINTS_5.1,concentration = c,concentratie = c
 HINTS_5.2,hypotenuse = h,hypotenuse = h
 HINTS_5.3,"answer is 3 or -2""","antwoord is 3 of -2"""
-HINTS_5.4,"Difficult? The animals represent temperature. If you read the assignment carefully, it will become clear why we're talking about temperature here. First, remember that you need to convert the data for hydrogen to another unit.","Moeilijk? e dieren staan namelijk voor temperatuur. Als jullie de opdracht goed lezen, wordt het duidelijk waarom we het hier over temperatuur hebben. Denk er eerst aan dat je de gegevens voor waterstof naar een andere eenheid moet omzetten."
+HINTS_5.4,"Difficult? The animals represent temperature. If you read the assignment carefully, it will become clear why we're talking about temperature here. First, remember that you need to convert the data for hydrogen to another unit.","Moeilijk? De dieren staan namelijk voor temperatuur. Als jullie de opdracht goed lezen, wordt het duidelijk waarom we het hier over temperatuur hebben. Denk er eerst aan dat je de gegevens voor waterstof naar een andere eenheid moet omzetten."
 INSTRUCTION_1,This riddle is about a force in space between different celestial bodies. Can you determine which celestial body it is?\n\nFgrav = 3.52 * 10^22 N\nG = constant(look it up yourself)\nMaarde = (look it up yourself)\nr = 1.496 * 10^11\nm = unknown,"Dit raadsel gaat over een kracht in de ruimte tussen verschillende hemellichamen. Kunnen jullie bepalen over welk hemellichaam het gaat?\n\nFgrav = 3,52 * 10^22 N\nG = constante(zelf opzoeken)\nMaarde = (zelf opzoeken)\nr = 1,496 * 10^11\nm = onbekende\n\nHulpmiddelen:\nBinas tabel 31 + 32C + 7A"
-INSTRUCTION_2,The professor was likely sedated by those criminal activists with some kind of substance. Can you determine which drink contained the sedative?,De professor werd waarschijnlijk door die criminele activisten verdoofd met een bepaalde stof. Kunnen jullie bepalen in welke drank het slaapmiddel zat?
+INSTRUCTION_2,The professor doesn't drink anything with a ph below 7 because of her weak tooth. Can you determine which drink she was drinking before she disappeared?,De professor drinkt geen dranken met een pH-waarde lager dan 7 vanwege haar zwakke tand. Kunt u achterhalen welke drank ze dronk voordat ze verdween?
 INSTRUCTION_3.0,figure out the antivirus the professor was making to unlock the door!,Ontdek welk antivirus de professor aan het ontwikkelen was om de deur te openen!
 INSTRUCTION_3.1,"Logbook\n 15.11 \n\nToday I tested my antivirus for four viruses, and it works! I've written a few lines below to help me remember which virus it is.","Logboek\n 15.11 \n\nVandaag heb ik mijn antivirus getest op vier virussen, en het werkt! Ik heb hieronder een paar regels geschreven om me te helpen onthouden welk virus het is."
 INSTRUCTION_3.2,RULES\n\n1. A true antivirus is the only agent that completely neutralizes exactly one virus.\n\n2. Antiviruses that do not neutralize any viruses are also eliminated.\n\n3. Partial effects do not count as neutralization.," REGELS\n\n1. Het echte antivirus is het enige middel dat precies één virus volledig neutraliseert.\n\n2. Antivirussen die geen virussen neutraliseren, worden ook geëlimineerd.\n\n3. Gedeeltelijke effecten tellen niet mee als neutralisatie."
@@ -32,10 +32,10 @@ ANSWER_1,sun,zon
 UI_THANKS,Thanks for playing!,Bedankt voor het spelen!
 UI_YOURSCORE,Your scores:,Jouw scores:
 UI_SCORE,Time: {time} | Wrong: {wrong} | Hints: {hints},Tijd: {time} | Fouten: {wrong} | Hints: {hints}
-UI_TOT_SCORE,Total stats:\n\n Total Time: %d \nTotal Wrong attempts %d \nTotal Hints: %d,Totale statistieken:\n\nTotale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d
+UI_TOT_SCORE,Total statistics:\n\nTotal time: %d\nTotal number of incorrect attempts:%d\nTotal number of hints: %d,Totale statistieken:\n\nTotale tijd: %d \nTotaal aantal verkeerde pogingen: %d \nTotaal aantal hints: %d
 ,,
-1_curtains_can't_open,You: [i]pulls curtains[/i] It won't budge.,Jij: [i]trekt gordijnen[/i] Het beweegt niet.
-1_curtains_stuck,The crank is stuck. These curtains won't open further.,De hendel zit vast. Deze gordijnen gaan niet verder open.
+1_curtains_can't_open,[i]pulls curtains[/i] It won't budge.,[i]trekt gordijnen[/i] Het beweegt niet.
+1_curtains_stuck,The crank is stuck. These curtains won't open further. We'll have to light up the room in another way.,De hendel zit vast. Deze gordijnen gaan niet verder open. We zullen de ruimte op een andere manier moeten verlichten.
 dialogue/1_finished.dialogue_1,The room is lit up!,De kamer is verlicht!
 dialogue/1_finished.dialogue_2,Now we can go to the next room.,Nu kunnen we naar de volgende kamer.
 dialogue/1_intro.dialogue_1,This is where professor Kamilla was last seen.,Dit is de plek waar professor Kamilla voor het laatst is gezien.
@@ -59,7 +59,7 @@ dialogue/3_virus_pressed.dialogue_5,You observed that Helixona was not neutraliz
 dialogue/3_wrong_virus.dialogue_1,This doesn't seem to be the correct virus.,Dit lijkt niet het juiste virus te zijn.
 dialogue/4_computer.dialogue_1,There's no electricity to power the computer.,Er is geen stroom om de computer van energie te voorzien.
 dialogue/4_fuel_combined.dialogue_1,*pulls cord*,*trekt aan koord*
-dialogue/4_fuel_combined.dialogue_2,These 2 fuels aren't providing enough energy,Deze twee brandstoffen leveren niet genoeg energie.
+dialogue/4_fuel_combined.dialogue_2,These 2 fuels aren't providing enough energy.,Deze twee brandstoffen leveren niet genoeg energie.
 dialogue/4_fuel_combined.dialogue_3,These 2 fuels aren't triggering any reactions...,Deze twee brandstoffen veroorzaken geen enkele reactie...
 dialogue/4_fuel_combined.dialogue_4,this is the one!,dit is ‘m!
 dialogue/5_intro.dialogue_1,We're so close... I have a feeling that once we crack her computer we will know the answer once and for all!,"We zijn zo dichtbij... Ik heb het gevoel dat we, zodra we haar computer kraken, het antwoord eindelijk zullen weten!"

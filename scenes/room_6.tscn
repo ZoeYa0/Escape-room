@@ -21,3 +21,12 @@ offset_bottom = 649.0
 stream = ExtResource("2_aanpt")
 expand = true
 bus = &"Video"
+
+[node name="WarningLabel" type="Label" parent="."]
+offset_left = 14.0
+offset_right = 1150.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "video is super laggy and may appear stuck and freeze for ~10 seconds before the next part is triggered. This is due to Godot's export and currently I haven't found a way to bypass this. just be patient. thanks"
+autowrap_mode = 2
