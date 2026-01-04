@@ -130,6 +130,7 @@ scale = Vector2(0.338177, 0.341759)
 texture = ExtResource("3_4et86")
 
 [node name="Colorblind" type="Button" parent="PHImage"]
+visible = false
 offset_left = 296.0
 offset_top = -272.0
 offset_right = 509.0

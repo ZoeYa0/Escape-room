@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://c60fe6qmqf3us"]
+[gd_scene load_steps=4 format=3 uid="uid://c60fe6qmqf3us"]
 
 [ext_resource type="Script" uid="uid://4h6pmhr18abp" path="res://scripts/language_screen.gd" id="2_1ak2e"]
+[ext_resource type="FontFile" uid="uid://dqi3r4qsjcm7a" path="res://other assets/Anonymous_Pro/AnonymousPro-Regular.ttf" id="3_tgmjn"]
 [ext_resource type="Texture2D" uid="uid://b6q68i6sahlng" path="res://images/1_room.png" id="6_1007u"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TempBg" type="Sprite2D" parent="."]
-modulate = Color(0.219501, 0.219501, 0.219501, 1)
 position = Vector2(578, 324.5)
 scale = Vector2(0.9, 0.845052)
 texture = ExtResource("6_1007u")
@@ -16,42 +16,44 @@ script = ExtResource("2_1ak2e")
 
 [node name="ColorRect" type="ColorRect" parent="LanguageScreen"]
 light_mask = 0
-offset_left = 59.0
-offset_top = 48.0
-offset_right = 1099.0
-offset_bottom = 593.0
-color = Color(0.584314, 0.584314, 0.584314, 0.929412)
+offset_left = -52.0
+offset_top = -34.0
+offset_right = 1193.0
+offset_bottom = 708.0
+color = Color(0.3741408, 0.40625024, 0.49867433, 0.972549)
 
 [node name="ActualHint" type="Label" parent="LanguageScreen"]
-offset_left = 395.0
-offset_top = 111.0
-offset_right = 770.0
-offset_bottom = 214.0
-theme_override_font_sizes/font_size = 36
-text = "Select your language"
+offset_left = 250.0
+offset_top = 134.0
+offset_right = 931.0
+offset_bottom = 239.0
+theme_override_fonts/font = ExtResource("3_tgmjn")
+theme_override_font_sizes/font_size = 50
+text = "Escape room Part 1: the vanishing scientist"
+horizontal_alignment = 1
 autowrap_mode = 1
 
 [node name="English" type="Button" parent="LanguageScreen"]
-offset_left = 237.0
-offset_top = 282.0
-offset_right = 397.0
-offset_bottom = 340.0
+offset_left = 209.0
+offset_top = 304.0
+offset_right = 382.0
+offset_bottom = 374.0
 theme_override_font_sizes/font_size = 36
 text = "ENGLISH"
 
 [node name="Dutch" type="Button" parent="LanguageScreen"]
-offset_left = 690.0
-offset_top = 283.0
-offset_right = 850.0
-offset_bottom = 341.0
+offset_left = 698.0
+offset_top = 309.0
+offset_right = 940.0
+offset_bottom = 376.0
 theme_override_font_sizes/font_size = 36
 text = "NEDERLANDS"
 
 [node name="Label" type="Label" parent="LanguageScreen"]
-offset_left = 690.0
-offset_top = 361.0
-offset_right = 854.0
-offset_bottom = 393.0
+offset_left = 699.0
+offset_top = 382.0
+offset_right = 898.0
+offset_bottom = 419.0
 text = "Neem je BINAS mee!"
 
 [connection signal="pressed" from="LanguageScreen/English" to="LanguageScreen" method="_on_english_pressed"]

@@ -44,16 +44,20 @@ func _ready() -> void:
 	total_time, total_wrong, total_hints
 	]
 
-@export var hue = 0.0
+@export var hue: float = 0.0
 
 func _process(delta: float) -> void:
-	title.modulate = Color.from_hsv(hue, 1.0, 1.0, 1.0)
-	if hue < 1.0:
-		hue += 0.001
-	else:
+	# Hard safety: never allow null
+	if hue == null:
 		hue = 0.0
-	backup.text = str(Events.rooms.values())
-	
+
+	title.modulate = Color.from_hsv(hue, 1.0, 1.0, 1.0)
+
+	hue += 0.001
+	if hue >= 1.0:
+		hue = 0.0
+
+	backup.text = str(Events.rooms.values() if Events.rooms != null else [])
 
 
 func _on_button_pressed() -> void:

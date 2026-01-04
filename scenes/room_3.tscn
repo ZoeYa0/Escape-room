@@ -24,15 +24,15 @@
 [ext_resource type="AudioStream" uid="uid://c6ms3l1brwcte" path="res://Audio/switch.mp3" id="22_o3yb1"]
 [ext_resource type="AudioStream" uid="uid://b33h7tfkagt7w" path="res://Audio/jelly_button.mp3" id="23_ielfm"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vc6b"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrdhv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3wdu"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrdhv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0xnh"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vc6b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ielfm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0xnh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3yb1"]
 
@@ -58,9 +58,9 @@ offset_left = 127.0
 offset_top = 165.0
 offset_right = 414.0
 offset_bottom = 647.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7vc6b")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_g3wdu")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_rrdhv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g3wdu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vc6b")
 text = "
 "
 destination_scene = 4
@@ -131,12 +131,13 @@ scale = Vector2(0.571083, 0.564167)
 texture = ExtResource("16_rrdhv")
 
 [node name="ShowInstructions2" type="Button" parent="." groups=["Buttons"]]
-offset_left = 209.0
-offset_top = 59.0
-offset_right = 419.0
-offset_bottom = 172.0
+offset_left = 197.0
+offset_top = 51.000004
+offset_right = 473.99197
+offset_bottom = 184.736
 scale = Vector2(0.434028, 0.434028)
-text = "Instructies"
+theme_override_font_sizes/font_size = 36
+text = "Instructions"
 
 [node name="CleanWindow" type="Button" parent="." groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)
@@ -169,8 +170,8 @@ offset_left = 281.0
 offset_top = 476.0
 offset_right = 360.0
 offset_bottom = 525.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b0xnh")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ielfm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b0xnh")
 
 [node name="Blue" type="Button" parent="Answerpad/Answers" groups=["Buttons"]]
 modulate = Color(1, 1, 1, 0)

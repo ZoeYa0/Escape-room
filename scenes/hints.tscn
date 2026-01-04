@@ -30,9 +30,9 @@ autowrap_mode = 1
 
 [node name="Hitn" type="Label" parent="."]
 offset_left = 546.0
-offset_top = 100.0
+offset_top = 109.0
 offset_right = 586.0
-offset_bottom = 123.0
+offset_bottom = 132.0
 text = "Hint"
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
