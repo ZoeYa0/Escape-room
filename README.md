@@ -1,46 +1,33 @@
-
+![Hackatime Badge](https://hackatime-badge.hackclub.com/U09D27K9XU5/escape-room)
 
 
 # Escape-room
-https://hackatime-badge.hackclub.com/U09D27K9XU5/escape-room
 
-Godot 4 game which tests the player's ability to use interdisciplinary skills
-
+Escape Room — a two-part browser-based STEM puzzle game built with Godot 4.
 
 
-# Daily Workflow 
- 1. Update your local repo(before editing anything)
+## About
+This project is a digital escape room designed to assess students’ problem-solving abilities through interdisciplinary thinking. Players solve a series of puzzles that require applying knowledge from multiple subjects, including mathematics, physics, chemistry, and biology.
 
-	git fetch origin
-	
-	git pull origin main --rebase
-	
-2. Work on your changes
-   
-	git status
-  
-	git add .
-  
-3. Commit your work 
+Story: The game follows a narrative in which Professor Kamilla, a renowned biochemist, has gone missing. As players progress through the escape room, they uncover clues and gradually reveal that an extremist climate activist group has kidnapped her in an attempt to obtain her research, believing that humanity is responsible for Earth’s environmental crises.
+Made by Zoe, Anastasiia, Elize and Kayra. 
 
-	git commit -m "Describe your change" 
-  
-4. Pull again before pushing
-   
-	git pull origin main --rebase
+## Demo
+<p align="center">
+  <img width="410" height="231" alt="image (1)" src="https://github.com/user-attachments/assets/04b948ac-49f9-4646-8639-3d800d83c587" />
+</p>
 
-5. Push to GitHub
-	 git push origin main
+<p align="center">
+<img width="410" height="231" alt="image (2)" src="https://github.com/user-attachments/assets/eadb72ea-085a-4a34-9157-d56c1553dcb2" />
+</p>
 
-# notes
-• Always use .tscn scenes and .gd scripts (text format).
+## Features
+- Rich, story-driven gameplay with fully written dialogue in both English and Dutch
+- Original hand-drawn artwork created by the development team
+- Bonus video cutscene unlocked at the end of the game
 
-• Add a proper .gitignore: 
-.import/ 
-.godot/ 
-export_presets.cfg 
-.DS_Store
+## Status
+Currently in beta-testing.
 
-• Avoid editing the same scene at the same time.
-
-• Always pull before opening Godot to prevent overwriting remote changes.
+## License
+MIT
