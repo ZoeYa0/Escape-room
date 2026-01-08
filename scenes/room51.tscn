@@ -1,0 +1,147 @@
+[gd_scene load_steps=23 format=3 uid="uid://cu365x7u0grxb"]
+
+[ext_resource type="Texture2D" uid="uid://bquqgsei7vgig" path="res://images/achtergrond51.png" id="1_eihe4"]
+[ext_resource type="Script" uid="uid://lkqlsrfw5ees" path="res://scripts/room51.gd" id="1_sf8l2"]
+[ext_resource type="Texture2D" uid="uid://bwixfdr6ingbd" path="res://images/55.png" id="3_v8yog"]
+[ext_resource type="Texture2D" uid="uid://c0kq8cuvie6rj" path="res://images/vraag51.png" id="5_7x3v8"]
+[ext_resource type="PackedScene" uid="uid://d1awp8vrnet6x" path="res://scenes/hint.tscn" id="5_ishgb"]
+[ext_resource type="AudioStream" uid="uid://c35rwl7wtuxg4" path="res://audio/lasers.mp3" id="5_v8yog"]
+[ext_resource type="Texture2D" uid="uid://blep7knj4hbth" path="res://images/vraag52.png" id="6_v8yog"]
+[ext_resource type="AudioStream" uid="uid://b4hhbu0p2y1e2" path="res://audio/rightanswer-95219 2.mp3" id="8_moh3v"]
+[ext_resource type="AudioStream" uid="uid://dbeep1x6e8pca" path="res://audio/wronganswer-37702.mp3" id="9_23o8h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ughih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ughih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7x3v8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ishgb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8yog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwrfx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moh3v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23o8h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c323b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pd3rn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlcbn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwrfx"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_ughih"]
+Panel/styles/panel = SubResource("StyleBoxFlat_lwrfx")
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sf8l2")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(574.12506, 323)
+scale = Vector2(1.2076802, 1.2)
+texture = ExtResource("1_eihe4")
+
+[node name="bg2" type="Sprite2D" parent="."]
+position = Vector2(536.00006, 369.50003)
+scale = Vector2(0.7315969, 0.6331097)
+texture = ExtResource("3_v8yog")
+
+[node name="hint51" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(573, 96.000015)
+scale = Vector2(0.7915254, 0.81609195)
+texture = SubResource("CompressedTexture2D_ughih")
+
+[node name="ShowHint" type="Button" parent="." groups=["Buttons"]]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 181.0
+offset_right = 214.0
+offset_bottom = 262.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ughih")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7x3v8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ishgb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v8yog")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lwrfx")
+
+[node name="showinformatie51" type="Button" parent="." groups=["Buttons"]]
+layout_mode = 0
+offset_left = 882.0
+offset_top = 180.0
+offset_right = 1106.0
+offset_bottom = 261.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_moh3v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_23o8h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c323b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pd3rn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qlcbn")
+
+[node name="antwoord51" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 530.0
+offset_right = 695.0
+offset_bottom = 573.0
+
+[node name="Hint" parent="." instance=ExtResource("5_ishgb")]
+visible = false
+
+[node name="antwoord52" type="LineEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 363.0
+offset_top = 498.0
+offset_right = 722.0
+offset_bottom = 547.0
+
+[node name="Instructions" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 55.0
+offset_top = 16.0
+offset_right = 1105.0
+offset_bottom = 628.0
+size_flags_vertical = 4
+theme = SubResource("Theme_ughih")
+
+[node name="informatie51" type="Sprite2D" parent="Instructions"]
+position = Vector2(521.25, 304.75)
+scale = Vector2(1.1961498, 1.1876155)
+texture = ExtResource("5_7x3v8")
+
+[node name="informatie52" type="Sprite2D" parent="Instructions"]
+position = Vector2(523, 306.00003)
+scale = Vector2(1.20251, 1.19593)
+texture = ExtResource("6_v8yog")
+
+[node name="HideInstructions" type="Button" parent="Instructions" groups=["Buttons"]]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 1.0
+offset_right = 1080.0
+offset_bottom = 76.0
+
+[node name="Audio" type="Node2D" parent="."]
+position = Vector2(55, 16)
+
+[node name="Rightanswer952192" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_moh3v")
+
+[node name="Wronganswer37702" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_23o8h")
+
+[node name="Lasers" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_v8yog")
+
+[connection signal="pressed" from="ShowHint" to="Hint" method="_on_show_hint_pressed"]
+[connection signal="pressed" from="showinformatie51" to="." method="_on_showinformatie_51_pressed"]
+[connection signal="text_submitted" from="antwoord51" to="." method="_on_antwoord_51_text_submitted"]
+[connection signal="text_submitted" from="antwoord52" to="." method="_on_antwoord_52_text_submitted"]
+[connection signal="pressed" from="Instructions/HideInstructions" to="." method="_on_hide_instructions_pressed"]
